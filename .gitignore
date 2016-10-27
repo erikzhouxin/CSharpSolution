@@ -1,0 +1,39 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+# Add Empty Folder, Use Bash Here And Type "find . -type d -empty -exec touch {}/.gitignore \;"
+.svn
+.app
+.git
+.ezx
+.bak
+.dbf
+bin
+obj
+*.suo
+*.user
+*.o
+*.lo
+*.la
+*.al
+.libs
+*.so
+*.so.[0-9]*
+*.a
+*.pyc
+*.pyo
+__pycache__
+*.rej
+*~
+#*#
+.#*
+.*.swp
+.DS_Store
+*.log
+Thumbs.db
+*.temp
+*.tmp
+packages
