@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息是通过以下项进行控制的
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("EZOper.TechTester.FirebirdWebUT")]
+[assembly: AssemblyTitle("EZOper.TechTester.FirebirdWebSI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EZOper.TechTester.FirebirdWebUT")]
+[assembly: AssemblyProduct("EZOper.TechTester.FirebirdWebSI")]
 [assembly: AssemblyCopyright("版权所有(C)  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("ec0c02a2-e497-472c-b1c7-29e2e4a7f207")]
+[assembly: Guid("8b401392-b8dc-4c00-a23b-4380e4d24c42")]
 
 // 程序集的版本信息由下列四个值组成:
 //
