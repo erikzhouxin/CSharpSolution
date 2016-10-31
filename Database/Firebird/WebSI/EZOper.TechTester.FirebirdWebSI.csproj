@@ -202,9 +202,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Context\FirebirdHelper.cs" />
+    <Compile Include="Context\SysContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthCode.cs" />
+    <Compile Include="Models\LogOnViewModel.cs" />
+    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Models\UserPassword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="T4MVC\Home.HomeController.generated.cs">
@@ -220,18 +226,36 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Firebird\EZOPER.TECHTESTER.FIREBIRD.SQL" />
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\CSS\Site.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.min.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\js\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\js\bootstrap.min.js" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\js\npm.js" />
     <Content Include="Scripts\Lib\bootstrap.js" />
     <Content Include="Scripts\Lib\bootstrap.min.js" />
     <Content Include="Areas\Home\Views\Web.config" />
     <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Home\Views\Home\Index.cshtml" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Data\Firebird\EZOPER.TECHTESTER.FIREBIRD.FDB" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
@@ -259,7 +283,6 @@
     <None Include="T4MVC\T4MVC.tt.hooks.t4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Home\Models\" />
   </ItemGroup>
   <ItemGroup>
