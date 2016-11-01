@@ -16,7 +16,7 @@ namespace EZOper.TechTester.SQLiteWebSI
             context.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                defaults: new { controller = "Auth", action = "LogOn", id = UrlParameter.Optional },
                 namespaces: new string[] { "EZOper.TechTester.SQLiteWebSI.Areas.Home.Controllers" }
             );
         }

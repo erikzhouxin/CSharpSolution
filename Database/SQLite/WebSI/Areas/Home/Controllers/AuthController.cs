@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EZOper.TechTester.SQLiteApiSI.DAL;
+using EZOper.TechTester.SQLiteApiSI.IDL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -46,7 +48,7 @@ namespace EZOper.TechTester.SQLiteWebSI.Areas.Home.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            TempData[SysContext.TempData_ErrorMsg] = "验证码错误，请重新输入";
+            TempData[SysContext.TempData_ErrorMsg] = "密码或用户名错误，请重新输入";
             model.AuthCode = string.Empty;
             return RedirectToAction("LogOn", model);
         }

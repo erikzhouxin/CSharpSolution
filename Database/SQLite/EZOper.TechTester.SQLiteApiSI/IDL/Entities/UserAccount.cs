@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.SQLiteWebSI
+namespace EZOper.TechTester.SQLiteApiSI.IDL
 {
     /// <summary>
     /// 用户特殊用户名

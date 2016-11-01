@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.SQLiteWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.SQLiteWebUT", "WebUT\EZOper.TechTester.SQLiteWebUT.csproj", "{0D2AB811-1CB3-462A-A856-8BBFD2940546}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.SQLiteApiSI", "EZOper.TechTester.SQLiteApiSI\EZOper.TechTester.SQLiteApiSI.csproj", "{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0D2AB811-1CB3-462A-A856-8BBFD2940546}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D2AB811-1CB3-462A-A856-8BBFD2940546}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D2AB811-1CB3-462A-A856-8BBFD2940546}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

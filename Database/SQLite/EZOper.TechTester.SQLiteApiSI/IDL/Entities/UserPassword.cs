@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.SQLiteWebSI
+namespace EZOper.TechTester.SQLiteApiSI.IDL
 {
     public class UserPassword
     {

@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace EZOper.TechTester.SQLiteWebSI
+namespace EZOper.TechTester.SQLiteApiSI.IDL
 {
     /// <summary>
     /// 验证码

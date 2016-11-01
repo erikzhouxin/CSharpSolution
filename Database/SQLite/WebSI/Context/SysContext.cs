@@ -14,7 +14,7 @@ namespace EZOper.TechTester.SQLiteWebSI
         public const string Session_AuthCode = "Session_AuthCode";
         #endregion
         #region // 配置约定
-        public static readonly string EZOper_TechTester_SQLite_Sqlite3 = ConfigurationManager.ConnectionStrings["EZOper.TechTester.SQLite.sqlite3"].ConnectionString;
+        // 连接字符串注意SQLiteHelper使用内置配置->{EZOper_TechTester_SQLite_Sqlite3:"EZOper.TechTester.SQLite.sqlite3"}
         public static readonly bool IsReleaseMode = ConfigurationManager.AppSettings["IsRelease"].Equals("true");
         public static readonly bool IsSettingMode = ConfigurationManager.AppSettings["IsSetting"].Equals("true");
         #endregion
