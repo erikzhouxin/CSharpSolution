@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<statements>
+		<select id="GetAllProducts" parameterClass="string" resultClass="hashtable">
+			SELECT * FROM Product WHERE Product_Company=#companyname#
+		</select>
+		<insert id="InsertProduct" parameterClass="EntityModel.Product">
+			INSERT  dbo.Product ( Product_Name ,Product_Company)
+			VALUES  (#ProductName# , #ProductCompany#)
+		</insert>
+		<delete id="DeleteProduct" parameterClass="int" restultClass="int">
+			DELETE FROM dbo.Product WHERE ProductID=#ProductId#
+		</delete>
+		<update id="UpdateProduct" parameterClass="EntityModel.Product" restltClass="int">
+			UPDATE Product SET Product_Name=#ProductName# WHERE ProductID=#ProductId#
+		</update>
+		<select id="SelectAllProduct" resultClass="List">
+			SELECT * FROM Product
+		</select>
+	</statements>
+
+</sqlMap>
+

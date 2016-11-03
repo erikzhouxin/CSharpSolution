@@ -1,0 +1,470 @@
+[Header]\r\n2011-03-17 11:19:06,995 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [InsertProduct] Types: [@param0=[String, System.String], @param1=[String, System.String]]
+2011-03-17 11:19:07,207 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "21197031" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:07,407 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "21197031" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:07,412 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:07,413 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:07,413 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:07,414 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "46078950" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:07,531 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:19:07,532 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:07,532 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,1]]
+2011-03-17 11:19:07,532 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:19:07,721 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:19:07,736 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "46078950" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:07,742 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:07,742 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:07,742 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:07,743 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:07,743 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:19:07,743 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:19:07,745 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "12841161" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:07,762 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "12841161" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 11:19:37,112 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:37,134 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:37,135 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:37,141 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 11:19:37,144 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 11:19:37,145 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 11:19:37,146 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:37,146 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:37,146 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:37,154 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [InsertProduct] PreparedStatement : [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:37,159 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [InsertProduct] Parameters: [@param0=[ProductName,Windows  phone 7 Device], @param1=[ProductCompany,MS]]
+2011-03-17 11:19:37,159 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [InsertProduct] Types: [@param0=[String, System.String], @param1=[String, System.String]]
+2011-03-17 11:19:37,163 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "28084257" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:37,166 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "28084257" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:37,172 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:37,172 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:37,172 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:37,173 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "41463608" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:37,174 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:19:37,174 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:37,174 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,2]]
+2011-03-17 11:19:37,175 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:19:37,202 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:19:37,202 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "41463608" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:37,217 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:37,217 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:19:37,217 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:19:37,218 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:19:37,218 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:19:37,218 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:19:37,220 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "64670131" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:19:37,228 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "64670131" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 11:20:03,793 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:03,813 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:20:03,815 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:03,819 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 11:20:03,822 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 11:20:03,824 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 11:20:03,824 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:03,824 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:20:03,824 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:03,847 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "21538395" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:20:03,847 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:20:03,850 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:03,853 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,2]]
+2011-03-17 11:20:03,853 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:20:03,856 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:20:03,857 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "21538395" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:20:03,863 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:03,863 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:20:03,863 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:03,864 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:03,864 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:20:03,864 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:20:03,866 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "7695165" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:20:03,889 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "7695165" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 11:20:23,737 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:23,758 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:20:23,760 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:23,766 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 11:20:23,770 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 11:20:23,771 [5872] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 11:20:23,771 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:23,772 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:20:23,772 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:23,779 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "12382274" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:20:23,780 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:20:23,783 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:23,786 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,3]]
+2011-03-17 11:20:23,786 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:20:23,788 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:20:23,789 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "12382274" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:20:23,795 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:23,796 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:20:23,796 [5872] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:20:23,796 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:20:23,797 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:20:23,797 [5872] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:20:23,798 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "49699499" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:20:23,803 [5872] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "49699499" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:22:00,025 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "25062673" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,3]]
+2011-03-17 11:22:00,026 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:22:00,028 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:22:00,028 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "25062673" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:22:00,044 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:22:00,044 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:22:00,044 [8020] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:22:00,045 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:22:00,045 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:22:00,045 [8020] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:22:00,045 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "10605130" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:22:00,046 [8020] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "10605130" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 11:56:56,888 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:56:56,907 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:56:56,909 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:56:56,914 [4260] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 11:56:56,918 [4260] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 11:56:56,919 [4260] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 11:56:56,920 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:56:56,920 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:56:56,920 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:56:56,961 [4260] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "57219801" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:56:56,962 [4260] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:56:56,964 [4260] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:56:56,968 [4260] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,3]]
+2011-03-17 11:56:56,968 [4260] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:56:56,974 [4260] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:56:56,974 [4260] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "57219801" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:56:56,980 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:56:56,980 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:56:56,981 [4260] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:56:56,981 [4260] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:56:56,982 [4260] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:56:56,982 [4260] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:56:56,983 [4260] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "27804605" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:56:56,989 [4260] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "27804605" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:57:01,034 [7456] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:57:01,035 [7456] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:57:01,035 [7456] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:57:01,035 [7456] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "3039189" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:57:01,035 [7456] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 11:57:01,035 [7456] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:57:01,035 [7456] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,3]]
+2011-03-17 11:57:01,036 [7456] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 11:57:01,037 [7456] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 11:57:01,037 [7456] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "3039189" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:57:01,044 [7456] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:57:01,044 [7456] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 11:57:01,069 [7456] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 11:57:01,069 [7456] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 11:57:01,069 [7456] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 11:57:01,069 [7456] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 11:57:01,070 [7456] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "54939031" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 11:57:01,071 [7456] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "54939031" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 14:07:56,719 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:56,949 [5860] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:56,988 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 14:07:56,988 [5860] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 14:07:56,990 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:56,995 [4640] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 14:07:57,002 [4640] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 14:07:57,003 [4640] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 14:07:57,004 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:57,004 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 14:07:57,004 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:57,007 [5860] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:58,391 [5860] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "6017154" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:58,506 [4640] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "65743252" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:58,556 [4640] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 14:07:58,558 [5860] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 14:07:58,570 [4640] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:58,572 [5860] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] PreparedStatement : [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:58,594 [4640] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,3]]
+2011-03-17 14:07:58,595 [4640] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 14:07:58,594 [5860] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Parameters: [@param0=[ProductId,3]]
+2011-03-17 14:07:58,595 [5860] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [DeleteProduct] Types: [@param0=[Int32, System.Int32]]
+2011-03-17 14:07:59,526 [4640] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 14:07:59,531 [4640] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "65743252" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:59,539 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:59,539 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 14:07:59,540 [4640] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:59,540 [4640] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:59,541 [4640] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 14:07:59,541 [4640] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 14:07:59,541 [5860] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 14:07:59,542 [5860] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "6017154" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:59,547 [5860] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:59,547 [5860] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 14:07:59,547 [5860] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 14:07:59,547 [5860] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] PreparedStatement : [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 14:07:59,548 [5860] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Parameters: [@param0=[companyname,MS]]
+2011-03-17 14:07:59,548 [5860] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [GetAllProducts] Types: [@param0=[String, System.String]]
+2011-03-17 14:07:59,596 [4640] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "6197104" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:59,596 [5860] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "58121440" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:59,798 [4640] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "6197104" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 14:07:59,798 [5860] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "58121440" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 15:14:47,645 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:14:47,679 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+[Footer]\r\n[Header]\r\n2011-03-17 15:18:01,753 [5612] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:18:01,773 [5612] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+[Footer]\r\n[Header]\r\n2011-03-17 15:18:43,206 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:18:43,226 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:18:43,228 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:18:43,229 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:18:43,233 [5016] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 15:18:43,237 [5016] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 15:18:43,239 [5016] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 15:18:43,239 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:18:43,239 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:18:43,240 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:18:43,240 [5016] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:18:43,290 [5016] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "332018" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:18:43,290 [5016] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:18:43,291 [5016] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - RollBack Transaction.
+2011-03-17 15:18:43,330 [5016] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "332018" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 15:19:16,956 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:19:16,978 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:19:16,979 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:16,981 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:19:16,987 [6316] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 15:19:16,992 [6316] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 15:19:16,993 [6316] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 15:19:16,994 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:19:16,994 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:19:16,994 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:16,994 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:19:17,003 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "9404391" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:19:17,003 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:19:17,005 [6316] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:17,024 [6316] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:19:17,024 [6316] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:19:17,063 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:19:17,064 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "9404391" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:19:31,223 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:19:31,223 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:19:31,223 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:31,223 [6316] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:19:31,223 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "38770986" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:19:31,223 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:19:31,224 [6316] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:31,224 [6316] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:19:31,224 [6316] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:19:31,224 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:19:31,224 [6316] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "38770986" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:19:32,267 [4856] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:19:32,268 [4856] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:19:32,268 [4856] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:32,268 [4856] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:19:32,268 [4856] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "10335641" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:19:32,269 [4856] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:19:32,269 [4856] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:19:32,269 [4856] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:19:32,269 [4856] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:19:32,269 [4856] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:19:32,269 [4856] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "10335641" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:14,679 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:21:14,679 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:21:14,680 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:14,680 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:21:14,680 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "5021907" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:14,680 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:21:14,680 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:14,681 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:21:14,681 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:21:14,682 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:21:14,683 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "5021907" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:15,941 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:21:15,941 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:21:15,942 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:15,942 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:21:15,942 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "2783736" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:15,944 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:21:15,944 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:15,944 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:21:15,944 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:21:15,944 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:21:15,944 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "2783736" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:17,015 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:21:17,015 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:21:17,016 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:17,016 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:21:17,016 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "20279768" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:17,017 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:21:17,017 [7276] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:17,017 [7276] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:21:17,017 [7276] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:21:17,017 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:21:17,017 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "20279768" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:17,276 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:21:17,276 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:21:17,276 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:17,276 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:21:17,276 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "57871880" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:21:17,277 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:21:17,277 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:21:17,277 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:21:17,277 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:21:17,277 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:21:17,277 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "57871880" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:34:33,261 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:34:33,262 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:34:33,262 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:34:33,262 [5552] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:34:33,268 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "49797542" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:34:33,268 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:34:33,268 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:34:33,268 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:34:33,268 [5552] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:34:33,270 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:34:33,270 [5552] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "49797542" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 15:53:44,002 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:53:44,064 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:53:44,066 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:53:44,067 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:53:44,115 [7276] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 15:53:44,423 [7276] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 15:53:44,424 [7276] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 15:53:44,425 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 15:53:44,425 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 15:53:44,426 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:53:44,426 [7276] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 15:53:44,485 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "48671597" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 15:53:44,485 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 15:53:44,488 [7276] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 15:53:44,492 [7276] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 15:53:44,492 [7276] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 15:53:44,497 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 15:53:44,497 [7276] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "48671597" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 16:59:17,497 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 16:59:17,540 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 16:59:17,545 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 16:59:17,547 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 16:59:17,548 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 16:59:17,552 [5896] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 16:59:17,556 [5896] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 16:59:17,558 [5896] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 16:59:17,558 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 16:59:17,558 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 16:59:17,558 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 16:59:17,559 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 16:59:17,559 [5896] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 16:59:17,753 [5896] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "17213837" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 16:59:17,754 [5896] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 16:59:17,756 [5896] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 16:59:17,761 [5896] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 16:59:17,762 [5896] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 16:59:18,776 [6512] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 16:59:18,776 [6512] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 16:59:18,776 [6512] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 16:59:18,776 [6512] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 16:59:18,777 [6512] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 16:59:19,001 [6512] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "14515456" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 16:59:19,001 [6512] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-17 16:59:19,001 [6512] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 16:59:19,001 [6512] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,chenkai], @param1=[ProductId,5]]
+2011-03-17 16:59:19,001 [6512] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-17 16:59:19,527 [6512] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 16:59:19,528 [6512] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "14515456" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 16:59:21,118 [5896] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-17 16:59:21,118 [5896] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "17213837" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 17:02:09,185 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 17:02:09,210 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 17:02:09,216 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 17:02:09,217 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 17:02:09,219 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 17:02:09,226 [7744] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 17:02:09,230 [7744] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 17:02:09,231 [7744] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 17:02:09,231 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 17:02:09,232 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 17:02:09,232 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 17:02:09,232 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 17:02:09,232 [7744] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 17:02:09,239 [7744] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [SelectAllProduct] PreparedStatement : [SELECT * FROM Product]
+2011-03-17 17:02:09,390 [7744] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "34696309" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 17:02:09,554 [7744] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "34696309" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-17 17:05:47,047 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 17:05:47,084 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 17:05:47,089 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 17:05:47,090 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 17:05:47,091 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 17:05:47,111 [6900] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-17 17:05:47,118 [6900] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-17 17:05:47,119 [6900] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-17 17:05:47,120 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-17 17:05:47,120 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-17 17:05:47,120 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-17 17:05:47,121 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-17 17:05:47,121 [6900] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-17 17:05:51,116 [6900] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [SelectAllProduct] PreparedStatement : [SELECT * FROM Product]
+2011-03-17 17:05:51,129 [6900] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "15211439" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 17:06:00,792 [6900] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "15211439" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-17 17:37:06,137 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,137 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,645 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,646 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,666 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,666 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,688 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,688 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,713 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,714 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,901 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:06,902 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:07,077 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:07,078 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:07,268 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:07,270 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:07,429 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+2011-03-17 17:37:07,429 [7044] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - ConfigWatcherHandler : Changed [ProductMap.xml]
+[Footer]\r\n[Header]\r\n[Footer]\r\n[Header]\r\n[Footer]\r\n[Header]\r\n[Footer]\r\n[Header]\r\n[Footer]\r\n[Header]\r\n2011-03-21 17:51:25,573 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-21 17:51:26,325 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-21 17:51:26,854 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-21 17:51:26,855 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 17:51:26,856 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-21 17:51:26,881 [8100] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-21 17:51:26,886 [8100] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-21 17:51:26,887 [8100] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-21 17:51:26,888 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-21 17:51:26,891 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-21 17:51:26,891 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-21 17:51:26,891 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 17:51:26,892 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-21 17:51:29,123 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "25301379" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-21 17:51:29,149 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-21 17:51:29,177 [8100] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 17:51:29,283 [8100] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,Widows  phone 7 Device], @param1=[ProductId,5]]
+2011-03-21 17:51:29,283 [8100] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-21 17:51:30,073 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-21 17:51:30,074 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "25301379" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n[Header]\r\n2011-03-21 17:51:59,622 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-21 17:51:59,639 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-21 17:51:59,644 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-21 17:51:59,645 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 17:51:59,646 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-21 17:51:59,668 [8100] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [SqlMap.config] to list of watched files.
+2011-03-21 17:51:59,672 [8100] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [CustomerMap.xml] to list of watched files.
+2011-03-21 17:51:59,674 [8100] DEBUG IBatisNet.Common.Utilities.ConfigWatcherHandler [(null)] - Adding file [ProductMap.xml] to list of watched files.
+2011-03-21 17:51:59,675 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-21 17:51:59,675 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-21 17:51:59,675 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-21 17:51:59,676 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 17:51:59,676 [8100] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-21 17:51:59,702 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "36986515" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-21 17:51:59,702 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-21 17:51:59,705 [8100] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 17:51:59,710 [8100] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,Widows  phone 7 Device], @param1=[ProductId,1]]
+2011-03-21 17:51:59,710 [8100] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-21 17:51:59,719 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-21 17:51:59,720 [8100] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "36986515" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-21 18:09:02,016 [7712] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [GetAllProducts] Prepared SQL: [SELECT * FROM Product WHERE Product_Company= @param0]
+2011-03-21 18:09:02,016 [7712] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [SelectAllProduct] Prepared SQL: [SELECT * FROM Product]
+2011-03-21 18:09:02,016 [7712] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [InsertProduct] Prepared SQL: [INSERT  dbo.Product ( Product_Name ,Product_Company)     VALUES  ( @param0  ,  @param1 )]
+2011-03-21 18:09:02,016 [7712] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [UpdateProduct] Prepared SQL: [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 18:09:02,016 [7712] DEBUG IBatisNet.DataMapper.Configuration.Statements.PreparedStatementFactory [(null)] - Statement Id: [DeleteProduct] Prepared SQL: [DELETE FROM dbo.Product WHERE ProductID= @param0]
+2011-03-21 18:09:02,019 [7712] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Open Connection "45598209" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+2011-03-21 18:09:02,019 [7712] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Begin Transaction.
+2011-03-21 18:09:02,019 [7712] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] PreparedStatement : [UPDATE Product SET Product_Name= @param0  WHERE ProductID= @param1]
+2011-03-21 18:09:02,020 [7712] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Parameters: [@param0=[ProductName,Widows  phone 7 Device], @param1=[ProductId,1]]
+2011-03-21 18:09:02,020 [7712] DEBUG IBatisNet.DataMapper.Commands.DefaultPreparedCommand [(null)] - Statement Id: [UpdateProduct] Types: [@param0=[String, System.String], @param1=[Int32, System.Int32]]
+2011-03-21 18:09:02,020 [7712] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Commit Transaction.
+2011-03-21 18:09:02,020 [7712] DEBUG IBatisNet.DataMapper.SqlMapSession [(null)] - Close Connection "45598209" to "Microsoft SQL Server, provider V2.0.0.0 in framework .NET V2.0".
+[Footer]\r\n

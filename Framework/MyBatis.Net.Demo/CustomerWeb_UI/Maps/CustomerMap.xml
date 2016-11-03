@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="Customer" type="EntityModel.Customer, EntityModel" />
+	</alias>
+
+	<!--Mapping Class To Sql Realation Teable-->
+	<resultMaps>
+		<resultMap id="CustomerResult" class="Customer">
+			<result property="CustomerID" column="Customer_ID"/>
+			<result property="CustomerName" column="Customer_Name"/>
+			<result property="CustomerSex" column="Customer_Sex"/>
+			<result property="CustomerAge" column="Customer_Age" />
+			<result property="CustomerAddress" column="Customer_Address" />
+			<result property="SignDate" column="SignOn_Data" />
+		</resultMap>
+	</resultMaps>
+	
+	<!--Mapping The SQl StateMent about CRUD chenkai-->
+	<statements>
+		<Insert id="InsertCustomer"  parameterClass="Customer">
+			INSERT INTO  dbo.Customer
+			( Customer_Name ,
+			Customer_Sex ,
+			Customer_Age ,
+			Customer_Address ,
+			SignOn_Data
+			)
+			VALUES  ( #CustomerName# , #CustomerSex# , #CustomerAge# , #CustomerAddress#,#SignDate# )
+		</Insert>
+
+		<Update id="UpdateCustomer" parameterClass="Customer">
+			UPDATE dbo.Customer SET Customer_Name=#CustomerName#,
+			Customer_Sex=#CustomerSex#,
+			Customer_Age=#CustomerAge#,
+			Customer_Address=#CustomerAddress#,
+			SignOn_Data=#SignDate#
+			WHERE Customer_ID=#CustomerID#
+		</Update>
+
+		<Delete id="DeleteCustomer" parameterClass="Customer">
+			DELETE FROM dbo.Customer WHERE Customer_ID=#CustomerID#
+		</Delete>
+
+		<Select id="SelectCustomer" resultClass="Customer" parameterClass="int">
+			SELECT * FROM dbo.Customer WHERE Customer_ID=#CustomerID#
+		</Select>
+	</statements>
+</sqlMap>
