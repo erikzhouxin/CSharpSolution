@@ -261,6 +261,8 @@
     <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="App_Data\SQLite\EZOper.TechTester.SQLite.sqlite3" />
+    <Content Include="Areas\Home\Views\Shared\DisplayTemplates\TesterPageModel.cshtml" />
+    <Content Include="Areas\Home\Views\Home\DisplayTemplates\TesterPageModel.cshtml" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />

@@ -1,7 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "你可知找到这是什么?";
 }
-
-<h2>Index</h2>
-
+@{ var modelTester = new TesterPageModel();}
+@Html.DisplayFor(m => modelTester, "TesterPageModel")
