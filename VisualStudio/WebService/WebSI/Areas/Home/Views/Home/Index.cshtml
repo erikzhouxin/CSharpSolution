@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<form id="CalcForm" class="" action="@Url.Action("GetResult")">
+    <div>
+        <input type="number" id="value1" name="value1" />
+        <select id="operSymbols" name="operSymbols">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="number" id="value2" name="value2" />
+        <label>=</label>
+        <input type="number" id="result" name="result" />
+        <button type="submit">获取服务计算结果</button>
+    </div>
+</form>
+@section CustomScript{
+    <script type="text/javascript">
+        $(function () {
+            $('#CalcForm').on('submit', function () {
+                var formEle = $(this);
+                if (formEle.valid()) {
+                    var postUrl = formEle.attr('action');
+                    var postData = formEle.serialize();
+                    $.post(postUrl, postData, function (data) {
+                        $('#result').val(data.Value);
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
+}
