@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace EZOper.TechTester.OAuth2ApiSI.IDL
+namespace EZOper.TechTester.OAuth2ApiDEMV
 {
     public class LogOnViewModel
     {

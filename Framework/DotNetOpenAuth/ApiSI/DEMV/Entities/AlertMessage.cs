@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace EZOper.TechTester.OAuth2ApiSI.IDL
+namespace EZOper.TechTester.OAuth2ApiDEMV
 {
     /// <summary>
     /// 返回结果及信息列表

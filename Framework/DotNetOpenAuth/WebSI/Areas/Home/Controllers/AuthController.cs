@@ -1,5 +1,5 @@
-﻿using EZOper.TechTester.OAuth2ApiSI.DAL;
-using EZOper.TechTester.OAuth2ApiSI.IDL;
+﻿using EZOper.TechTester.OAuth2ApiBLL;
+using EZOper.TechTester.OAuth2ApiDEMV;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +41,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.Home.Controllers
                 model.AuthCode = string.Empty;
                 return RedirectToAction("LogOn", model);
             }
-            var process = new AuthDataAccess();
+            var process = ServiceFactory.GetAuthService();
             var isPass = process.IsValid(model);
             if (isPass)
             {

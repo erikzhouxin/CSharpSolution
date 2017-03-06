@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.OAuth2ApiSI.IDL
+namespace EZOper.TechTester.OAuth2ApiDEMV
 {
     public class UserPassword
     {

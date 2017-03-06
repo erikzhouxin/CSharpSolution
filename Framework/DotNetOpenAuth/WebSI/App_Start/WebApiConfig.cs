@@ -16,8 +16,8 @@ namespace EZOper.TechTester.OAuth2WebSI
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "Api/{controller}/{action}/{id}",
+                defaults: new { area = "ZApi", id = RouteParameter.Optional }
             );
         }
     }

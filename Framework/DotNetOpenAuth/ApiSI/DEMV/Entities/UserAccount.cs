@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.OAuth2ApiSI.IDL
+namespace EZOper.TechTester.OAuth2ApiDEMV
 {
     /// <summary>
     /// 用户特殊用户名

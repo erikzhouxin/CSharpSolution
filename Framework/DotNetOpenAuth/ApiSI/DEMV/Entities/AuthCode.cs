@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace EZOper.TechTester.OAuth2ApiSI.IDL
+namespace EZOper.TechTester.OAuth2ApiDEMV
 {
     /// <summary>
     /// 验证码

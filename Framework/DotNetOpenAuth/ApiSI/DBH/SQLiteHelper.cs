@@ -5,11 +5,11 @@ using System.Text;
 using System.Data;
 using System.Data.SQLite;
 using System.Configuration;
-using EZOper.TechTester.OAuth2ApiSI.IDL;
+using EZOper.TechTester.OAuth2ApiDEMV;
 
-namespace EZOper.TechTester.OAuth2ApiSI.DBH
+namespace EZOper.TechTester.OAuth2ApiDBH
 {
-    public class SQLiteHelper
+    internal class SQLiteHelper
     {
         /// <summary>
         /// WebConfig中connectionStrings配置
