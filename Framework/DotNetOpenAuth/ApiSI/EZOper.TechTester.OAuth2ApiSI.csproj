@@ -101,19 +101,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ServiceFactory.cs" />
-    <Compile Include="DAL\DataAccessFactory.cs" />
-    <Compile Include="IBLL\IAuthService.cs" />
+    <Compile Include="BLL\IAuthService.cs" />
     <Compile Include="BLL\AuthService.cs" />
     <Compile Include="DAL\AuthDataAccess.cs" />
     <Compile Include="DEMV\Entities\AlertMessage.cs" />
     <Compile Include="DEMV\Entities\AuthCode.cs" />
     <Compile Include="DEMV\Entities\UserAccount.cs" />
     <Compile Include="DEMV\Entities\UserPassword.cs" />
-    <Compile Include="IDAL\IAuthDataAccess.cs" />
     <Compile Include="DEMV\ViewModels\LogOnViewModel.cs" />
     <Compile Include="DEMV\ViewModels\TesterPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DBH\SQLiteHelper.cs" />
+    <Compile Include="DAL\SQLiteHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DEMV\Models\" />

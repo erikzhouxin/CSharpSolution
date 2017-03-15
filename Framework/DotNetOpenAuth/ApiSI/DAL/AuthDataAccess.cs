@@ -1,5 +1,4 @@
-﻿using EZOper.TechTester.OAuth2ApiDBH;
-using EZOper.TechTester.OAuth2ApiDEMV;
+﻿using EZOper.TechTester.OAuth2ApiDEMV;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -8,7 +7,7 @@ using System.Web;
 
 namespace EZOper.TechTester.OAuth2ApiDAL
 {
-    internal class AuthDataAccess : IAuthDataAccess
+    internal class AuthDataAccess
     {
         public bool IsValid(LogOnViewModel model)
         {

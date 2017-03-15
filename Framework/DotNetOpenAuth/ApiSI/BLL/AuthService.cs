@@ -10,10 +10,10 @@ namespace EZOper.TechTester.OAuth2ApiBLL
 {
     internal class AuthService : IAuthService
     {
-        private IAuthDataAccess _dataAccess;
+        private AuthDataAccess _dataAccess;
         public AuthService()
         {
-            _dataAccess = DataAccessFactory.GetAuthDataAccess();
+            _dataAccess = new AuthDataAccess();
         }
 
         public bool IsValid(LogOnViewModel model)
