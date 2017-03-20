@@ -1,0 +1,48 @@
+﻿@model ILookup<string, ApiDescription>
+@{
+    ViewBag.Title = "系统接口列表";
+    int index = 0;
+}
+@foreach (var group in Model)
+{
+    index++;
+    <div class="panel-heading bg-info" role="tab" id="heading@(index)">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse@(index)" aria-expanded="true" aria-controls="collapse@(index)">
+                @(index). @(group.Key)
+            </a>
+        </h4>
+    </div>
+    <div id="collapse@(index)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading@(index)">
+        <div class="panel-body">
+            <ul class="media-list">
+                @foreach (var api in group)
+                {
+                    <li class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="..." alt="" width="100" height="100">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <strong>@api.ID</strong> :
+                                <small>{ ActionName: "<em>@api.ActionDescriptor.ActionName</em>", RelativePath: "<em>@api.RelativePath</em>", Method: "<em>@(api.HttpMethod.Method)</em>" }</small>
+                            </h4>
+                            <p></p>
+                            @foreach (var param in api.ParameterDescriptions)
+                            {
+                                <p>@param.Name : { Source: "<em>@(param.Source)</em>", DefaultValue: "<em>@(param.ParameterDescriptor.DefaultValue)</em>" }</p>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <hr />
+}
+@section CustomScript
+{
+    <script type="text/javascript">
+        PAGE_NAMESPACE = "ZApi.Help.Api";
+    </script>
+}

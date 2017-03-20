@@ -23,7 +23,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>c0e79304</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>c1315dca</NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -205,11 +205,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\LoadConfig.cs" />
     <Compile Include="App_Start\TesterIISManager.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\ZApi\Controllers\HelpController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\HomeController.cs" />
     <Compile Include="Context\SysContext.cs" />
     <Compile Include="Areas\Home\Controllers\AuthController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
@@ -264,6 +265,10 @@
     <Content Include="App_Data\SQLite\EZOper.TechTester.SQLite.sqlite3" />
     <Content Include="Areas\Home\Views\Shared\DisplayTemplates\TesterPageModel.cshtml" />
     <Content Include="Areas\Home\Views\Home\DisplayTemplates\TesterPageModel.cshtml" />
+    <Content Include="Areas\ZApi\Views\Web.config" />
+    <Content Include="Areas\ZApi\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ZApi\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\ZApi\Views\Help\Api.cshtml" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
@@ -311,6 +316,9 @@
       <Project>{9b6189ee-0ce2-438d-a8f0-ee777dc8c890}</Project>
       <Name>EZOper.TechTester.OAuth2ApiSI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\ZApi\Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

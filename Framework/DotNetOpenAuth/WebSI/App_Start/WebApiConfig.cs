@@ -19,6 +19,9 @@ namespace EZOper.TechTester.OAuth2WebSI
                 routeTemplate: "Api/{controller}/{action}/{id}",
                 defaults: new { area = "ZApi", id = RouteParameter.Optional }
             );
+
+            // config.Formatters.Remove(config.Formatters.JsonFormatter);
+            // config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }
