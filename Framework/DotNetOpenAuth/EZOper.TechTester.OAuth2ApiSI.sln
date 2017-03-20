@@ -1,19 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.OAuth2WebSI", "WebSI\EZOper.TechTester.OAuth2WebSI.csproj", "{534C3589-AFD3-4EF1-8D0D-866FF82B637F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.OAuth2WebUT", "WebUT\EZOper.TechTester.OAuth2WebUT.csproj", "{0D2AB811-1CB3-462A-A856-8BBFD2940546}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.OAuth2ApiSI", "ApiSI\EZOper.TechTester.OAuth2ApiSI.csproj", "{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOpenAuth.WebAPI", "..\..\..\OAuth\DotNetOpenAuth.WebAPI.Git\source\DotNetOpenAuth.WebAPI\DotNetOpenAuth.WebAPI.csproj", "{554F0B3E-B914-4091-8454-755CB22C48C8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOpenAuth.WebAPI.ClientSample", "..\..\..\OAuth\DotNetOpenAuth.WebAPI.Git\source\DotNetOpenAuth.WebAPI.ClientSample\DotNetOpenAuth.WebAPI.ClientSample.csproj", "{E35E2B69-7430-4B43-AD78-E1B1737468CA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOpenAuth.WebAPI.HostSample", "..\..\..\OAuth\DotNetOpenAuth.WebAPI.Git\source\DotNetOpenAuth.WebAPI.HostSample\DotNetOpenAuth.WebAPI.HostSample.csproj", "{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +27,6 @@ Global
 		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B6189EE-0CE2-438D-A8F0-EE777DC8C890}.Release|Any CPU.Build.0 = Release|Any CPU
-		{554F0B3E-B914-4091-8454-755CB22C48C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{554F0B3E-B914-4091-8454-755CB22C48C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{554F0B3E-B914-4091-8454-755CB22C48C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{554F0B3E-B914-4091-8454-755CB22C48C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
