@@ -7,10 +7,10 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-using EZOper.TechTester.ViewModels;
-using EZOper.TechTester.Models;
+using EZOper.TechTester.AndroidCnaAppSI.ViewModels;
+using EZOper.TechTester.AndroidCnaAppSI.Models;
 
-namespace EZOper.TechTester.Activities
+namespace EZOper.TechTester.AndroidCnaAppSI.Activities
 {
 	[Activity (Label = "模拟钟表")]
 	public class TTTAnalogClockActivity : Activity

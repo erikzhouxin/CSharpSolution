@@ -8,9 +8,9 @@ using Android.App;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
-using EZOper.TechTester.Adapters;
+using EZOper.TechTester.AndroidCnaAppSI.Adapters;
 
-namespace EZOper.TechTester.Activities
+namespace EZOper.TechTester.AndroidCnaAppSI.Activities
 {
     [Activity(Label = "技术探究集", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity

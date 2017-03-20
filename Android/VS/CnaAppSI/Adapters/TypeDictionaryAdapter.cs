@@ -5,7 +5,7 @@ using Android.App;
 using Android;
 using System.Collections.ObjectModel;
 
-namespace EZOper.TechTester.Adapters
+namespace EZOper.TechTester.AndroidCnaAppSI.Adapters
 {
     public class TypeDictionaryAdapter : BaseAdapter<Type>
     {

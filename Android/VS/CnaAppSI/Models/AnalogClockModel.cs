@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.Models
+namespace EZOper.TechTester.AndroidCnaAppSI.Models
 {
     public class AnalogClockModel : INotifyPropertyChanged
     {

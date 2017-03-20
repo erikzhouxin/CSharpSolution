@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("EZOper.TechTester.AndroidCnaAppSI.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("EZOper.TechTester.AndroidWebAppSI.Resource", IsApplication=true)]
 
-namespace EZOper.TechTester.AndroidCnaAppSI
+namespace EZOper.TechTester.AndroidWebAppSI
 {
 	
 	
@@ -60,23 +60,8 @@ namespace EZOper.TechTester.AndroidCnaAppSI
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050003
-			public const int DownloadedImageView = 2131034115;
-			
-			// aapt resource value: 0x7f050001
-			public const int GetButton = 2131034113;
-			
 			// aapt resource value: 0x7f050000
-			public const int LvwAreaNameList = 2131034112;
-			
-			// aapt resource value: 0x7f050005
-			public const int LvwFunctionList = 2131034117;
-			
-			// aapt resource value: 0x7f050004
-			public const int ResultEditText = 2131034116;
-			
-			// aapt resource value: 0x7f050002
-			public const int ResultTextView = 2131034114;
+			public const int webView = 2131034112;
 			
 			static Id()
 			{
@@ -94,12 +79,6 @@ namespace EZOper.TechTester.AndroidCnaAppSI
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
 			
-			// aapt resource value: 0x7f030001
-			public const int TTTAsyncAwaitLoadImg = 2130903041;
-			
-			// aapt resource value: 0x7f030002
-			public const int TTTMainListView = 2130903042;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -113,11 +92,11 @@ namespace EZOper.TechTester.AndroidCnaAppSI
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int ApplicationName = 2130968576;
-			
 			// aapt resource value: 0x7f040001
-			public const int hello = 2130968577;
+			public const int ApplicationName = 2130968577;
+			
+			// aapt resource value: 0x7f040000
+			public const int Hello = 2130968576;
 			
 			static String()
 			{

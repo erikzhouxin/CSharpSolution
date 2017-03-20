@@ -10,9 +10,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using EZOper.TechTester.Adapters;
+using EZOper.TechTester.AndroidCnaAppSI.Adapters;
 
-namespace EZOper.TechTester.Activities
+namespace EZOper.TechTester.AndroidCnaAppSI.Activities
 {
     [Activity(Label = "临时测试练习功能表")]
     public class TTTMainListViewActivity : Activity

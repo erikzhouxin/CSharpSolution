@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.IO;
 using Android.Graphics;
 
-namespace EZOper.TechTester.Activities
+namespace EZOper.TechTester.AndroidCnaAppSI.Activities
 {
 	[Activity (Label = "“Ï≤Ω«Î«Ûº”‘ÿÕº∆¨")]
 	public class TTTAsyncAwaitLoadImgActivity : Activity

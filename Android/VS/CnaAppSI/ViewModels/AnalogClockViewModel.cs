@@ -8,7 +8,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace EZOper.TechTester.ViewModels
+namespace EZOper.TechTester.AndroidCnaAppSI.ViewModels
 {
 	public class AnalogClockViewModel : View
 	{
