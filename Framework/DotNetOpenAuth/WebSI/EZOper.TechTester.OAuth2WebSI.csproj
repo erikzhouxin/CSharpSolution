@@ -288,7 +288,7 @@
     <Compile Include="Areas\EZModels\Controllers\AccountController.cs" />
     <Compile Include="Areas\EZModels\Controllers\HomeController.cs" />
     <Compile Include="Areas\EZModels\Controllers\OAuthController.cs" />
-    <Compile Include="Areas\EZModels\Controllers\ValuesController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
     <Compile Include="Areas\EZModels\Models\AccountAuthorizeModel.cs" />
     <Compile Include="Areas\EZModels\Models\AccountModels.cs" />
     <Compile Include="Areas\EZModels\Models\AuthenticationConfiguration.cs" />

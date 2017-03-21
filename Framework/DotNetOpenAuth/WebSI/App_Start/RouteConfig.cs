@@ -14,7 +14,15 @@ namespace EZOper.TechTester.OAuth2WebSI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             AreaRegistrationContext areaRegContext;
-            
+
+            areaRegContext = new AreaRegistrationContext("EZModels", routes);
+            areaRegContext.MapRoute(
+                 name: "EZModels",
+                 url: "EZModels/{controller}/{action}/{id}",
+                 defaults: new { controller = "Account", action = "LogOn", id = UrlParameter.Optional },
+                 namespaces: new[] { "EZOper.TechTester.OAuth2WebSI.Areas.EZModels.Controllers" }
+             );
+
             areaRegContext = new AreaRegistrationContext("ZApi", routes);
             areaRegContext.MapRoute(
                  name: "ZApi",

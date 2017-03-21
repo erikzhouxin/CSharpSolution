@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace EZOper.TechTester.OAuth2WebSI.Areas.EZModels.Controllers
+namespace EZOper.TechTester.OAuth2WebSI.Areas.ZApi.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController
