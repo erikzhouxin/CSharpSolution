@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.OAuth2ApiDEMV
+namespace EZOper.TechTester.OAuth2ApiSI
 {
     public class TesterPageModel
     {

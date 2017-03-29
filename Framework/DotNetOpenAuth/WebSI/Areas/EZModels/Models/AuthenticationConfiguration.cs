@@ -1,27 +1,18 @@
-﻿using System.Collections.Specialized;
+﻿using DotNetOpenAuth.OAuth2;
+using Microsoft.IdentityModel.Claims;
 using System.IdentityModel.Tokens;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using DotNetOpenAuth.Messaging;
-using DotNetOpenAuth.OAuth2;
-using Microsoft.IdentityModel.Claims;
-using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json.Linq;
+    using System.Linq;
 
 namespace EZOper.TechTester.OAuth2WebSI.Areas.EZModels
 {
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
     public class AuthenticationConfig
     {
         public static void ConfigureGlobal(HttpConfiguration globalConfig)

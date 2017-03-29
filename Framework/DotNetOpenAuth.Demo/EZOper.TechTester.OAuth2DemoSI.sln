@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.OAuth2WebSI", "WebSI\EZOper.TechTester.OAuth2WebSI.csproj", "{7B243187-464F-4E1D-8C62-9141E5000111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.OAuth2WebUT", "WebUT\EZOper.TechTester.OAuth2WebUT.csproj", "{F73FE28D-D6DB-4B9F-BD36-3043D168E6F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.OAuth2ApiSI", "ApiSI\EZOper.TechTester.OAuth2ApiSI.csproj", "{03FB68F3-2E96-41BC-BCFA-8F8DAB6E9984}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{4E25C0B7-6F88-4199-B04B-6DA158D0D582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOpenAuth.WebAPI", "..\..\..\OAuth\DotNetOpenAuth.WebAPI.Git\source\DotNetOpenAuth.WebAPI\DotNetOpenAuth.WebAPI.csproj", "{554F0B3E-B914-4091-8454-755CB22C48C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOpenAuth.WebAPI.ClientSample", "..\..\..\OAuth\DotNetOpenAuth.WebAPI.Git\source\DotNetOpenAuth.WebAPI.ClientSample\DotNetOpenAuth.WebAPI.ClientSample.csproj", "{E35E2B69-7430-4B43-AD78-E1B1737468CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOpenAuth.WebAPI.HostSample", "..\..\..\OAuth\DotNetOpenAuth.WebAPI.Git\source\DotNetOpenAuth.WebAPI.HostSample\DotNetOpenAuth.WebAPI.HostSample.csproj", "{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B243187-464F-4E1D-8C62-9141E5000111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B243187-464F-4E1D-8C62-9141E5000111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B243187-464F-4E1D-8C62-9141E5000111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B243187-464F-4E1D-8C62-9141E5000111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73FE28D-D6DB-4B9F-BD36-3043D168E6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73FE28D-D6DB-4B9F-BD36-3043D168E6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73FE28D-D6DB-4B9F-BD36-3043D168E6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73FE28D-D6DB-4B9F-BD36-3043D168E6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FB68F3-2E96-41BC-BCFA-8F8DAB6E9984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FB68F3-2E96-41BC-BCFA-8F8DAB6E9984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FB68F3-2E96-41BC-BCFA-8F8DAB6E9984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FB68F3-2E96-41BC-BCFA-8F8DAB6E9984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554F0B3E-B914-4091-8454-755CB22C48C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554F0B3E-B914-4091-8454-755CB22C48C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554F0B3E-B914-4091-8454-755CB22C48C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554F0B3E-B914-4091-8454-755CB22C48C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35E2B69-7430-4B43-AD78-E1B1737468CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{554F0B3E-B914-4091-8454-755CB22C48C8} = {4E25C0B7-6F88-4199-B04B-6DA158D0D582}
+		{E35E2B69-7430-4B43-AD78-E1B1737468CA} = {4E25C0B7-6F88-4199-B04B-6DA158D0D582}
+		{F356B3A0-1A41-4A94-9CA2-42C515EBB81B} = {4E25C0B7-6F88-4199-B04B-6DA158D0D582}
+	EndGlobalSection
+EndGlobal

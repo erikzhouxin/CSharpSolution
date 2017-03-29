@@ -364,6 +364,7 @@
     <Content Include="Areas\EZModels\Views\OAuth\Authorise.cshtml" />
     <Content Include="Areas\EZModels\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\EZModels\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\ZApi\Views\Home\Index.cshtml" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
@@ -406,9 +407,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\ZApi\Views\Home\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ApiSI\EZOper.TechTester.OAuth2ApiSI.csproj">
       <Project>{9b6189ee-0ce2-438d-a8f0-ee777dc8c890}</Project>

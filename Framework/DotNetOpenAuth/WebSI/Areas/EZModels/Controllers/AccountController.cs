@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 using EZOper.TechTester.OAuth2ApiBLL;
+using EZOper.TechTester.OAuth2ApiSI;
 
 namespace EZOper.TechTester.OAuth2WebSI.Areas.EZModels.Controllers
 {
@@ -31,8 +32,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.EZModels.Controllers
             return View();
         }
         [AcceptVerbs(HttpVerbs.Post)]
-        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings",
-            Justification = "Needs to take same parameter type as Controller.Redirect()")]
+        [SuppressMessage("Microsoft.Design", SuppressMsgDefinition.CA1054, Justification = SuppressMsgDefinition.JCA10541)]
         public ActionResult LogOn(string userName, bool? rememberMe, string returnUrl)
         {
             this.FormsAuth.SignIn(userName, rememberMe ?? false);
@@ -61,7 +61,6 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.EZModels.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
-
             return RedirectToAction("Index", "Home");
         }
     }

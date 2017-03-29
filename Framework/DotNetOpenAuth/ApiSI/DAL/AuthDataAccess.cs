@@ -1,11 +1,11 @@
-﻿using EZOper.TechTester.OAuth2ApiDEMV;
+﻿using EZOper.TechTester.OAuth2ApiSI;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Web;
 
-namespace EZOper.TechTester.OAuth2ApiDAL
+namespace EZOper.TechTester.OAuth2ApiBLL
 {
     internal class AuthDataAccess
     {
@@ -24,22 +24,21 @@ namespace EZOper.TechTester.OAuth2ApiDAL
             }
             return false;
         }
-
-        public AlertMessage Create(LogOnViewModel book)
+        public AlertMessage Create(LogOnViewModel user)
         {
             var sql = "INSERT INTO Users VALUES(@ID,@BookName,@Price);";
             var idParam = new SQLiteParameter("ID", null);
-            var bookNameParam = new SQLiteParameter("BookName", book.Account);
-            var priceParam = new SQLiteParameter("Price", book.Password);
+            var bookNameParam = new SQLiteParameter("BookName", user.Account);
+            var priceParam = new SQLiteParameter("Price", user.Password);
             var sqlExcute = new SQLiteHelper();
             return sqlExcute.ExecuteNonQuery(sql, idParam, bookNameParam, priceParam);
         }
-        public AlertMessage Update(LogOnViewModel book)
+        public AlertMessage Update(LogOnViewModel user)
         {
             var sql = "update Book set BookName=@BookName,Price=@Price where ID=@ID;";
             var idParam = new SQLiteParameter("ID", null);
-            var bookNameParam = new SQLiteParameter("BookName", book.Account);
-            var priceParam = new SQLiteParameter("Price", book.Password);
+            var bookNameParam = new SQLiteParameter("BookName", user.Account);
+            var priceParam = new SQLiteParameter("Price", user.Password);
             var sqlExcute = new SQLiteHelper();
             return sqlExcute.ExecuteNonQuery(sql, idParam, bookNameParam, priceParam);
         }

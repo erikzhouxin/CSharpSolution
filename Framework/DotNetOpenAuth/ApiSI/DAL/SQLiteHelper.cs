@@ -5,9 +5,9 @@ using System.Text;
 using System.Data;
 using System.Data.SQLite;
 using System.Configuration;
-using EZOper.TechTester.OAuth2ApiDEMV;
+using EZOper.TechTester.OAuth2ApiSI;
 
-namespace EZOper.TechTester.OAuth2ApiDAL
+namespace EZOper.TechTester.OAuth2ApiBLL
 {
     internal class SQLiteHelper
     {
