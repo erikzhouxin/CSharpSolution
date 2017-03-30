@@ -1,5 +1,3 @@
 .vs
-bin
-obj
-packages
-*.csproj.user
+.vscode
+.nuget

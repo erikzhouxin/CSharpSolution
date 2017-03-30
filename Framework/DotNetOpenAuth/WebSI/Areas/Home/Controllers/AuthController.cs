@@ -1,5 +1,4 @@
-﻿using EZOper.TechTester.OAuth2ApiBLL;
-using EZOper.TechTester.OAuth2ApiSI;
+﻿using EZOper.TechTester.OAuth2ApiSI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
