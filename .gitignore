@@ -6,34 +6,14 @@
 # *~
 # Add Empty Folder, Use Bash Here And Type "find . -type d -empty -exec touch {}/.gitignore \;"
 .svn
-.app
 .git
-.ezx
-.bak
-.dbf
+.vs
+packages
 bin
 obj
 *.suo
 *.user
-*.o
-*.lo
-*.la
-*.al
-.libs
-*.so
-*.so.[0-9]*
-*.a
-*.pyc
-*.pyo
-__pycache__
-*.rej
-*~
-#*#
-.#*
-.*.swp
-.DS_Store
 *.log
-Thumbs.db
 *.temp
 *.tmp
-packages
+Thumbs.db
