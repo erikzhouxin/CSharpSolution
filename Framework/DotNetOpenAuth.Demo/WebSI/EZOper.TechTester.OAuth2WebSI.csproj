@@ -239,7 +239,7 @@
     <Content Include="Content\CSS\bootstrap-theme.min.css.map" />
     <Content Include="Content\CSS\bootstrap.css.map" />
     <Content Include="Content\CSS\bootstrap.min.css.map" />
-    <Content Include="Areas\OAuthDemo\Views\web.config" />
+    <Content Include="Areas\OAuth2\Views\Web.config" />
     <Content Include="Areas\ZApi\Views\MHelp\Api.cshtml" />
     <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\CollectionModelDescription.cshtml" />
@@ -257,6 +257,11 @@
     <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\TextSample.cshtml" />
     <Content Include="Areas\ZApi\Views\MHelp\Index.cshtml" />
     <Content Include="Areas\ZApi\Views\MHelp\ResourceModel.cshtml" />
+    <Content Include="Areas\OAuth2\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\OAuth2\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\OAuth2\Views\Account\LogOn.cshtml" />
+    <Content Include="Areas\OAuth2\Views\Home\Index.cshtml" />
+    <Content Include="Areas\OAuth2\Views\OAuth\Authorise.cshtml" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
@@ -288,6 +293,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Areas\OAuth2\Controllers\AccountController.cs" />
+    <Compile Include="Areas\OAuth2\Controllers\HomeController.cs" />
+    <Compile Include="Areas\OAuth2\Controllers\OAuthController.cs" />
     <Compile Include="Areas\ZApi\Context\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\ZApi\Context\HelpPageConfig.cs" />
     <Compile Include="Areas\ZApi\Controllers\MHelpController.cs" />
@@ -349,11 +357,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\OAuthDemo\Controllers\" />
-    <Folder Include="Areas\OAuthDemo\Models\" />
-    <Folder Include="Areas\OAuthDemo\Views\Shared\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ApiSI\EZOper.TechTester.OAuth2ApiSI.csproj">
       <Project>{03fb68f3-2e96-41bc-bcfa-8f8dab6e9984}</Project>
