@@ -12,5 +12,10 @@ namespace EZOper.TechTester.OAuth2ApiSI
         {
             return new AuthService();
         }
+
+        public static IOAuth2AuthService GetOAuth2AuthService()
+        {
+            return new OAuth2AuthService();
+        }
     }
 }

@@ -195,6 +195,78 @@ namespace EZOper.TechTester.OAuth2ApiSI
         }
 
         /// <summary>
+        /// 执行不返回结果集的SQL语句影响的行数
+        /// </summary>
+        /// <param name="sql">SQL语句</param>
+        /// <returns>影响的行数提示信息类</returns>
+        public AlertMsgDbRowsEffect ExecNonQuery(string sql)
+        {
+            var result = new AlertMsgDbRowsEffect();
+            _conn.Open();
+            var trans = _conn.BeginTransaction();
+            try
+            {
+                using (var cmd = new SQLiteCommand(sql, _conn, trans))
+                {
+                    cmd.CommandTimeout = 180;
+                    result.EffectLines = cmd.ExecuteNonQuery();
+                    trans.Commit();
+                    result.IsSuccess = true;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+                result.EffectLines = -1;
+                result.IsSuccess = false;
+                result.Message = ex.Message;
+                return result;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        /// <summary>
+        /// 执行不返回结果集带参数的SQL语句影响的行数
+        /// </summary>
+        /// <param name="sql">SQL语句</param>
+        /// <param name="param">可变个数的参数</param>
+        /// <returns>影响行数提示信息类</returns>
+        public AlertMsgDbRowsEffect ExecNonQuery(string sql, params SQLiteParameter[] param)
+        {
+            var result = new AlertMsgDbRowsEffect();
+            _conn.Open();
+            var trans = _conn.BeginTransaction();
+            try
+            {
+                using (var mycommand = new SQLiteCommand(sql, _conn, trans))
+                {
+                    mycommand.CommandTimeout = 180;
+                    mycommand.Parameters.AddRange(param);
+                    result .EffectLines = mycommand.ExecuteNonQuery();
+                    trans.Commit();
+                    result.IsSuccess = true;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+                result.EffectLines = -1;
+                result.IsSuccess = false;
+                result.Message = ex.Message;
+                return result;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        /// <summary>
         /// 获取结果中第一行第一列的值
         /// </summary>
         /// <param name="sql">SQL语句</param>

@@ -200,6 +200,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SQLite\EZOper.TechTester.OAuth.sql" />
     <Content Include="Content\CSS\ZApi\HelpPage.css" />
     <Content Include="Content\CSS\bootstrap-theme.css" />
     <Content Include="Content\CSS\bootstrap-theme.min.css" />
@@ -262,6 +263,7 @@
     <Content Include="Areas\OAuth2\Views\Account\LogOn.cshtml" />
     <Content Include="Areas\OAuth2\Views\Home\Index.cshtml" />
     <Content Include="Areas\OAuth2\Views\OAuth\Authorise.cshtml" />
+    <Content Include="Areas\OAuth2\Views\Shared\Error.cshtml" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
