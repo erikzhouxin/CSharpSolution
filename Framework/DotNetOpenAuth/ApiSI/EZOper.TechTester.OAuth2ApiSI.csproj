@@ -181,6 +181,9 @@
     <Compile Include="AModels\Entities\AuthCode.cs" />
     <Compile Include="AModels\Entities\AlertMsgDbRowsEffect.cs" />
     <Compile Include="AModels\Entities\SQLite\OAuthClient.cs" />
+    <Compile Include="AModels\Entities\SQLite\OAuthClientAuthor.cs" />
+    <Compile Include="AModels\Entities\SQLite\OAuthNonce.cs" />
+    <Compile Include="AModels\Entities\SQLite\OAuthSymmetricCryptoKey.cs" />
     <Compile Include="AModels\Entities\SQLite\OAuthUsers.cs" />
     <Compile Include="AModels\Entities\UserAccount.cs" />
     <Compile Include="AModels\Entities\UserPassword.cs" />
@@ -191,7 +194,6 @@
     <Compile Include="BServices\OAuth\AuthenticationServiceHandler.cs" />
     <Compile Include="BServices\OAuth\CorsServiceHandler.cs" />
     <Compile Include="BServices\OAuth\IOAuth2AuthService.cs" />
-    <Compile Include="BServices\OAuth\OAuth2AuthorizationServer.cs" />
     <Compile Include="BServices\OAuth\OAuth2AuthService.cs" />
     <Compile Include="BServices\OAuth\WebAPIResourceServer.cs" />
     <Compile Include="CDataAccess\AuthDataAccess.cs" />

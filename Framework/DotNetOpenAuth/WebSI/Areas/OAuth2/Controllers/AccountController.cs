@@ -25,7 +25,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
         {
             FormsAuthentication.SetAuthCookie(userName,  rememberMe ?? false);
             var service = ServiceFactory.GetOAuth2AuthService();
-            if (service.IsUserNameValid(userName))
+            if (!service.IsUserNameValid(userName))
             {
                 service.AddOAuthUsers(new OAuthUsers()
                 {

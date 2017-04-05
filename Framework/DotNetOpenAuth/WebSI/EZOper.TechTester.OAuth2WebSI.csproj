@@ -295,6 +295,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Areas\OAuth2\Context\DatabaseKeyNonceStore.cs" />
+    <Compile Include="Areas\OAuth2\Context\OAuth2AuthorizationServerHost.cs" />
     <Compile Include="Areas\OAuth2\Controllers\AccountController.cs" />
     <Compile Include="Areas\OAuth2\Controllers\HomeController.cs" />
     <Compile Include="Areas\OAuth2\Controllers\OAuthController.cs" />

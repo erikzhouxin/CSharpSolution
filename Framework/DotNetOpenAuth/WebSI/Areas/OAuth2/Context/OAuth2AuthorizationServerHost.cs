@@ -2,6 +2,7 @@
 using DotNetOpenAuth.OAuth2;
 using DotNetOpenAuth.OAuth2.ChannelElements;
 using DotNetOpenAuth.OAuth2.Messages;
+using EZOper.TechTester.OAuth2ApiSI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace EZOper.TechTester.OAuth2ApiSI
+namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2
 {
-    public class OAuth2AuthorizationServerOAuth2AuthorizationServer : IAuthorizationServerHost
+    public class OAuth2AuthorizationServerHost : IAuthorizationServerHost
     {
+        IOAuth2AuthService _service;
+        DatabaseKeyNonceStore _keyNonceStore;
+        public OAuth2AuthorizationServerHost()
+        {
+            _service = ServiceFactory.GetOAuth2AuthService();
+            _keyNonceStore = new DatabaseKeyNonceStore(_service);
+        }
         /// <summary>
         /// This is the FOR SAMPLE ONLY hard-coded public key of the complementary OAuthResourceServer sample.
         /// </summary>
@@ -30,12 +38,12 @@ namespace EZOper.TechTester.OAuth2ApiSI
 
         public ICryptoKeyStore CryptoKeyStore
         {
-            get { return new DatabaseKeyNonceStore(); }
+            get { return _keyNonceStore; }
         }
 
         public INonceStore NonceStore
         {
-            get { return WebApiApplication.KeyNonceStore; }
+            get { return _keyNonceStore; }
         }
 
         #region Implementation of IAuthorizationServerHost
@@ -68,8 +76,7 @@ namespace EZOper.TechTester.OAuth2ApiSI
 
         public IClientDescription GetClient(string clientIdentifier)
         {
-            var consumerRow = WebApiApplication.DataContext.Clients.SingleOrDefault(
-                consumerCandidate => consumerCandidate.ClientIdentifier == clientIdentifier);
+            var consumerRow = _service.GetOAuthClient(clientIdentifier);
             if (consumerRow == null)
             {
                 throw new ArgumentOutOfRangeException("clientIdentifier");
@@ -121,8 +128,8 @@ namespace EZOper.TechTester.OAuth2ApiSI
             {
                 // Never issue auto-approval if the client secret is blank, since that too makes it easy to spoof
                 // a client's identity and obtain unauthorized access.
-                var requestingClient = WebApiApplication.DataContext.Clients.First(c => c.ClientIdentifier == authorizationRequest.ClientIdentifier);
-                if (!string.IsNullOrEmpty(requestingClient.ClientSecret))
+                var requestingClient = _service.GetOAuthClient(authorizationRequest.ClientIdentifier);
+                if (!string.IsNullOrEmpty(requestingClient.Secret))
                 {
                     return this.IsAuthorizationValid(
                         authorizationRequest.Scope,
@@ -172,13 +179,7 @@ namespace EZOper.TechTester.OAuth2ApiSI
             // often disregard a token that is minted immediately after the authorization record is stored in the db.
             // To compensate for this, we'll increase the timestamp on the token's issue date by 1 second.
             issuedUtc += TimeSpan.FromSeconds(1);
-            var grantedScopeStrings = from auth in WebApiApplication.DataContext.ClientAuthorizations
-                                      where
-                                          auth.Client.ClientIdentifier == clientIdentifier &&
-                                          auth.CreatedOnUtc <= issuedUtc &&
-                                          (!auth.ExpirationDateUtc.HasValue || auth.ExpirationDateUtc.Value >= DateTime.UtcNow) &&
-                                          auth.User.OpenIDClaimedIdentifier == username
-                                      select auth.Scope;
+            var grantedScopeStrings = _service.GetOAuthClientAuthorScopes(clientIdentifier, issuedUtc, username);
 
             if (!grantedScopeStrings.Any())
             {

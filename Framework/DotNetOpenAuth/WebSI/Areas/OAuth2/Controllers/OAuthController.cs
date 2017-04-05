@@ -21,7 +21,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
         /// <returns>The response to the Client.</returns>
         public ActionResult Token()
         {
-            var authorizationServer = new AuthorizationServer(new OAuth2AuthorizationServer());
+            var authorizationServer = new AuthorizationServer(new OAuth2AuthorizationServerHost());
             return authorizationServer.HandleTokenRequest(this.Request).AsActionResultMvc5();
         }
 
@@ -33,17 +33,17 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
         //[HttpHeader("x-frame-options", "SAMEORIGIN")] // mitigates clickjacking
         public ActionResult Authorise()
         {
-            var authorizationServer = new AuthorizationServer(new OAuth2AuthorizationServer());
+            var authorizationServer = new AuthorizationServer(new OAuth2AuthorizationServerHost());
             var pendingRequest = authorizationServer.ReadAuthorizationRequest();
             if (pendingRequest == null)
             {
                 throw new HttpException((int)HttpStatusCode.BadRequest, "Missing authorization request.");
             }
-
-            var requestingClient = WebApiApplication.DataContext.Clients.First(c => c.ClientIdentifier == pendingRequest.ClientIdentifier);
+            var service = ServiceFactory.GetOAuth2AuthService();
+            var requestingClient = service.GetOAuthClient(pendingRequest.ClientIdentifier);
 
             // Consider auto-approving if safe to do so.
-            if (((OAuth2AuthorizationServer)authorizationServer.AuthorizationServerServices).CanBeAutoApproved(pendingRequest))
+            if (((OAuth2AuthorizationServerHost)authorizationServer.AuthorizationServerServices).CanBeAutoApproved(pendingRequest))
             {
                 var approval = authorizationServer.PrepareApproveAuthorizationRequest(pendingRequest, HttpContext.User.Identity.Name);
                 return authorizationServer.Channel.PrepareResponse(approval).AsActionResultMvc5();
@@ -67,7 +67,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
         [Authorize, HttpPost, ValidateAntiForgeryToken]
         public ActionResult AuthoriseResponse(bool isApproved)
         {
-            var authorizationServer = new AuthorizationServer(new OAuth2AuthorizationServer());
+            var authorizationServer = new AuthorizationServer(new OAuth2AuthorizationServerHost());
             var pendingRequest = authorizationServer.ReadAuthorizationRequest();
             if (pendingRequest == null)
             {
@@ -80,14 +80,17 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
                 // The authorization we file in our database lasts until the user explicitly revokes it.
                 // You can cause the authorization to expire by setting the ExpirationDateUTC
                 // property in the below created ClientAuthorization.
-                var client = WebApiApplication.DataContext.Clients.First(c => c.ClientIdentifier == pendingRequest.ClientIdentifier);
-                client.ClientAuthorizations.Add(
-                    new ClientAuthorization
-                    {
-                        Scope = OAuthUtilities.JoinScopes(pendingRequest.Scope),
-                        User = WebApiApplication.LoggedInUser,
-                        CreatedOnUtc = DateTime.UtcNow,
-                    });
+                var service = ServiceFactory.GetOAuth2AuthService();
+                var client = service.GetOAuthClient(pendingRequest.ClientIdentifier);
+                var user = service.GetOAuthUsers(HttpContext.User.Identity.Name);
+                service.AddOAuthClientAuthor(new OAuthClientAuthor
+                {
+                    UserID = user.ID,
+                    ClientID = client.ID,
+                    Scope = OAuthUtilities.JoinScopes(pendingRequest.Scope),
+                    ExpireUtc = DateTime.UtcNow.AddDays(1).AsUtc(),
+                    Time = DateTime.Now,
+                });
                 // submit now so that this new row can be retrieved later in this same HTTP request
 
                 // In this simple sample, the user either agrees to the entire scope requested by the client or none of it.  

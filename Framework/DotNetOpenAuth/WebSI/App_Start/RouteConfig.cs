@@ -31,10 +31,10 @@ namespace EZOper.TechTester.OAuth2WebSI
                  namespaces: new[] { "EZOper.TechTester.OAuth2WebSI.Areas.ZApi.Controllers" }
              );
 
-            areaRegContext = new AreaRegistrationContext("OAuth", routes);
+            areaRegContext = new AreaRegistrationContext("OAuth2", routes);
             areaRegContext.MapRoute(
-                 name: "OAuth",
-                 url: "OAuth/{controller}/{action}/{id}",
+                 name: "OAuth2",
+                 url: "OAuth2/{controller}/{action}/{id}",
                  defaults: new { controller = "Account", action = "LogOn", id = UrlParameter.Optional },
                  namespaces: new[] { "EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers" }
              );

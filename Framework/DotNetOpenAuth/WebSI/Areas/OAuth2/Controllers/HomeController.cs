@@ -27,7 +27,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
                 Secret = "samplesecret",
                 Callback = string.Empty,
                 Name = "Some sample client",
-                Type = "0",
+                Type = 0,
                 Time = DateTime.Now,
             });
             service.AddOAuthClient(new OAuthClient
@@ -36,7 +36,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
                 Secret = string.Empty,
                 Callback = Request.Url.Host,
                 Name = "Some sample client used for implicit grants (no secret)",
-                Type = "0",
+                Type = 0,
                 Time = DateTime.Now,
             });
             return this.View();
