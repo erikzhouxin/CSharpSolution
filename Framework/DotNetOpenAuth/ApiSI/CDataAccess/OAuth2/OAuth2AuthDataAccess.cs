@@ -22,7 +22,7 @@ namespace EZOper.TechTester.OAuth2ApiSI
         {
             var helper = new SQLiteHelper();
             var accountParam = new SQLiteParameter("claimed", userName);
-            var resultTab = helper.GetDataTable("SELECT ID, Claimed, Friendly) FROM OAuthUsers WHERE Claimed = @claimed", accountParam);
+            var resultTab = helper.GetDataTable("SELECT ID, Claimed, Friendly FROM OAuthUsers WHERE Claimed = @claimed", accountParam);
             if (resultTab.Rows.Count > 0)
             {
                 var row = resultTab.Rows[0];
@@ -40,7 +40,7 @@ namespace EZOper.TechTester.OAuth2ApiSI
         {
             var helper = new SQLiteHelper();
             var clientParam = new SQLiteParameter("client", client);
-            var resultTab = helper.GetDataTable("SELECT OAuthClient.ID, OAuthClient.Client, OAuthClient.Secret, OAuthClient.Callback, OAuthClient.Name, OAuthClient.Type, OAuthClient.Time FROM OAuthClient WHERE Client = @client", clientParam);
+            var resultTab = helper.GetDataTable("SELECT OAuthClient.ID, OAuthClient.Client, OAuthClient.Secret, OAuthClient.Callback, OAuthClient.Name, OAuthClient.Type, OAuthClient.Time FROM OAuthClient WHERE Client = @client LIMIT 0, 1", clientParam);
             if (resultTab.Rows.Count > 0)
             {
                 var row = resultTab.Rows[0];
@@ -97,7 +97,7 @@ namespace EZOper.TechTester.OAuth2ApiSI
         {
             var helper = new SQLiteHelper();
             var bucketParam = new SQLiteParameter("bucket", bucket);
-            var handleParam = new SQLiteParameter("handle", bucket);
+            var handleParam = new SQLiteParameter("handle", handle);
             var resultTab = helper.GetDataTable("SELECT OAuthSymmetricCryptoKey.ID, OAuthSymmetricCryptoKey.Bucket, OAuthSymmetricCryptoKey.Handle, OAuthSymmetricCryptoKey.Secret, OAuthSymmetricCryptoKey.ExpiresUtc FROM OAuthSymmetricCryptoKey WHERE OAuthSymmetricCryptoKey.Bucket = @bucket AND OAuthSymmetricCryptoKey.Handle = @handle", bucketParam, handleParam);
             var result = new List<OAuthSymmetricCryptoKey>();
             foreach (DataRow row in resultTab.Rows)

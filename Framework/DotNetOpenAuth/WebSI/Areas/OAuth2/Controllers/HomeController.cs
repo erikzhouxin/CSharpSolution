@@ -34,7 +34,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
             {
                 Client = "sampleImplicitConsumer",
                 Secret = string.Empty,
-                Callback = Request.Url.Host,
+                Callback = Request.Url.Authority,
                 Name = "Some sample client used for implicit grants (no secret)",
                 Type = 0,
                 Time = DateTime.Now,

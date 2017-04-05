@@ -210,6 +210,7 @@
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Areas\OAuth2\dnoa.webapisample.client.js" />
     <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css" />
     <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css" />
@@ -264,6 +265,8 @@
     <Content Include="Areas\OAuth2\Views\Home\Index.cshtml" />
     <Content Include="Areas\OAuth2\Views\OAuth\Authorise.cshtml" />
     <Content Include="Areas\OAuth2\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Home\Views\OAuth2Client\Index.cshtml" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
@@ -295,6 +298,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Areas\Home\Controllers\OAuth2ClientController.cs" />
     <Compile Include="Areas\OAuth2\Context\DatabaseKeyNonceStore.cs" />
     <Compile Include="Areas\OAuth2\Context\OAuth2AuthorizationServerHost.cs" />
     <Compile Include="Areas\OAuth2\Controllers\AccountController.cs" />
