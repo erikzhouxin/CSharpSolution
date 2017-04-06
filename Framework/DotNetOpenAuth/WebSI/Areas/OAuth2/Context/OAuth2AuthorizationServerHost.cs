@@ -87,7 +87,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2
 
         public bool IsAuthorizationValid(IAuthorizationDescription authorization)
         {
-            return this.IsAuthorizationValid(authorization.Scope, authorization.ClientIdentifier, authorization.UtcIssued, authorization.User);
+            return this.IsAuthorizationValid(authorization.Scope, authorization.ClientIdentifier, authorization.UtcIssued.ToLocalTime(), authorization.User);
         }
 
         public AutomatedAuthorizationCheckResponse CheckAuthorizeClientCredentialsGrant(IAccessTokenRequest accessRequest)
@@ -134,7 +134,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2
                     return this.IsAuthorizationValid(
                         authorizationRequest.Scope,
                         authorizationRequest.ClientIdentifier,
-                        DateTime.UtcNow,
+                        DateTime.Now,
                         HttpContext.Current.User.Identity.Name);
                 }
             }

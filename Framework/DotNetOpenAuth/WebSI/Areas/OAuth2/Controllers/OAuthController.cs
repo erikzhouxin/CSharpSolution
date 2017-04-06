@@ -88,7 +88,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.OAuth2.Controllers
                     UserID = user.ID,
                     ClientID = client.ID,
                     Scope = OAuthUtilities.JoinScopes(pendingRequest.Scope),
-                    ExpireUtc = DateTime.UtcNow.AddDays(1).AsUtc(),
+                    ExpireUtc = DateTime.Now.AddDays(1),
                     Time = DateTime.Now,
                 });
                 // submit now so that this new row can be retrieved later in this same HTTP request

@@ -21,7 +21,7 @@ namespace EZOper.TechTester.OAuth2WebSI
             );
 
             // config.Formatters.Remove(config.Formatters.JsonFormatter);
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            // config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }

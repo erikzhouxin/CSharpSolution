@@ -15,7 +15,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.Home.Controllers
     /// </summary>
     public class OAuth2ClientController : Controller
     {
-        public const string HostBaseUrl = "http://localhost:55142";
+        public const string HostBaseUrl = "http://localhost:55142";// 55142
         public const string ClientBaseUrl = "http://localhost:55142";
 
         public IAuthorizationState Authorization { get; private set; }
@@ -51,6 +51,7 @@ namespace EZOper.TechTester.OAuth2WebSI.Areas.Home.Controllers
                     ViewBag.Values = ex.Message;
                 }
             }
+            ViewBag.HostBaseUrl = HostBaseUrl;
             return View();
         }
 

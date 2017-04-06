@@ -9,10 +9,8 @@
 <div id="Output" class="alert alert-info">@ViewBag.Values</div>
 @section CustomScript
 {
-    <script src="~/Scripts/Areas/OAuth2/dnoa.webapisample.client.js?v=201704051714"></script>
-    <script language="javascript">
-        window.DNOA.OAuth.Client.Setup({
-            GetValuesURI: '@Url.Action("GetValues")'
-        })
+    <script type="javascript">
+        window.DNOA.OAuth.Client.Setup({});
     </script>
+    <script src="~/Scripts/Areas/OAuth2/dnoa.webapisample.client.js?v=201704061458"></script>
 }

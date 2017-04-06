@@ -1,9 +1,9 @@
-﻿
-OAuth2HostBaseURL = "http://localhost:55142";
+﻿OAuth2HostBaseURL = 'http://localhost:55142';
+OAuth2HostGetValuesURI = '/OAuth2Client/GetValues';
 (function (window, undefined) {
     var oAuthClientDemo = function () {
         var base = this;
-        base.options = {};
+        base.options = { };
         base.elements = {
             serverFetchID: '#ServerFetch',
             getValuesButtonID: '#GetValuesButton',
@@ -12,7 +12,6 @@ OAuth2HostBaseURL = "http://localhost:55142";
         base.resourceURI = OAuth2HostBaseURL + '/api/values/get';
         base.requiresAuth = false;
         base.accessToken = null;
-
         base.init = function () {
             $.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
             $(base.elements.getValuesButtonID).click(function () {
@@ -46,7 +45,7 @@ OAuth2HostBaseURL = "http://localhost:55142";
                 args['scope'] = base.resourceURI;
                 args['redirect_uri'] = base.utilities.stripQueryAndFragment(document.location.href);
                 args['response_type'] = 'token';
-                args['client_id'] = 'samplewebapiconsumer';
+                args['client_id'] = 'EZOper.TechTester.OAuth2WebSI';
 
                 var authoriseUrl = OAuth2HostBaseURL + "/OAuth2/OAuth/Authorise" + base.utilities.assembleQueryString(args);
                 window.location = authoriseUrl;
@@ -73,7 +72,7 @@ OAuth2HostBaseURL = "http://localhost:55142";
         base.onServerGetValues = function () {
             $.ajax({
                 type: 'POST',
-                url: base.options.GetValuesURI,
+                url: OAuth2HostGetValuesURI,
                 success: onSuccess,
                 cache: false,
                 dataType: 'JSON'
