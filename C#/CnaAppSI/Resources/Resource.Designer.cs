@@ -45,7 +45,10 @@ namespace EZOper.TechTester.AndroidCnaAppSI
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ic_stat_button_click = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
 			
 			static Drawable()
 			{
@@ -69,14 +72,17 @@ namespace EZOper.TechTester.AndroidCnaAppSI
 			// aapt resource value: 0x7f050000
 			public const int LvwAreaNameList = 2131034112;
 			
-			// aapt resource value: 0x7f050005
-			public const int LvwFunctionList = 2131034117;
+			// aapt resource value: 0x7f050006
+			public const int LvwFunctionList = 2131034118;
 			
 			// aapt resource value: 0x7f050004
 			public const int ResultEditText = 2131034116;
 			
 			// aapt resource value: 0x7f050002
 			public const int ResultTextView = 2131034114;
+			
+			// aapt resource value: 0x7f050005
+			public const int textView1 = 2131034117;
 			
 			static Id()
 			{
@@ -98,7 +104,10 @@ namespace EZOper.TechTester.AndroidCnaAppSI
 			public const int TTTAsyncAwaitLoadImg = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int TTTMainListView = 2130903042;
+			public const int TTTAsyncAwaitLoadImgNotedActivity = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int TTTMainListView = 2130903043;
 			
 			static Layout()
 			{

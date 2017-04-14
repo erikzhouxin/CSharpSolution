@@ -59,6 +59,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\TTT\TTTAnalogClockActivity.cs" />
     <Compile Include="Activities\TTT\TTTAsyncAwaitLoadImgActivity.cs" />
+    <Compile Include="Activities\TTT\TTTAsyncAwaitLoadImgNotedActivity.cs" />
     <Compile Include="Activities\TTT\TTTMainListViewActivity.cs" />
     <Compile Include="Adapters\TypeDictionaryAdapter.cs" />
     <Compile Include="Models\AnalogClockModel.cs" />
@@ -76,6 +77,7 @@
     <AndroidResource Include="Resources\layout\TTTMainListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\TTTAsyncAwaitLoadImgNotedActivity.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -90,9 +92,12 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EZCache\" />
-    <Folder Include="EZSQLite\" />
-    <Folder Include="EZSQL\" />
+    <Folder Include="Components\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_stat_button_click.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
