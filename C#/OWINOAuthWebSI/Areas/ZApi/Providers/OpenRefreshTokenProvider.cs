@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace OAuth2.Demo.Providers
+namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
 {
     public class OpenRefreshTokenProvider : AuthenticationTokenProvider
     {

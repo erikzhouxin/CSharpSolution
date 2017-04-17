@@ -9,7 +9,7 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace OAuth2.Demo.Providers
+namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
 {
     public class OpenAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {

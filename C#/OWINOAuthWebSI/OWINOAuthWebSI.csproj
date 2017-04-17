@@ -206,6 +206,7 @@
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Controllers\ManageController.cs" />
     <Compile Include="Areas\Home\Controllers\ReadmeController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\CodesController.cs" />
     <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
     <Compile Include="Areas\ZApi\Providers\OpenAuthorizationCodeProvider.cs" />
     <Compile Include="Areas\ZApi\Providers\OpenAuthorizationServerProvider.cs" />

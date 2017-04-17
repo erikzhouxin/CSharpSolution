@@ -61,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -152,17 +153,49 @@
     <Compile Include="Areas\Home\Context\UserContext.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Filters\UserAuthorizeAttribute.cs" />
+    <Compile Include="Areas\ZApi\Context\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\ZApi\Context\HelpPageConfig.cs" />
+    <Compile Include="Areas\ZApi\Context\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\ZApi\Context\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\ZApi\Controllers\HelpController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\MHelpController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\HelpPageApiModel.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\ZApi\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\ZApi\SampleGeneration\TextSample.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SQLite\EZOper.TechTester.CSharp.sql" />
     <Content Include="Content\CSS\bootstrap-theme.css" />
     <Content Include="Content\CSS\bootstrap-theme.min.css" />
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\CSS\ZApi\HelpPage.css" />
+    <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\CSS\Site.css" />
@@ -177,6 +210,30 @@
     <Content Include="Content\CSS\bootstrap.css.map" />
     <Content Include="Content\CSS\bootstrap-theme.min.css.map" />
     <Content Include="Content\CSS\bootstrap-theme.css.map" />
+    <Content Include="Areas\ZApi\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ZApi\Views\Help\Api.cshtml" />
+    <Content Include="Areas\ZApi\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\Api.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\Index.cshtml" />
+    <Content Include="Areas\ZApi\Views\MHelp\ResourceModel.cshtml" />
+    <Content Include="Areas\ZApi\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\ZApi\Views\Shared\_LayoutModel.cshtml" />
+    <Content Include="Areas\ZApi\Views\web.config" />
+    <Content Include="App_Data\SQLite\EZOper.TechTester.CSharp.sqlite3" />
     <None Include="Scripts\Lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Lib\bootstrap.js" />
     <Content Include="Scripts\Lib\bootstrap.min.js" />
@@ -211,7 +268,6 @@
     <Content Include="Areas\Home\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Scripts\AngularJS\" />
     <Folder Include="Scripts\Bootstrap\" />
     <Folder Include="Scripts\jQuery\" />
@@ -224,6 +280,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Lib\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BServices\BServices.csproj">
+      <Project>{8e7fd444-2fd2-4230-89b8-4d76ad44236f}</Project>
+      <Name>BServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CUtilities\CUtilities.csproj">
+      <Project>{e1cae6ef-b37f-4dfe-957e-059d2ea16e72}</Project>
+      <Name>CUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DModels\DModels.csproj">
+      <Project>{5c97e2f8-1559-4084-8c92-a7dc07141e9c}</Project>
+      <Name>DModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

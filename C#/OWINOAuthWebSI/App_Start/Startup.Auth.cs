@@ -6,9 +6,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using EZOper.TechTester.OWINOAuthWebSI.Models;
-using OAuth2.Demo.Providers;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers;
 
 namespace EZOper.TechTester.OWINOAuthWebSI
 {

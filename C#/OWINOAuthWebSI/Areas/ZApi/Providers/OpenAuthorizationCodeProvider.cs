@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace OAuth2.Demo.Providers
+namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
 {
     public class OpenAuthorizationCodeProvider : AuthenticationTokenProvider
     {
