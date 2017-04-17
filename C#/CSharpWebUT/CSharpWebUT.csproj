@@ -37,11 +37,15 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.1\lib\net46\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -81,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\EZRedis\RedisHelperUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,9 +95,29 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BServices\BServices.csproj">
+      <Project>{8e7fd444-2fd2-4230-89b8-4d76ad44236f}</Project>
+      <Name>BServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CSharpWebSI\CSharpWebSI.csproj">
       <Project>{CC243AF4-358E-420F-AC29-209E50082485}</Project>
       <Name>CSharpWebSI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CUtilities\CUtilities.csproj">
+      <Project>{e1cae6ef-b37f-4dfe-957e-059d2ea16e72}</Project>
+      <Name>CUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DACache\DACache.csproj">
+      <Project>{62fcacb9-41b8-4210-977b-c84c8a490117}</Project>
+      <Name>DACache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{88bb3ee7-b20c-4bcc-9530-aca7eca3a9c0}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DModels\DModels.csproj">
+      <Project>{5c97e2f8-1559-4084-8c92-a7dc07141e9c}</Project>
+      <Name>DModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
