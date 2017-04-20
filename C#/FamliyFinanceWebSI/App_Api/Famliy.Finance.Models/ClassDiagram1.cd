@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Famliy.Finance.Models.bank_account">
+    <Position X="6.5" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgAAAAACAEAAAAAAAAgAAACAAAAAAAAAAAUAA=</HashCode>
+      <FileName>bank\bank_account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.bank_family">
+    <Position X="9.5" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABCAEAAgABgAAACAAAAQAAAAIAiQAQAA=</HashCode>
+      <FileName>bank\bank_family.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.bank_family_user">
+    <Position X="3.25" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAACAAAAAABAAAgAAAEAAAAAAIAAAAQgA=</HashCode>
+      <FileName>bank\bank_family_user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.bank_operate_log">
+    <Position X="6" Y="8" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQBCIAgBAAAACBAAAAgAAAAgAAAEAAAAAAgAAoAUgA=</HashCode>
+      <FileName>bank\bank_operate_log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.bank_record" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgIAAAACABAAAAJAAKgAAAAAAAAIAAAAAAQgA=</HashCode>
+      <FileName>bank\bank_record.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.BankModel" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAQIAAAAAAAIAQAAAAAAAAEAAAEgAAAIBIAAhgAAA=</HashCode>
+      <FileName>BankModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.CustomAttribute" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.UniqueAttribute">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.Entities" Collapsed="true">
+    <Position X="1.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAQAgAgQAAAEAAAEAQAAAAIAAggAAE=</HashCode>
+      <FileName>Model1.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_log">
+    <Position X="1.75" Y="14" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AQQAAACgAAAAACAAJAACARAA0AAAgAAAIIAAAABAQkA=</HashCode>
+      <FileName>sys_log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_permission">
+    <Position X="6" Y="12.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAACAAAAAgAAAAAAAEAAAQAABAAAAAQAA=</HashCode>
+      <FileName>sys_permission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_role">
+    <Position X="1.75" Y="7.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AgQAQAAAAAAAACAAAgggAAAAAAAACAAAAABAAAAAQAA=</HashCode>
+      <FileName>sys_role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_role_permission">
+    <Position X="10.5" Y="12.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAAACAQAAAAAAAAAAAAAAAQAAAAAAAgQgA=</HashCode>
+      <FileName>sys_role_permission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_subject">
+    <Position X="5.25" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>ACRAAAAAAAAAACBAAAAAAAAAAQAAAAAAABAAIAhAQAA=</HashCode>
+      <FileName>sys_subject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_user">
+    <Position X="9.5" Y="4.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAYBQCAhAAAAQiAgAgQAAAgBgAIgkAwgAAAAAgACQAg=</HashCode>
+      <FileName>sys_user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_user_log">
+    <Position X="2.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAgAAgAICAAAAAAAAAAgAAAAAQAAAAAAAAAQAI=</HashCode>
+      <FileName>sys_user_log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Famliy.Finance.Models.sys_user_role">
+    <Position X="1.75" Y="11" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAAACAQAAAAAAAAgAAAAAAAAAAIAAAAQgA=</HashCode>
+      <FileName>sys_user_role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Famliy.Finance.Models.OrderType">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAQAAAAAA=</HashCode>
+      <FileName>OrderType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -46,11 +46,24 @@
     <Reference Include="AsyncIO, Version=0.1.17.0, Culture=neutral, PublicKeyToken=44a94435bd6f33f8, processorArchitecture=MSIL">
       <HintPath>..\packages\AsyncIO.0.1.17.0\lib\net40\AsyncIO.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -68,11 +81,25 @@
     <Reference Include="MongoDB.Driver.Legacy, Version=2.4.3.23, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\mongocsharpdriver.2.4.3\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NetMQ, Version=3.3.2.1, Culture=neutral, PublicKeyToken=a6decef4ddc58b3a, processorArchitecture=MSIL">
       <HintPath>..\packages\NetMQ.3.3.2.1\lib\net40\NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
       <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
@@ -149,19 +176,72 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Api\Family.Finance.BLL\Readme.txt" />
+    <Content Include="App_Api\Famliy.Finance.Common\Readme.txt" />
+    <Content Include="App_Api\Famliy.Finance.DAL\Readme.txt" />
+    <Content Include="App_Api\Famliy.Finance.Models\Readme.txt" />
     <Content Include="App_Api\GW.Mail\Readme.txt" />
     <Content Include="App_Api\GW.Redis.Common\Readme.txt" />
     <Content Include="App_Api\GW.Redis\Readme.txt" />
     <Content Include="App_Api\GW.Utils\DataAccess\MongoDB\MongoDB_QuerySample.txt" />
     <Content Include="App_Api\GW.Utils\Readme.txt" />
+    <Content Include="App_Api\GW.Weixin\Readme.txt" />
     <Content Include="App_Data\familyjob.sql" />
     <Content Include="App_Data\familyscript.sql" />
     <Content Include="App_Data\family_op.sql" />
     <Content Include="App_Data\script.sql" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Api\Family.Finance.BLL\BankAccountService2.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Base\BaseService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\ContextFactory.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\DBInit.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\FamilyService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\FamliyBLL.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\LogBusiness.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\MemberBLL.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\BankAccountService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\BankFamilyService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\BankOperateLogService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysLogService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysPermissionService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysRolePermissionService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysRoleService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysSubjectService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysUserRoleService.cs" />
+    <Compile Include="App_Api\Family.Finance.BLL\Service\SysUserService.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Common\ConfigBusiness.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Common\HtmlHelper2.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Common\Utils.cs" />
+    <Compile Include="App_Api\Famliy.Finance.DAL\BankModelInitializer.cs" />
+    <Compile Include="App_Api\Famliy.Finance.DAL\BankRedisOperate.cs" />
+    <Compile Include="App_Api\Famliy.Finance.DAL\BaseRepository.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\BankModel.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\bank\bank_account.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\bank\bank_family.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\bank\bank_family_user.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\bank\bank_operate_log.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\bank\bank_record.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\CustomAttribute.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\OrderType.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_family.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_family_day.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_family_subject_day.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_family_user.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_user.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_user_day.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\report\report_user_subject_day.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_log.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_permission.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_role.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_role_permission.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_subject.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_user.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_user_log.cs" />
+    <Compile Include="App_Api\Famliy.Finance.Models\sys\sys_user_role.cs" />
     <Compile Include="App_Api\GW.Mail\ConfigurationInfo.cs" />
     <Compile Include="App_Api\GW.Mail\Entity\MailAddressInfo.cs" />
     <Compile Include="App_Api\GW.Mail\Entity\MailInfo.cs" />
@@ -221,6 +301,29 @@
     <Compile Include="App_Api\GW.Utils\Web\SecurityHelper.cs" />
     <Compile Include="App_Api\GW.Utils\XmlHelper.cs" />
     <Compile Include="App_Api\GW.Utils\ZipHelper.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\ADictionary.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\AList.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\ApiError.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\ApiResult.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\ApiToken.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\AppEntity.cs" />
+    <Compile Include="App_Api\GW.Weixin\Entitys\OAuthEntity.cs" />
+    <Compile Include="App_Api\GW.Weixin\Helpers\HttpHelper.cs" />
+    <Compile Include="App_Api\GW.Weixin\Helpers\SecurityHelper.cs" />
+    <Compile Include="App_Api\GW.Weixin\Helpers\UtilHelper.cs" />
+    <Compile Include="App_Api\GW.Weixin\Helpers\XmlHelper.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuthConfig.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\OAuthApp.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\OAuthBase.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\OAuthCache.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\OAuthStatic.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\Models\WeixinMError.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\Models\WeixinMGroup.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\Models\WeixinMMedia.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\Models\WeixinMOpenIds.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\Models\WeixinMToken.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\Models\WeixinMUser.cs" />
+    <Compile Include="App_Api\GW.Weixin\OAuths\Weixinmps\WeixinmpOAuth.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
@@ -231,6 +334,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Data\familybank_db.pdm" />
+    <Content Include="App_Api\GW.Weixin\weixin.config" />
+    <Content Include="App_Api\Famliy.Finance.Models\ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
