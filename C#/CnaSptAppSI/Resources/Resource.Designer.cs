@@ -91,16 +91,16 @@ namespace EZOper.TechTester.CnaSptAppSI
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ab_background = 2130837504;
+			public const int Icon = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int discrete_shadow = 2130837505;
+			public const int TTTSwipeToRefresh_AbBg = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_action_logo = 2130837506;
+			public const int TTTSwipeToRefresh_DiscreteShadow = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Icon = 2130837507;
+			public const int TTTSwipeToRefresh_Logo = 2130837507;
 			
 			static Drawable()
 			{
@@ -174,10 +174,10 @@ namespace EZOper.TechTester.CnaSptAppSI
 			public const int TTTMainListView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int TTTSwipeToReFreshMain = 2130903042;
+			public const int TTTSwipeToRefresh_Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int TTTSwipeToReFreshPostItemLayout = 2130903043;
+			public const int TTTSwipeToRefresh_PostItemLayout = 2130903043;
 			
 			static Layout()
 			{

@@ -5,7 +5,7 @@ using Android.Graphics.Drawables;
 
 namespace EZOper.TechTester.CnaSptAppSI.Services
 {
-	public class VignetteDrawable : Drawable
+	public class TTTSwipeToRefresh_VignetteDrawable : Drawable
 	{
 		bool useGradientOverlay;
 		float mCornerRadius;
@@ -15,7 +15,7 @@ namespace EZOper.TechTester.CnaSptAppSI.Services
 		Paint strokePaint;
 		int margin;
 
-		public VignetteDrawable (Bitmap bitmap, float cornerRadius = 5, int margin = 3, bool withEffect = true)
+		public TTTSwipeToRefresh_VignetteDrawable (Bitmap bitmap, float cornerRadius = 5, int margin = 3, bool withEffect = true)
 		{
 			useGradientOverlay = withEffect;
 			mCornerRadius = cornerRadius;

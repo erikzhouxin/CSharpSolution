@@ -45,7 +45,7 @@ namespace EZOper.TechTester.CnaSptAppSI.Adapters
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             // Get our object for position
-            var item = this[position];
+            var item = activitiesList[position];
 
             //Try to reuse convertView if it's not  null, otherwise inflate it from our item layout
             // gives us some performance gains by not always inflating a new view

@@ -14,19 +14,19 @@ using EZOper.TechTester.CnaSptAppSI.Services;
 
 namespace EZOper.TechTester.CnaSptAppSI
 {
-	[Activity (Label = "Swipe Refresh", MainLauncher = true, Theme = "@style/XamActionBarTheme")]
-	public class TTTSwipeToRefreshMainActivity : Android.Support.V4.App.FragmentActivity
+	[Activity (Label = "Swipe Refresh", Theme = "@style/XamActionBarTheme")]
+	public class TTTSwipeToRefresh_MainActivity : Android.Support.V4.App.FragmentActivity
 	{
-		PostListFragment forum;
+		TTTSwipeToRefresh_PostListFragment forum;
 		SwipeRefreshLayout refresher;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			SetContentView (Resource.Layout.Main);
+			SetContentView (Resource.Layout.TTTSwipeToRefresh_Main);
 
-			forum = PostListFragment.Instantiate ("android", "Android");
+			forum = TTTSwipeToRefresh_PostListFragment.Instantiate ("android", "Android");
 			SupportFragmentManager.BeginTransaction ()
 				.Add (Resource.Id.container, forum, "post-list")
 				.Commit ();

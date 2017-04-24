@@ -20,12 +20,12 @@ namespace EZOper.TechTester.CnaSptAppSI
     {
         internal static readonly List<ActivityItem> FuncDic = new List<ActivityItem>()
         {
-            new ActivityItem(0, "临时测试练习功能表", typeof(TTTSwipeToRefreshMainActivity), typeof(TTTMainListViewActivity), null),
+            new ActivityItem(0, "下拉刷新(Xamarin.SwipeToRefresh)", typeof(TTTSwipeToRefresh_MainActivity), typeof(TTTMainListViewActivity), null),
         };
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
 
             // 设置显示页面
             SetContentView(Resource.Layout.TTTMainListView);

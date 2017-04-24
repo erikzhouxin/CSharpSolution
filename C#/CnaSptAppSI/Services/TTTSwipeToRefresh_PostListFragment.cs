@@ -23,14 +23,14 @@ using EZOper.TechTester.CnaSptAppSI.Models;
 
 namespace EZOper.TechTester.CnaSptAppSI.Services
 {
-	public class PostListFragment : Android.Support.V4.App.ListFragment
+	public class TTTSwipeToRefresh_PostListFragment : Android.Support.V4.App.ListFragment
 	{
 		bool loading;
 		PostListAdapter adapter;
 
-		public static PostListFragment Instantiate (string forumID, string forumName)
+		public static TTTSwipeToRefresh_PostListFragment Instantiate (string forumID, string forumName)
 		{
-			return new PostListFragment {
+			return new TTTSwipeToRefresh_PostListFragment {
 				ForumID = forumID,
 				ForumName = forumName
 			};
@@ -194,7 +194,7 @@ namespace EZOper.TechTester.CnaSptAppSI.Services
 					var avatar = view.FindViewById<ImageView> (Resource.Id.PostAvatar);
 					var bmp = BitmapFactory.DecodeByteArray (data.Result, 0, data.Result.Length);
 					bmp = ResizeBitmap (bmp);
-					avatar.SetImageDrawable (new VignetteDrawable (bmp, withEffect: false));
+					avatar.SetImageDrawable (new TTTSwipeToRefresh_VignetteDrawable (bmp, withEffect: false));
 				} else {
 					data.ContinueWith (t => {
 						if (t.Result != null && view.VersionNumber == version) {
@@ -203,7 +203,7 @@ namespace EZOper.TechTester.CnaSptAppSI.Services
 							context.RunOnUiThread (() => {
 								if (view.VersionNumber == version) {
 									var avatar = view.FindViewById<ImageView> (Resource.Id.PostAvatar);
-									avatar.SetImageDrawable (new VignetteDrawable (bmp, withEffect: false));
+									avatar.SetImageDrawable (new TTTSwipeToRefresh_VignetteDrawable (bmp, withEffect: false));
 								}
 							});
 						}
@@ -255,7 +255,7 @@ namespace EZOper.TechTester.CnaSptAppSI.Services
 			public DiscussionView (Context ctx) : base (ctx)
 			{
 				var inflater = ctx.GetSystemService (Context.LayoutInflaterService).JavaCast<LayoutInflater> ();
-				inflater.Inflate (Resource.Layout.TTTSwipeToReFreshPostItemLayout, this, true);
+				inflater.Inflate (Resource.Layout.TTTSwipeToRefresh_PostItemLayout, this, true);
 			}
 
 			public long VersionNumber;

@@ -3,13 +3,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <swipetorefresh.ScrollChildSwipeRefreshLayout
-        android:id="@+id/refresher"
+  <EZOper.TechTester.CnaSptAppSI.Services.TTTSwipeToRefresh_ScrollChildSwipeRefreshLayout
+      android:id="@+id/refresher"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </swipetorefresh.ScrollChildSwipeRefreshLayout>
+    </EZOper.TechTester.CnaSptAppSI.Services.TTTSwipeToRefresh_ScrollChildSwipeRefreshLayout>
 </LinearLayout>

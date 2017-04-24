@@ -16,9 +16,10 @@
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidSdkBuildToolsVersion>23.0.3</AndroidSdkBuildToolsVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -79,14 +80,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\MainActivity.cs" />
-    <Compile Include="Activities\TTT\TTTSwipeToRefreshMainActivity.cs" />
+    <Compile Include="Activities\TTT\TTTSwipeToRefresh_MainActivity.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\Discussion.cs" />
-    <Compile Include="Services\TTTSwipeToRefreshPostListFragment.cs" />
-    <Compile Include="Services\TTTSwipeToRefreshScrollChildSwipeRefreshLayout.cs" />
+    <Compile Include="Services\TTTSwipeToRefresh_PostListFragment.cs" />
+    <Compile Include="Services\TTTSwipeToRefresh_ScrollChildSwipeRefreshLayout.cs" />
     <Compile Include="Activities\TTT\TTTMainListViewActivity.cs" />
     <Compile Include="Models\BodyType.cs" />
-    <Compile Include="Services\TTTSwipeToRefreshVignetteDrawable.cs" />
+    <Compile Include="Services\TTTSwipeToRefresh_VignetteDrawable.cs" />
     <Compile Include="Adapters\ActivityAdapter.cs" />
     <Compile Include="Models\ActivityItem.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -100,8 +101,8 @@
     <AndroidResource Include="Resources\layout\TTTMainListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\TTTSwipeToReFreshMain.axml" />
-    <AndroidResource Include="Resources\layout\TTTSwipeToReFreshPostItemLayout.axml" />
+    <AndroidResource Include="Resources\layout\TTTSwipeToRefresh_Main.axml" />
+    <AndroidResource Include="Resources\layout\TTTSwipeToRefresh_PostItemLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -123,28 +124,28 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TTTSwipeToRefresh_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\ic_action_logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TTTSwipeToRefresh_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\ic_action_logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\TTTSwipeToRefresh_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TTTSwipeToRefresh_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\TTTSwipeToReFreshAbBg.xml" />
+    <AndroidResource Include="Resources\drawable\TTTSwipeToRefresh_AbBg.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\TTTSwipeToReFreshDiscreteShadow.xml" />
+    <AndroidResource Include="Resources\drawable\TTTSwipeToRefresh_DiscreteShadow.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_action_logo.png" />
+    <AndroidResource Include="Resources\drawable\TTTSwipeToRefresh_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\TTTSwipeToReFreshTheme.xml" />
+    <AndroidResource Include="Resources\values\TTTSwipeToRefresh_Theme.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
