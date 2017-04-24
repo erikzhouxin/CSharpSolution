@@ -18,7 +18,7 @@ namespace EZOper.TechTester.CnaSptAppSI
     {
         internal static readonly ReadOnlyCollection<ActivityItem> AreaDic = new ReadOnlyCollection<ActivityItem>(new List<ActivityItem>()
         {
-            new ActivityItem(0,"", typeof(TTTMainListViewActivity),typeof(MainActivity),""),
+            new ActivityItem(0, "临时测试练习功能表", typeof(TTTMainListViewActivity), typeof(MainActivity), null),
         });
 
         protected override void OnCreate(Bundle bundle)

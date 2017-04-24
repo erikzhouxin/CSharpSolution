@@ -11,15 +11,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using EZOper.TechTester.CnaSptAppSI.Adapters;
+using EZOper.TechTester.CnaSptAppSI.Models;
 
 namespace EZOper.TechTester.CnaSptAppSI
 {
     [Activity(Label = "临时测试练习功能表")]
     public class TTTMainListViewActivity : Activity
     {
-        internal static ReadOnlyDictionary<int, Type> FuncDic = new ReadOnlyDictionary<int, Type>(new Dictionary<int, Type>()
+        internal static readonly List<ActivityItem> FuncDic = new List<ActivityItem>()
         {
-        });
+            new ActivityItem(0, "临时测试练习功能表", typeof(TTTSwipeToRefreshMainActivity), typeof(TTTMainListViewActivity), null),
+        };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,7 +35,7 @@ namespace EZOper.TechTester.CnaSptAppSI
             {
                 _functionListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
-                    var areaName = TTTMainListViewActivity.FuncDic[e.Position];
+                    var areaName = TTTMainListViewActivity.FuncDic[e.Position].Type;
                     var taskDetails = new Intent(this, (areaName));
                     StartActivity(taskDetails);
                 };
@@ -45,7 +47,7 @@ namespace EZOper.TechTester.CnaSptAppSI
             base.OnResume();
             var areaListView = FindViewById<ListView>(Resource.Id.LvwFunctionList);
             //Hook up our adapter to our ListView
-            areaListView.Adapter = new TypeDictionaryAdapter(this, FuncDic);
+            areaListView.Adapter = new ActivityAdapter(this, FuncDic);
         }
     }
 }
