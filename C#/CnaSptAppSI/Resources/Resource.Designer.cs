@@ -118,8 +118,8 @@ namespace EZOper.TechTester.CnaSptAppSI
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07000d
-			public const int AuthorName = 2131165197;
+			// aapt resource value: 0x7f070013
+			public const int AuthorName = 2131165203;
 			
 			// aapt resource value: 0x7f070003
 			public const int DownloadedImageView = 2131165187;
@@ -130,23 +130,23 @@ namespace EZOper.TechTester.CnaSptAppSI
 			// aapt resource value: 0x7f070000
 			public const int LvwAreaNameList = 2131165184;
 			
-			// aapt resource value: 0x7f070006
-			public const int LvwFunctionList = 2131165190;
+			// aapt resource value: 0x7f07000d
+			public const int LvwFunctionList = 2131165197;
 			
-			// aapt resource value: 0x7f07000c
-			public const int PostAvatar = 2131165196;
+			// aapt resource value: 0x7f070012
+			public const int PostAvatar = 2131165202;
 			
-			// aapt resource value: 0x7f07000e
-			public const int PostText = 2131165198;
+			// aapt resource value: 0x7f070014
+			public const int PostText = 2131165204;
+			
+			// aapt resource value: 0x7f070016
+			public const int PostTime = 2131165206;
+			
+			// aapt resource value: 0x7f070017
+			public const int PostTimeSecondary = 2131165207;
 			
 			// aapt resource value: 0x7f070010
-			public const int PostTime = 2131165200;
-			
-			// aapt resource value: 0x7f070011
-			public const int PostTimeSecondary = 2131165201;
-			
-			// aapt resource value: 0x7f070009
-			public const int PostTitle = 2131165193;
+			public const int PostTitle = 2131165200;
 			
 			// aapt resource value: 0x7f070004
 			public const int ResultEditText = 2131165188;
@@ -154,23 +154,41 @@ namespace EZOper.TechTester.CnaSptAppSI
 			// aapt resource value: 0x7f070002
 			public const int ResultTextView = 2131165186;
 			
-			// aapt resource value: 0x7f070008
-			public const int container = 2131165192;
-			
-			// aapt resource value: 0x7f07000a
-			public const int linearLayout1 = 2131165194;
+			// aapt resource value: 0x7f07000b
+			public const int clickButton = 2131165195;
 			
 			// aapt resource value: 0x7f07000f
-			public const int linearLayout2 = 2131165199;
+			public const int container = 2131165199;
 			
-			// aapt resource value: 0x7f07000b
-			public const int linearLayout3 = 2131165195;
+			// aapt resource value: 0x7f070009
+			public const int downloadButton = 2131165193;
+			
+			// aapt resource value: 0x7f07000c
+			public const int imageView1 = 2131165196;
+			
+			// aapt resource value: 0x7f070008
+			public const int linearLayout1 = 2131165192;
+			
+			// aapt resource value: 0x7f070015
+			public const int linearLayout2 = 2131165205;
+			
+			// aapt resource value: 0x7f070011
+			public const int linearLayout3 = 2131165201;
 			
 			// aapt resource value: 0x7f070007
-			public const int refresher = 2131165191;
+			public const int progressBar = 2131165191;
+			
+			// aapt resource value: 0x7f07000e
+			public const int refresher = 2131165198;
+			
+			// aapt resource value: 0x7f070006
+			public const int relativeLayout1 = 2131165190;
 			
 			// aapt resource value: 0x7f070005
 			public const int textView1 = 2131165189;
+			
+			// aapt resource value: 0x7f07000a
+			public const int textView2 = 2131165194;
 			
 			static Id()
 			{
@@ -195,13 +213,16 @@ namespace EZOper.TechTester.CnaSptAppSI
 			public const int TTTAsyncAwaitLoad_ImgAndNoted = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int TTTMainListView = 2130903043;
+			public const int TTTAsyncImageAndroid_Download = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int TTTSwipeToRefresh_Main = 2130903044;
+			public const int TTTMainListView = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int TTTSwipeToRefresh_PostItem = 2130903045;
+			public const int TTTSwipeToRefresh_Main = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int TTTSwipeToRefresh_PostItem = 2130903046;
 			
 			static Layout()
 			{

@@ -83,6 +83,7 @@
     <Compile Include="Activities\TTT\TTTAnalogClock_MainActivity.cs" />
     <Compile Include="Activities\TTT\TTTAsyncAwaitLoad_ImgActivity.cs" />
     <Compile Include="Activities\TTT\TTTAsyncAwaitLoad_ImgAndNotedActivity.cs" />
+    <Compile Include="Activities\TTT\TTTAsyncImageAndroid_DownloadActivity.cs" />
     <Compile Include="Activities\TTT\TTTSwipeToRefresh_MainActivity.cs" />
     <Compile Include="Adapters\TypeDictionaryAdapter.cs" />
     <Compile Include="Models\Forum.cs" />
@@ -111,6 +112,9 @@
     <AndroidResource Include="Resources\layout\TTTSwipeToRefresh_PostItem.axml" />
     <AndroidResource Include="Resources\layout\TTTAsyncAwaitLoad_ImgAndNoted.axml" />
     <AndroidResource Include="Resources\layout\TTTAsyncAwaitLoad_Img.axml" />
+    <AndroidResource Include="Resources\layout\TTTAsyncImageAndroid_Download.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -119,9 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -156,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_addbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

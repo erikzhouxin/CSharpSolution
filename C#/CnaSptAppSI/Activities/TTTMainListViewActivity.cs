@@ -23,6 +23,7 @@ namespace EZOper.TechTester.CnaSptAppSI
             new ActivityItem(0, "模拟时钟(Xamarin.AnalogClock)", typeof(TTTAnalogClockActivity), typeof(TTTMainListViewActivity),"https://developer.xamarin.com/samples/mobile/AnalogClock/"),
             new ActivityItem(1, "异步等待及通知(Xamarin.AsyncAwait,???)", typeof(TTTAsyncAwaitLoadImgActivity), typeof(TTTMainListViewActivity),"https://developer.xamarin.com/samples/mobile/AsyncAwait/,???"),
             new ActivityItem(2, "下拉刷新(Xamarin.SwipeToRefresh)", typeof(TTTSwipeToRefresh_MainActivity), typeof(TTTMainListViewActivity), "https://developer.xamarin.com/samples/monodroid/SwipeToRefresh/"),
+            new ActivityItem(3, "异步下载(Xamarin.AsyncImageAndroid)", typeof(TTTAsyncImageAndroid_DownloadActivity),typeof(TTTMainListViewActivity),"https://developer.xamarin.com/samples/monodroid/AsyncImageAndroid/"),
         };
 
         protected override void OnCreate(Bundle bundle)
