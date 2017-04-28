@@ -255,7 +255,7 @@ namespace EZOper.TechTester.CnaSptAppSI.Services
 			public DiscussionView (Context ctx) : base (ctx)
 			{
 				var inflater = ctx.GetSystemService (Context.LayoutInflaterService).JavaCast<LayoutInflater> ();
-				inflater.Inflate (Resource.Layout.TTTSwipeToRefresh_PostItemLayout, this, true);
+				inflater.Inflate (Resource.Layout.TTTSwipeToRefresh_PostItem, this, true);
 			}
 
 			public long VersionNumber;

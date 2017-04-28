@@ -2,16 +2,16 @@ using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace EZOper.TechTester.AndroidCnaAppSI.Models
+namespace EZOper.TechTester.CnaSptAppSI.Services
 {
-    public class AnalogClockModel : INotifyPropertyChanged
+    public class AnalogClockPropertyChangeService : INotifyPropertyChanged
     {
         DateTime dateTime;
         float hourAngle, minuteAngle, secondAngle;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AnalogClockModel()
+        public AnalogClockPropertyChangeService()
         {
             this.DateTime = DateTime.Now;
             Timer();

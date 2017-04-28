@@ -7,7 +7,7 @@
         android:id="@+id/GetButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:text="@string/GoAndGet" />
     <TextView
         android:text="-"
         android:textAppearance="?android:attr/textAppearanceLarge"

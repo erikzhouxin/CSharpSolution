@@ -8,9 +8,9 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace EZOper.TechTester.AndroidCnaAppSI.ViewModels
+namespace EZOper.TechTester.CnaSptAppSI.ViewModels
 {
-	public class AnalogClockViewModel : View
+	public class TTTAnalogClock_ViewModel : View
 	{
 		Path tickMarks;
 		Path hourHand;
@@ -26,19 +26,19 @@ namespace EZOper.TechTester.AndroidCnaAppSI.ViewModels
 			
 		float hourAngle, minuteAngle, secondAngle;
 
-		public AnalogClockViewModel (Context context) :
+		public TTTAnalogClock_ViewModel (Context context) :
 			base (context)
 		{
 			Initialize ();
 		}
 
-		public AnalogClockViewModel (Context context, IAttributeSet attrs) :
+		public TTTAnalogClock_ViewModel (Context context, IAttributeSet attrs) :
 			base (context, attrs)
 		{
 			Initialize ();
 		}
 
-		public AnalogClockViewModel (Context context, IAttributeSet attrs, int defStyle) :
+		public TTTAnalogClock_ViewModel (Context context, IAttributeSet attrs, int defStyle) :
 			base (context, attrs, defStyle)
 		{
 			Initialize ();

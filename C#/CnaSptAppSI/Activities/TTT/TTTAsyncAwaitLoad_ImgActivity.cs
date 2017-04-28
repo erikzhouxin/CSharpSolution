@@ -11,7 +11,7 @@ using System.IO;
 using Android.Graphics;
 using Java.Lang;
 
-namespace EZOper.TechTester.AndroidCnaAppSI.Activities
+namespace EZOper.TechTester.CnaSptAppSI
 {
     [Activity(Label = "异步请求加载图片")]
     public class TTTAsyncAwaitLoadImgActivity : Activity
@@ -29,7 +29,7 @@ namespace EZOper.TechTester.AndroidCnaAppSI.Activities
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.TTTAsyncAwaitLoadImg);
+            SetContentView(Resource.Layout.TTTAsyncAwaitLoad_Img);
 
             // Get our button from the layout resource,
             // and attach an event to it
@@ -130,7 +130,7 @@ namespace EZOper.TechTester.AndroidCnaAppSI.Activities
                 .SetContentIntent(resultPendingIntent) // start up this activity when the user clicks the intent.
                 .SetContentTitle("点击按钮") // Set the title
                 //.SetNumber(_count) // Display the count in the Content Info
-                .SetSmallIcon(Resource.Drawable.ic_stat_button_click) // This is the icon to display NECESSARY
+                .SetSmallIcon(Resource.Drawable.ic_addbtn) // This is the icon to display NECESSARY
                 .SetContentText(string.Format("你已经点击 {0} 次,多次点击也没用.", _count)); // the message to display.
 
             var builder2 = new Notification.Builder(this);

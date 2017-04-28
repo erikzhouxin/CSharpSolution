@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">技术探究集</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">技术探究集</string>
+  <string name="GoAndGet">GO AND GET</string>
 </resources>

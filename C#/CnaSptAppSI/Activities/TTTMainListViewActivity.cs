@@ -10,22 +10,24 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using EZOper.TechTester.AndroidCnaAppSI.Adapters;
+using EZOper.TechTester.CnaSptAppSI.Adapters;
+using EZOper.TechTester.CnaSptAppSI.Models;
 
-namespace EZOper.TechTester.AndroidCnaAppSI.Activities
+namespace EZOper.TechTester.CnaSptAppSI
 {
     [Activity(Label = "临时测试练习功能表")]
     public class TTTMainListViewActivity : Activity
     {
-        internal static ReadOnlyDictionary<int, Type> FuncDic = new ReadOnlyDictionary<int, Type>(new Dictionary<int, Type>()
+        internal static readonly List<ActivityItem> FuncDic = new List<ActivityItem>()
         {
-            {0,typeof(TTTAnalogClockActivity)},
-            {1,typeof(TTTAsyncAwaitLoadImgActivity)},
-        });
+            new ActivityItem(0, "模拟时钟(Xamarin.AnalogClock)", typeof(TTTAnalogClockActivity), typeof(TTTMainListViewActivity),"https://developer.xamarin.com/samples/mobile/AnalogClock/"),
+            new ActivityItem(1, "异步等待及通知(Xamarin.AsyncAwait,???)", typeof(TTTAsyncAwaitLoadImgActivity), typeof(TTTMainListViewActivity),"https://developer.xamarin.com/samples/mobile/AsyncAwait/,???"),
+            new ActivityItem(2, "下拉刷新(Xamarin.SwipeToRefresh)", typeof(TTTSwipeToRefresh_MainActivity), typeof(TTTMainListViewActivity), "https://developer.xamarin.com/samples/monodroid/SwipeToRefresh/"),
+        };
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
 
             // 设置显示页面
             SetContentView(Resource.Layout.TTTMainListView);
@@ -35,7 +37,7 @@ namespace EZOper.TechTester.AndroidCnaAppSI.Activities
             {
                 _functionListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
-                    var areaName = TTTMainListViewActivity.FuncDic[e.Position];
+                    var areaName = TTTMainListViewActivity.FuncDic[e.Position].Type;
                     var taskDetails = new Intent(this, (areaName));
                     StartActivity(taskDetails);
                 };
@@ -47,7 +49,7 @@ namespace EZOper.TechTester.AndroidCnaAppSI.Activities
             base.OnResume();
             var areaListView = FindViewById<ListView>(Resource.Id.LvwFunctionList);
             //Hook up our adapter to our ListView
-            areaListView.Adapter = new TypeDictionaryAdapter(this, FuncDic);
+            areaListView.Adapter = new ActivityAdapter(this, FuncDic);
         }
     }
 }

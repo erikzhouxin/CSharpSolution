@@ -6,17 +6,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using EZOper.TechTester.CnaSptAppSI.ViewModels;
+using EZOper.TechTester.CnaSptAppSI.Services;
 
-using EZOper.TechTester.AndroidCnaAppSI.ViewModels;
-using EZOper.TechTester.AndroidCnaAppSI.Models;
-
-namespace EZOper.TechTester.AndroidCnaAppSI.Activities
+namespace EZOper.TechTester.CnaSptAppSI
 {
 	[Activity (Label = "模拟钟表")]
 	public class TTTAnalogClockActivity : Activity
 	{
-		AnalogClockViewModel clockView;
-        AnalogClockModel clockModel;
+		TTTAnalogClock_ViewModel clockView;
+        AnalogClockPropertyChangeService clockModel;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -24,12 +23,12 @@ namespace EZOper.TechTester.AndroidCnaAppSI.Activities
 
 			// Set content view to FrameLayout with ClockView.
 			FrameLayout frameLayout = new FrameLayout (this);
-			clockView = new AnalogClockViewModel (this);
+			clockView = new TTTAnalogClock_ViewModel (this);
 			frameLayout.AddView (clockView);
 			SetContentView (frameLayout);
 
 			// Create ClockModel to keep clock updated.
-			clockModel = new AnalogClockModel
+			clockModel = new AnalogClockPropertyChangeService
             {
 				IsSweepSecondHand = true
 			};

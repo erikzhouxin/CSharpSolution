@@ -80,18 +80,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\TTT\TTTAnalogClock_MainActivity.cs" />
+    <Compile Include="Activities\TTT\TTTAsyncAwaitLoad_ImgActivity.cs" />
+    <Compile Include="Activities\TTT\TTTAsyncAwaitLoad_ImgAndNotedActivity.cs" />
     <Compile Include="Activities\TTT\TTTSwipeToRefresh_MainActivity.cs" />
+    <Compile Include="Adapters\TypeDictionaryAdapter.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\Discussion.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Services\TTTAnalogClock_PropertyChangeService.cs" />
     <Compile Include="Services\TTTSwipeToRefresh_PostListFragment.cs" />
     <Compile Include="Services\TTTSwipeToRefresh_ScrollChildSwipeRefreshLayout.cs" />
-    <Compile Include="Activities\TTT\TTTMainListViewActivity.cs" />
+    <Compile Include="Activities\TTTMainListViewActivity.cs" />
     <Compile Include="Models\BodyType.cs" />
     <Compile Include="Services\TTTSwipeToRefresh_VignetteDrawable.cs" />
     <Compile Include="Adapters\ActivityAdapter.cs" />
     <Compile Include="Models\ActivityItem.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\TTTAnalogClock_ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -102,7 +108,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\TTTSwipeToRefresh_Main.axml" />
-    <AndroidResource Include="Resources\layout\TTTSwipeToRefresh_PostItemLayout.axml" />
+    <AndroidResource Include="Resources\layout\TTTSwipeToRefresh_PostItem.axml" />
+    <AndroidResource Include="Resources\layout\TTTAsyncAwaitLoad_ImgAndNoted.axml" />
+    <AndroidResource Include="Resources\layout\TTTAsyncAwaitLoad_Img.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -121,7 +129,6 @@
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="DataAccess\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\TTTSwipeToRefresh_Logo.png" />
@@ -146,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\TTTSwipeToRefresh_Theme.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_addbtn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
