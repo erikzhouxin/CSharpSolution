@@ -7,7 +7,7 @@ using Android.App;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EZOper.TechTester.CnaSptAppSI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("技术探究集(DroidApp)-App缉技集")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("EZOper.TechTester.CnaSptAppSI")]

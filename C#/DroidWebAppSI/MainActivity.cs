@@ -6,12 +6,12 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 using Android.OS;
-using EZOper.TechTester.AndroidWebAppSI.Views;
-using EZOper.TechTester.AndroidWebAppSI.Models;
+using EZOper.TechTester.DroidWebAppSI.Views;
+using EZOper.TechTester.DroidWebAppSI.Models;
 
-namespace EZOper.TechTester.AndroidWebAppSI
+namespace EZOper.TechTester.DroidWebAppSI
 {
-    [Activity(Label = "EZOper.TechTester.AndroidWebAppSI", MainLauncher = true)]
+    [Activity(Label = "Web缉技集", MainLauncher = true)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

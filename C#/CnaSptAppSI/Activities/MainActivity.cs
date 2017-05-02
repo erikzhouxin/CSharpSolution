@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace EZOper.TechTester.CnaSptAppSI
 {
-    [Activity(Label = "技术探究集", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "App缉技集", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         internal static readonly ReadOnlyCollection<ActivityItem> AreaDic = new ReadOnlyCollection<ActivityItem>(new List<ActivityItem>()

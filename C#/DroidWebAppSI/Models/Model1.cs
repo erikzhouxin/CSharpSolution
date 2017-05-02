@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EZOper.TechTester.AndroidWebAppSI.Models
+namespace EZOper.TechTester.DroidWebAppSI.Models
 {
     public class Model1
     {
