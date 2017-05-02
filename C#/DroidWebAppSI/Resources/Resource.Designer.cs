@@ -60,8 +60,8 @@ namespace EZOper.TechTester.DroidWebAppSI
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int webView = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int webView = 2131099648;
 			
 			static Id()
 			{
@@ -89,14 +89,30 @@ namespace EZOper.TechTester.DroidWebAppSI
 			}
 		}
 		
-		public partial class String
+		public partial class Raw
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int ApplicationName = 2130968576;
+			public const int DroidWebAppSI = 2130968576;
 			
-			// aapt resource value: 0x7f040001
-			public const int Hello = 2130968577;
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
+		public partial class String
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int ApplicationName = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int Hello = 2131034113;
 			
 			static String()
 			{
