@@ -11,7 +11,7 @@ using EZOper.TechTester.DroidWebAppSI.Models;
 
 namespace EZOper.TechTester.DroidWebAppSI
 {
-    [Activity(Label = "Web缉技集", MainLauncher = true)]
+    [Activity(Label = "Web缉技集", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
