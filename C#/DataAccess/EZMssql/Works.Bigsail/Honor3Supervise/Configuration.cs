@@ -9,7 +9,8 @@ namespace EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3Supervise
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             MigrationsDirectory = @"EZMssql\Works.Bigsail\Honor3Supervise";
         }
 

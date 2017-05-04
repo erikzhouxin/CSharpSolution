@@ -44,10 +44,10 @@ namespace EZOper.TechTester.DModels
         private static string CalcHashPassword(string password, Guid salt)
         {
             string passwordSalt = password + salt.ToString("N");
-            var s = new SHA1Managed();
+            var sha1 = new SHA1Managed();
             var enc = new UTF8Encoding();
-            s.ComputeHash(enc.GetBytes(passwordSalt));
-            return BitConverter.ToString(s.Hash).Replace("-", "");
+            sha1.ComputeHash(enc.GetBytes(passwordSalt));
+            return BitConverter.ToString(sha1.Hash).Replace("-", "");
         }
     }
 }

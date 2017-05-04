@@ -21,6 +21,5 @@ namespace EZOper.TechTester.DModels.Entities.WorksBigsail
         [Display(Name = "注册名称", Description = "组织注册时的名称,县区为区域名称,学校为简称")]
         public string RegisteredName { get; set; }
 
-        public 
     }
 }
