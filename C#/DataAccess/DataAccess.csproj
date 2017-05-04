@@ -74,6 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EZFirebird\FirebirdHelper.cs" />
+    <Compile Include="EZMssql\Works.Bigsail\Honor3School\Honor3SchoolContext.cs" />
+    <Compile Include="EZMssql\Works.Bigsail\Honor3Supervise\Configuration.cs" />
+    <Compile Include="EZMssql\Works.Bigsail\Honor3Supervise\Honor3SuperviseContext.cs" />
     <Compile Include="EZRedis\RedisConnectionHelp.cs" />
     <Compile Include="EZRedis\RedisHelper.cs" />
     <Compile Include="EZSQLite\SQLiteHelper.cs" />
@@ -92,6 +95,9 @@
       <Project>{5c97e2f8-1559-4084-8c92-a7dc07141e9c}</Project>
       <Name>DModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EZMssql\Works.Bigsail\Honor3Supervise\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net46\System.Data.SQLite.Core.targets')" />

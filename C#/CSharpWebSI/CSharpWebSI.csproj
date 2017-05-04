@@ -48,6 +48,12 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
@@ -61,6 +67,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -153,6 +165,18 @@
     <Compile Include="Areas\Home\Context\UserContext.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Filters\UserAuthorizeAttribute.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Api\BigsailHonor3Controller.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Controllers\PrototypeController.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Controllers\SchoolController.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Controllers\ServiceController.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Controllers\SettingController.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Controllers\SuperviseController.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Context\ConfigContext.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Context\PrototypeContext.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Context\SchoolContext.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Context\SettingContext.cs" />
+    <Compile Include="Areas\Works.Bigsail.Honor3\Context\SuperviseContext.cs" />
     <Compile Include="Areas\ZApi\Context\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\ZApi\Context\HelpPageConfig.cs" />
     <Compile Include="Areas\ZApi\Context\HelpPageConfigurationExtensions.cs" />
@@ -197,6 +221,7 @@
     <Content Include="Content\CSS\ZApi\HelpPage.css" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\CSS\Site.css" />
     <Content Include="ApplicationInsights.config">
@@ -232,20 +257,49 @@
     <Content Include="Areas\ZApi\Views\MHelp\ResourceModel.cshtml" />
     <Content Include="Areas\ZApi\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\ZApi\Views\Shared\_LayoutModel.cshtml" />
-    <Content Include="Areas\ZApi\Views\web.config" />
+    <Content Include="Areas\ZApi\Views\Web.config" />
     <Content Include="App_Data\SQLite\EZOper.TechTester.CSharp.sqlite3" />
-    <None Include="Scripts\Lib\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\Lib\bootstrap.js" />
-    <Content Include="Scripts\Lib\bootstrap.min.js" />
-    <Content Include="Scripts\Lib\jquery-3.1.1.js" />
-    <Content Include="Scripts\Lib\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\Lib\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.js" />
+    <Content Include="Areas\Works.Bigsail.Honor3\Views\Web.config" />
+    <Content Include="Areas\Works.Bigsail.Honor3\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Works.Bigsail.Honor3\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Works.Bigsail.Honor3\Views\Auth\LogOn.cshtml" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.min.css" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\js\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\js\bootstrap.min.js" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\js\npm.js" />
+    <Content Include="Scripts\jQuery\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jQuery\jquery-1.11.3.min.map" />
+    <Content Include="Scripts\jQuery\jquery-2.1.4.min.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jQuery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jQuery\jquery-1.10.2.js" />
+    <Content Include="Scripts\jQuery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jQuery\jquery-1.11.3.js" />
+    <Content Include="Scripts\jQuery\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jQuery\jquery-2.1.4.js" />
+    <Content Include="Scripts\jQuery\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jQuery\jquery-3.1.1-vsdoc.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.js" />
     <None Include="Scripts\Lib\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Lib\jquery.validate.js" />
     <Content Include="Scripts\Lib\jquery.validate.min.js" />
     <Content Include="Scripts\Lib\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\Lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Lib\modernizr-2.6.2.js" />
     <Content Include="Scripts\Lib\modernizr-2.8.3.js" />
     <Content Include="Scripts\Lib\respond.js" />
     <Content Include="Scripts\Lib\respond.matchmedia.addListener.js" />
@@ -269,17 +323,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\AngularJS\" />
-    <Folder Include="Scripts\Bootstrap\" />
-    <Folder Include="Scripts\jQuery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Lib\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BServices\BServices.csproj">
@@ -329,7 +381,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
