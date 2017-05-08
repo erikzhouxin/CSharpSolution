@@ -13,11 +13,11 @@ namespace EZOper.TechTester.DModels
         public UserPassword(string password) : this(Guid.NewGuid(), password) { }
         public UserPassword(Guid salt, string password)
         {
-            Salt = salt;
+            Salt = salt.ToString("N");
             Password = password;
         }
 
-        public Guid Salt { get; private set; }
+        public string Salt { get; private set; }
 
         public string Password { get; private set; }
 
@@ -41,9 +41,9 @@ namespace EZOper.TechTester.DModels
         /// <param name="password"></param>
         /// <param name="salt">盐值</param>
         /// <returns></returns>
-        private static string CalcHashPassword(string password, Guid salt)
+        private static string CalcHashPassword(string password, string salt)
         {
-            string passwordSalt = password + salt.ToString("N");
+            string passwordSalt = password + salt;
             var sha1 = new SHA1Managed();
             var enc = new UTF8Encoding();
             sha1.ComputeHash(enc.GetBytes(passwordSalt));

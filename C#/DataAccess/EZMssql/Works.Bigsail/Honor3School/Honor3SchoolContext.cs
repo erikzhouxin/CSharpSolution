@@ -9,8 +9,7 @@ namespace EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail
 {
     internal class Honor3SchoolContext : DbContext
     {
-        public Honor3SchoolContext()
-            : base("name=WorksBigsailHonor3School")
+        public Honor3SchoolContext() : base("name=WorksBigsailHonor3School")
         {
 
         }

@@ -136,12 +136,11 @@
     # This scaffolds a migrations configuration for MyContext and will put the configuration
     # and subsequent configurations in a new directory called "DirectoryName"
 
-PM> Enable-Migrations -ContextTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3SuperviseContext -MigrationsDirectory EZMssql\Works.Bigsail\Honor3Supervise
+PM> Enable-Migrations -ContextTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3SchoolContext -MigrationsDirectory EZMssql\Works.Bigsail\Honor3School
 
 正在检查上下文的目标是否为现有数据库...
 已为项目 DataAccess 启用 Code First 迁移。
----------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------
+
 PM> GET-HELP Update-Database -FULL
 
 名称
@@ -281,7 +280,7 @@ PM> GET-HELP Update-Database -FULL
     C:\PS>Update-Database -TargetMigration $InitialDatabase
     # Runs the Down method to roll-back any migrations that have been applied to the database
 
-PM> Update-Database -ConfigurationTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3Supervise.Configuration -Verbose
+PM> Update-Database -ConfigurationTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3School.Configuration -Verbose
 
 Using StartUp project 'CSharpWebSI'.
 Using NuGet project 'DataAccess'.
@@ -289,8 +288,7 @@ Using NuGet project 'DataAccess'.
 目标数据库为: “WorksBigsailHonor3Supervise”(DataSource: localhost\MSSQLE14，提供程序: System.Data.SqlClient，来源: Configuration)。
 没有挂起的显式迁移。
 正在运行 Seed 方法。
----------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------
+
 PM> GET-HELP Add-Migration -FULL
 
 名称
@@ -300,7 +298,8 @@ PM> GET-HELP Add-Migration -FULL
 语法
     Add-Migration [-Name] <String> [-Force] [-ProjectName <String>] [-StartUpProjectName <String>] [-ConfigurationTypeName <String>] [-ConnectionStringName <String>] [-IgnoreChanges] [-AppDomainBaseDirectory <String>] [<CommonParameters>]
     
-    Add-Migration [-Name] <String> [-Force] [-ProjectName <String>] [-StartUpProjectName <String>] [-ConfigurationTypeName <String>] -ConnectionString <String> -ConnectionProviderName <String> [-IgnoreChanges] [-AppDomainBaseDirectory <String>] [<CommonParameters>]
+    Add-Migration [-Name] <String> [-Force] [-ProjectName <String>] [-StartUpProjectName <String>] [-ConfigurationTypeName <String>] -ConnectionString <String> -ConnectionProviderName <String> [-IgnoreChanges] [-AppDomainBaseDirectory <String>] [<CommonParameter
+    s>]
 说明
     Scaffolds a new migration script and adds it to the project.
 参数
@@ -407,11 +406,3 @@ PM> GET-HELP Add-Migration -FULL
     # This can be used to create an initial, empty migration to enable Migrations for an existing
     # database. N.B. Doing this assumes that the target database schema is compatible with the
     # current model.
-
-PM> Add-Migration AddInitDatabase -ConfigurationTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3Supervise.Configuration
-
-正在为迁移“AddInitDatabase”搭建基架。
-此迁移文件的设计器代码包含当前 Code First 模型的快照。在下一次搭建迁移基架时，将使用此快照计算对模型的更改。如果对要包含在此迁移中的模型进行其他更改，则您可通过再次运行“Add-Migration AddRegOrg”重新搭建基架。
----------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------
-PM> Update-Database -ConfigurationTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3Supervise.Configuration -Verbose
