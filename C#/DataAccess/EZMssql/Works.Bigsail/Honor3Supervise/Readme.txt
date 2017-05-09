@@ -411,7 +411,7 @@ PM> GET-HELP Add-Migration -FULL
 PM> Add-Migration AddInitDatabase -ConfigurationTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3Supervise.Configuration
 
 正在为迁移“AddInitDatabase”搭建基架。
-此迁移文件的设计器代码包含当前 Code First 模型的快照。在下一次搭建迁移基架时，将使用此快照计算对模型的更改。如果对要包含在此迁移中的模型进行其他更改，则您可通过再次运行“Add-Migration AddRegOrg”重新搭建基架。
+此迁移文件的设计器代码包含当前 Code First 模型的快照。在下一次搭建迁移基架时，将使用此快照计算对模型的更改。如果对要包含在此迁移中的模型进行其他更改，则您可通过再次运行“Add-Migration AddInitDatabase”重新搭建基架。
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 PM> Update-Database -ConfigurationTypeName EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail.Honor3Supervise.Configuration -Verbose

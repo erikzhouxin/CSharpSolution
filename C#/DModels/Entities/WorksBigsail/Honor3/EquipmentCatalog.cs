@@ -22,8 +22,9 @@ namespace EZOper.TechTester.DModels.Entities.WorksBigsail.Honor3
         [Display(Name = "科目标识", Description = "科目标识")]
         public Int64 VersionID { get; set; }
 
-        [Required(ErrorMessage = "{0}是必填字段")]
-        [Column("SchoolType", TypeName = "int")]
+        [MaxLength(16, ErrorMessage = "{0}限制长度16位字符")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "{0}是必填字段")]
+        [Column("SchoolType", TypeName = "nvarchar")]
         [Display(Name = "学校类型", Description = "学校类型")]
         public string SchoolType { get; set; }
 

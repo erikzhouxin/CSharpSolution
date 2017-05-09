@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace EZOper.TechTester.DModels.Entities.WorksBigsail.Honor3
 {
+    [Table("StandardEquipment", Schema = "dbo")]
     public class StandardEquipment
     {
+        [Key]
         [Required(ErrorMessage = "{0}是必填字段")]
         [Column("SerialID", TypeName = "bigint")]
         [Display(Name = "设备标识", Description = "设备标识")]

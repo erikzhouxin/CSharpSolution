@@ -30,5 +30,13 @@ namespace EZOper.TechTester.DataAccess.EZMssql.Works.Bigsail
         public virtual DbSet<StandardEquipment> StandardEquipment { get; set; }
 
         public virtual DbSet<EquipmentCatalog> EquipmentCatalog { get; set; }
+
+        public virtual DbSet<EquipmentCatalogAllocation> EquipmentCatalogAllocation { get;set;}
+
+        public virtual DbSet<EquipmentCatalogDimension> EquipmentCatalogDimension { get; set; }
+
+        public virtual DbSet<EquipmentDimension> EquipmentDimension { get; set; }
+
+        public virtual DbSet<EquipmentRequirement> EquipmentRequirement { get; set; }
     }
 }
