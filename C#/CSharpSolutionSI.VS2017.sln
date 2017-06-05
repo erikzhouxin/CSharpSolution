@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Mod", "0.Mod", "{80758445-121E-4A74-988F-A2244BEA7F4E}"
 EndProject
@@ -52,6 +52,8 @@ EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AppApiShared", "AppApiShared\AppApiShared.shproj", "{5358CA27-A0FB-4DF0-976D-70FD9F809597}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidWebAppSI", "DroidWebAppSI\DroidWebAppSI.csproj", "{FBC87564-0377-4E9C-8AF6-FC65D7E74103}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDitAppFrameWebSI", "DDitAppFrameWebSI\DDitAppFrameWebSI.csproj", "{BC14D765-EA1C-4DDF-B23D-FC69283F1BD3}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -126,6 +128,10 @@ Global
 		{FBC87564-0377-4E9C-8AF6-FC65D7E74103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBC87564-0377-4E9C-8AF6-FC65D7E74103}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FBC87564-0377-4E9C-8AF6-FC65D7E74103}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BC14D765-EA1C-4DDF-B23D-FC69283F1BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC14D765-EA1C-4DDF-B23D-FC69283F1BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC14D765-EA1C-4DDF-B23D-FC69283F1BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC14D765-EA1C-4DDF-B23D-FC69283F1BD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,5 +153,6 @@ Global
 		{57C8F313-4AEE-4995-B55C-564CD5699A41} = {5DA84D11-38F2-4D33-BA95-1109449FCADC}
 		{5358CA27-A0FB-4DF0-976D-70FD9F809597} = {0352B0E0-DAB5-4408-B008-56D7AF179037}
 		{FBC87564-0377-4E9C-8AF6-FC65D7E74103} = {5DA84D11-38F2-4D33-BA95-1109449FCADC}
+		{BC14D765-EA1C-4DDF-B23D-FC69283F1BD3} = {3DB74401-6103-48A6-987E-3AB72C2C66A3}
 	EndGlobalSection
 EndGlobal
