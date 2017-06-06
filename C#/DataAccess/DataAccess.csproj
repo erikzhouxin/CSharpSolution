@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EZMssql\Works.Bigsail\Honor3School\Readme.txt" />
+    <Content Include="EZMssql\Works.Bigsail\Honor3Supervise\Honor3Supervise.Trunk.sql" />
     <Content Include="EZMssql\Works.Bigsail\Honor3Supervise\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
