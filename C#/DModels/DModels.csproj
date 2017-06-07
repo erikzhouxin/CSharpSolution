@@ -40,6 +40,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +68,40 @@
     <Compile Include="Entities\WorksBigsail\Base\SchoolType.cs" />
     <Compile Include="Entities\WorksBigsail\Base\SemesterTypeEnum.cs" />
     <Compile Include="Entities\WorksBigsail\Base\InfoUsageEnum.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\BookEditions.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\CatalogDimensionRelation.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\CommandInfo.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\DatabaseDistribution.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EducationBureauFilesControl.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EducationBureauRegistry.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EducationBureauUsers.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EducationBureau_ExperimentSettings.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EducationLockUnlockOperLog.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EducationUsersSchoolRange.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EquipmentCatalogs.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EquipmentItems.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EquipmentReferenceUnitPrice.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EquipmentStandardDimensions.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\EquipmentStandardRequirements.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\ExperimentItems.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\GroupingExperimentEquipment.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\OperationLog.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\ReferenceUnitPriceProject.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolCatalogInit.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolNotices.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolOrderInfo.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolRegistry.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolRenewFee.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolUserOperInfo.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolUsers.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SchoolYearFilesRegistry.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\StandardSchoolClassifications.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\StandardVersions.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\SysSettingUser.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\VW_BookEdition.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\VW_Category.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\VW_Experiment.cs" />
+    <Compile Include="Entities\WorksBigsail\Honor3\Supervise\VW_ExperimentCategory.cs" />
     <Compile Include="Entities\WorksBigsail\Honor3\EducationBaseInfo.cs" />
     <Compile Include="Entities\WorksBigsail\Honor3\EducationFileInfo.cs" />
     <Compile Include="Entities\WorksBigsail\Honor3\EducationRenewalInfo.cs" />
@@ -106,6 +142,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -83,6 +83,7 @@
     <Compile Include="EZMssql\Works.Bigsail\Honor3Supervise\Configuration.cs" />
     <Compile Include="EZMssql\Works.Bigsail\DatabaseInitializer.cs" />
     <Compile Include="EZMssql\Works.Bigsail\Honor3Supervise\Honor3SuperviseContext.cs" />
+    <Compile Include="EZMssql\Works.Bigsail\Honor3Supervise\Honor3SuperviseEntities.cs" />
     <Compile Include="EZRedis\RedisConnectionHelp.cs" />
     <Compile Include="EZRedis\RedisHelper.cs" />
     <Compile Include="EZSQLite\SQLiteHelper.cs" />
