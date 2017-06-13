@@ -50,6 +50,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.3.1.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -146,9 +152,6 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
@@ -206,7 +209,9 @@
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\Controllers\ManageController.cs" />
     <Compile Include="Areas\Home\Controllers\ReadmeController.cs" />
-    <Compile Include="Areas\ZApi\Controllers\CodesController.cs" />
+    <Compile Include="Context\SysContext.cs" />
+    <Compile Include="Context\TokenResponse.cs" />
+    <Compile Include="Areas\ZApi\Controllers\AuthController.cs" />
     <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
     <Compile Include="Areas\ZApi\Providers\OpenAuthorizationCodeProvider.cs" />
     <Compile Include="Areas\ZApi\Providers\OpenAuthorizationServerProvider.cs" />
@@ -215,7 +220,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Areas\Home\Models\AccountViewModels.cs" />
-    <Compile Include="Areas\Home\Models\IdentityModels.cs" />
+    <Compile Include="Context\IdentityModels.cs" />
     <Compile Include="Areas\Home\Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
@@ -237,6 +242,7 @@
     </Content>
     <Content Include="Areas\ZApi\Views\Web.config" />
     <Content Include="App_Data\SQLite\EZOper.TechTester.OAuth.sqlite3" />
+    <Content Include="Areas\Home\Views\Readme\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -284,7 +290,6 @@
     <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Home\Views\Readme\" />
     <Folder Include="Areas\ZApi\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

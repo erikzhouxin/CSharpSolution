@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace EZOper.TechTester.OWINOAuthWebSI.Models
+namespace EZOper.TechTester.OWINOAuthWebSI.Areas.Home
 {
     public class IndexViewModel
     {

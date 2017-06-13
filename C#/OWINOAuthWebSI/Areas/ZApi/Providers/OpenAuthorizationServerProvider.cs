@@ -118,7 +118,7 @@ namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
         /// </summary>
         public override async Task ValidateAuthorizeRequest(OAuthValidateAuthorizeRequestContext context)
         {
-            if (context.AuthorizeRequest.ClientId == "xishuai" && 
+            if (context.AuthorizeRequest.ClientId == "xishuai" &&
                 (context.AuthorizeRequest.IsAuthorizationCodeGrantType || context.AuthorizeRequest.IsImplicitGrantType))
             {
                 context.Validated();
@@ -150,6 +150,91 @@ namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
             {
                 context.Rejected();
             }
+        }
+    }
+
+    public class ClientOpenAuthorizationServerProvider : OAuthAuthorizationServerProvider
+    {
+        /// <summary>
+        /// 验证 client 信息
+        /// </summary>
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        {
+            string clientId;
+            string clientSecret;
+            if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
+            {
+                context.TryGetFormCredentials(out clientId, out clientSecret);
+            }
+
+            if (clientId != "xishuai" || clientSecret != "123")
+            {
+                context.SetError("invalid_client", "client or clientSecret is not valid");
+                return;
+            }
+            context.Validated();
+        }
+
+        /// <summary>
+        /// 生成 access_token（client credentials 授权方式）
+        /// </summary>
+        public override async Task GrantClientCredentials(OAuthGrantClientCredentialsContext context)
+        {
+            var identity = new ClaimsIdentity(new GenericIdentity(
+                context.ClientId, OAuthDefaults.AuthenticationType),
+                context.Scope.Select(x => new Claim("urn:oauth:scope", x)));
+
+            context.Validated(identity);
+        }
+    }
+
+    public class RownerOpenAuthorizationServerProvider : OAuthAuthorizationServerProvider
+    {
+        /// <summary>
+        /// 验证 client 信息
+        /// </summary>
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        {
+            string clientId;
+            string clientSecret;
+            if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
+            {
+                context.TryGetFormCredentials(out clientId, out clientSecret);
+            }
+
+            if (clientId != "xishuai")
+            {
+                context.SetError("invalid_client", "client is not valid");
+                return;
+            }
+            context.Validated();
+        }
+
+        /// <summary>
+        /// 生成 access_token（resource owner password credentials 授权方式）
+        /// </summary>
+        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        {
+            if (string.IsNullOrEmpty(context.UserName))
+            {
+                context.SetError("invalid_username", "username is not valid");
+                return;
+            }
+            if (string.IsNullOrEmpty(context.Password))
+            {
+                context.SetError("invalid_password", "password is not valid");
+                return;
+            }
+
+            if (context.UserName != "xishuai" || context.Password != "123")
+            {
+                context.SetError("invalid_identity", "username or password is not valid");
+                return;
+            }
+
+            var OAuthIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
+            OAuthIdentity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+            context.Validated(OAuthIdentity);
         }
     }
 }

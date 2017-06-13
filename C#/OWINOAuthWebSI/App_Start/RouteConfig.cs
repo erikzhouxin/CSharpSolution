@@ -13,11 +13,17 @@ namespace EZOper.TechTester.OWINOAuthWebSI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+            AreaRegistrationContext areaRegistrationContext;
+
+            #region // 基础域-Home
+            areaRegistrationContext = new AreaRegistrationContext("Home", routes);
+            areaRegistrationContext.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "EZOper.TechTester.OWINOAuthWebSI.Areas.Home.Controllers" }
             );
+            #endregion
         }
     }
 }

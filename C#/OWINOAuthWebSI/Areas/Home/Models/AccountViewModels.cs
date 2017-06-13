@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace EZOper.TechTester.OWINOAuthWebSI.Models
+namespace EZOper.TechTester.OWINOAuthWebSI.Areas.Home
 {
     public class ExternalLoginConfirmationViewModel
     {

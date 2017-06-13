@@ -8,11 +8,11 @@ using System.Web.Http;
 
 namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
 {
-    public class CodesController : ApiController
+    public class AuthController : ApiController
     {
         [HttpGet]
-        [Route("api/authorization_code")]
-        public HttpResponseMessage Get(string code)
+        //[Route("api/authorization_code")]
+        public HttpResponseMessage GetCode(string code)
         {
             return new HttpResponseMessage()
             {
@@ -21,7 +21,7 @@ namespace EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/access_token")]
+        //[Route("api/access_token")]
         public HttpResponseMessage GetToken()
         {
             var url = Request.RequestUri;

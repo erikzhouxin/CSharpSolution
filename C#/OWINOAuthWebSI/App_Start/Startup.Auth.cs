@@ -5,7 +5,6 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using EZOper.TechTester.OWINOAuthWebSI.Models;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers;
@@ -66,19 +65,65 @@ namespace EZOper.TechTester.OWINOAuthWebSI
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            #region // OWIN 授权方式
+            // 授权码模式
             var OAuthOptions = new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true,
                 AuthenticationMode = AuthenticationMode.Active,
                 TokenEndpointPath = new PathString("/token"), //获取 access_token 认证服务请求地址
                 AuthorizeEndpointPath = new PathString("/authorize"), //获取 authorization_code 认证服务请求地址
-                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(10), //access_token 过期时间
+                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(60), //access_token 过期时间
 
                 Provider = new OpenAuthorizationServerProvider(), //access_token 相关认证服务
                 AuthorizationCodeProvider = new OpenAuthorizationCodeProvider(), //authorization_code 认证服务
                 RefreshTokenProvider = new OpenRefreshTokenProvider() //refresh_token 认证服务
             };
             app.UseOAuthBearerTokens(OAuthOptions); //表示 token_type 使用 bearer 方式
+
+            // 简单模式
+            var ImplicateOAuthOptions = new OAuthAuthorizationServerOptions
+            {
+                AllowInsecureHttp = true,
+                AuthenticationMode = AuthenticationMode.Active,
+                TokenEndpointPath = new PathString("/implicate_token"), //获取 access_token 授权服务请求地址
+                AuthorizeEndpointPath = new PathString("/implicate_authorize"), //获取 authorization_code 授权服务请求地址
+                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(60), //access_token 过期时间
+
+                Provider = new OpenAuthorizationServerProvider(), //access_token 相关授权服务
+                RefreshTokenProvider = new OpenRefreshTokenProvider() //refresh_token 授权服务
+            };
+            app.UseOAuthBearerTokens(ImplicateOAuthOptions);
+
+            // 密码模式
+            var RsrcOwnerOAuthOptions = new OAuthAuthorizationServerOptions
+            {
+                AllowInsecureHttp = true,
+                AuthenticationMode = AuthenticationMode.Active,
+                TokenEndpointPath = new PathString("/rowner_token"), //获取 access_token 授权服务请求地址
+                AuthorizeEndpointPath = new PathString("/rowner_authorize"), //获取 authorization_code 授权服务请求地址
+                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(60), //access_token 过期时间
+
+                Provider = new RownerOpenAuthorizationServerProvider(), //access_token 相关授权服务
+                RefreshTokenProvider = new OpenRefreshTokenProvider() //refresh_token 授权服务
+            };
+            app.UseOAuthBearerTokens(RsrcOwnerOAuthOptions);
+
+            // 客户端模式
+            var ClientOAuthOptions = new OAuthAuthorizationServerOptions
+            {
+                AllowInsecureHttp = true,
+                AuthenticationMode = AuthenticationMode.Active,
+                TokenEndpointPath = new PathString("/client_token"), //获取 access_token 授权服务请求地址
+                AuthorizeEndpointPath = new PathString("/client_authorize"), //获取 authorization_code 授权服务请求地址
+                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(60), //access_token 过期时间
+
+                Provider = new ClientOpenAuthorizationServerProvider(), //access_token 相关授权服务
+                RefreshTokenProvider = new OpenRefreshTokenProvider() //refresh_token 授权服务
+            };
+            app.UseOAuthBearerTokens(ClientOAuthOptions);
+            #endregion
         }
     }
 }
