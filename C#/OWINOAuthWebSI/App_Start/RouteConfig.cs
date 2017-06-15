@@ -14,7 +14,15 @@ namespace EZOper.TechTester.OWINOAuthWebSI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             AreaRegistrationContext areaRegistrationContext;
-
+            #region // 接口域
+            areaRegistrationContext = new AreaRegistrationContext("ZApi", routes);
+            areaRegistrationContext.MapRoute(
+                 name: "ZApi",
+                 url: "ZApi/{controller}/{action}/{id}",
+                 defaults: new { controller = "Help", action = "Api", id = UrlParameter.Optional },
+                 namespaces: new[] { "EZOper.TechTester.OWINOAuthWebSI.Areas.ZApi.Controllers" }
+             );
+            #endregion
             #region // 基础域-Home
             areaRegistrationContext = new AreaRegistrationContext("Home", routes);
             areaRegistrationContext.MapRoute(

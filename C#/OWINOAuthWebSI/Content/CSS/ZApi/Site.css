@@ -1,0 +1,41 @@
+﻿body { padding-top: 50px; padding-bottom: 20px; font-family: 'Microsoft YaHei','Microsoft YaHei UI'; background: none; }
+
+/* Set padding to keep content from hitting the edges */
+.body-content { padding-left: 15px; padding-right: 15px; }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt { white-space: normal; }
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,select,textarea { max-width: 280px; }
+
+/* Get Style Sheet From Works.Bigsail.Honor3 */
+.control-label::after { content: "："; }
+.form-group .radio-inline, .form-group label.checkbox-inline { margin: 0 1em 0 0; }
+.form-group label.checkbox { display: inline-block; margin: 0 1.8em 0 0; }
+table.table-combine > thead > tr > th, table.table-combine > tbody > tr > td { text-align: center; vertical-align: middle; white-space: nowrap; word-break: keep-all; }
+.table-responsive { overflow-x: auto; }
+.queryList a { padding-right: 3em; }
+.form-horizontal .required::before { content: "*"; color: red; vertical-align: middle; margin-right: .3em; }
+.dropdown-menu { min-width: 120px; }
+    .dropdown-menu li { text-align: left; }
+.text-overflow-200 { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.divider { clear: both; }
+.control-label-fixed { text-align: right; line-height: 34px; }
+/* 设置提示文字颜色 */
+.placeholder::-webkit-input-placeholder { color: #999; }
+.placeholder:-moz-placeholder { color: #999; }
+.placeholder::-moz-placeholder { color: #999; }
+.placeholder:-ms-input-placeholder { color: #999; }
+.placeholder { color: #999; }
+.callout h4, .callout p { font-size: 14px; font-family: Microsoft YaHei; }
+.callout { padding: 10px 20px; }
+table > tbody > tr > td.accountant-money { text-align: right; }
+    table > tbody > tr > td.accountant-money:before { content: "¥"; float: left; }
+.form-inline .ui-checkbox input[type=checkbox]:checked + span:after { top: 15px; left: -5px; }
+.form-inline .ui-checkbox { line-height: 34px; padding-left: 10px; margin-bottom: 0px; }
+.form-inline .form-group { padding-left: 10px; margin-bottom: 10px; }
+.form-inline .input-group > .form-control { width: auto; }
+.tab-content .tab-pane { padding-top: 10px; }
