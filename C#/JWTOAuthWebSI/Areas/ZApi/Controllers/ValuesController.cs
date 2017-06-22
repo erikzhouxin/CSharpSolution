@@ -1,37 +1,43 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Web.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EZOper.TechTester.JWTOAuthWebSI.Areas.ZApi.Controllers
 {
-    [Authorize]
-    public class ValuesController : ApiController
+    [Produces("application/json")]
+    public class ValuesController : AreaBaseController
     {
-        // GET /api/values
+        // GET: api/Values
+        [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Value", DateTime.Now.Ticks.ToString() };
+            return new string[] { "value1", "value2" };
         }
 
-        // GET /api/values/5
+        // GET: api/Values/5
+        [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
-
-        // POST /api/values
-        public void Post(string value)
+        
+        // POST: api/Values
+        [HttpPost]
+        public void Post([FromBody]string value)
         {
         }
-
-        // PUT /api/values/5
-        public void Put(int id, string value)
+        
+        // PUT: api/Values/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]string value)
         {
         }
-
-        // DELETE /api/values/5
+        
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
         }

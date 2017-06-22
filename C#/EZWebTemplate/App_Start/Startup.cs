@@ -1,11 +1,5 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
+﻿using Microsoft.Owin;
 using Owin;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.OAuth;
 using System.Web.Http;
 
 [assembly: OwinStartupAttribute(typeof(EZOper.TechTester.EZWebTemplate.Startup))]

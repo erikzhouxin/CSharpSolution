@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DA2C531C-B9AC-4A8E-8F14-9A5E40D2D23C}</ProjectGuid>
+    <ProjectGuid>{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -48,12 +48,6 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
@@ -75,21 +69,15 @@
     <Reference Include="Microsoft.ApplicationInsights, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.3.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
@@ -102,9 +90,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -186,21 +171,36 @@
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Help\Controllers\ZApiController.cs" />
-    <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Help\Context\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\Help\Context\HelpPageConfig.cs" />
     <Compile Include="Areas\Help\Context\HelpPageConfigurationExtensions.cs" />
     <Compile Include="Areas\Help\Context\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\Help\Controllers\HomeController.cs" />
-    <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
+    <Compile Include="Areas\Help\Controllers\ZApiController.cs" />
     <Compile Include="Areas\Help\ModelDescriptions\CollectionModelDescription.cs" />
     <Compile Include="Areas\Help\ModelDescriptions\ComplexTypeModelDescription.cs" />
     <Compile Include="Areas\Help\ModelDescriptions\DictionaryModelDescription.cs" />
@@ -223,11 +223,14 @@
     <Compile Include="Areas\Help\SampleGeneration\ObjectGenerator.cs" />
     <Compile Include="Areas\Help\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\Help\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
     <Compile Include="Context\SysContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Start\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SQLite\EZWebTemplate.sql" />
@@ -236,12 +239,17 @@
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="Content\CSS\help.apihelppage.css" />
+    <Content Include="Content\CSS\Site.css" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Help\Readme.txt" />
     <Content Include="Content\Images\favicon.ico" />
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Scripts\help.apihelper.js" />
+    <Content Include="Content\Scripts\help.newbase64.js" />
     <Content Include="Global.asax" />
-    <Content Include="Content\CSS\Site.css" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\SQLite\EZWebTemplate.sqlite3" />
     <Content Include="Scripts\Angular.Base64\v2.0.4\angular-base64.js" />
     <Content Include="Scripts\Angular.Base64\v2.0.4\angular-base64.min.js" />
     <Content Include="Scripts\Angular.UI.Bootstrap\v2.5.0\ui-bootstrap-csp.css" />
@@ -293,42 +301,13 @@
     <Content Include="Scripts\jQuery\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jQuery\jquery-2.1.4.js" />
     <Content Include="Scripts\jQuery\jquery-2.1.4.min.js" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css.map" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css.map" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css.map" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.min.css.map" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-animate.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-aria.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-cookies.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-loader.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-message-format.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-messages.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-parse-ext.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-resource.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-route.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-sanitize.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular-touch.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\angular.min.js.map" />
-    <Content Include="Scripts\Angular\v1.6.4\errors.json" />
-    <Content Include="Scripts\Angular\v1.6.4\version.json" />
-    <None Include="Scripts\jQuery\jquery-3.1.1-vsdoc.js" />
-    <None Include="Scripts\jQuery\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jQuery\jquery-3.1.1.js" />
-    <Content Include="Scripts\jQuery\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.js" />
-    <Content Include="Scripts\Lib\bootstrap.js" />
-    <Content Include="Scripts\Lib\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\SQLite\EZWebTemplate.sqlite3" />
-    <Content Include="Areas\ZApi\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Help\Views\ZApi\TestApi.cshtml" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Help\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Help\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Help\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Help\Views\Web.config" />
     <Content Include="Areas\Help\Views\ZApi\Api.cshtml" />
     <Content Include="Areas\Help\Views\ZApi\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\Help\Views\ZApi\DisplayTemplates\CollectionModelDescription.cshtml" />
@@ -345,18 +324,26 @@
     <Content Include="Areas\Help\Views\ZApi\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
     <Content Include="Areas\Help\Views\ZApi\DisplayTemplates\TextSample.cshtml" />
     <Content Include="Areas\Help\Views\ZApi\Index.cshtml" />
-    <Content Include="Areas\Help\Views\ZApi\ResourceModel.cshtml" />
-    <Content Include="Areas\Help\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Help\Views\ZApi\LayoutModel.cshtml" />
+    <Content Include="Areas\Help\Views\ZApi\ResourceModel.cshtml" />
+    <Content Include="Areas\Help\Views\ZApi\TestApi.cshtml" />
+    <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Home\Views\Home\About.cshtml" />
+    <Content Include="Areas\Home\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\Home\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Home\Views\Web.config" />
+    <Content Include="Areas\ZApi\Views\_ViewStart.cshtml" />
     <Content Include="Areas\ZApi\Views\Web.config" />
-    <Content Include="Areas\Help\Views\Web.config" />
-    <Content Include="Areas\Help\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Help\Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jQuery\jquery-1.10.2.min.map" />
-    <Content Include="Scripts\jQuery\jquery-1.11.3.min.map" />
-    <Content Include="Scripts\jQuery\jquery-2.1.4.min.map" />
-    <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
-    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.map" />
+    <None Include="Scripts\jQuery\jquery-3.1.1-vsdoc.js" />
+    <None Include="Scripts\jQuery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\Lib\bootstrap.js" />
+    <Content Include="Scripts\Lib\bootstrap.min.js" />
     <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.js" />
     <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
@@ -375,31 +362,90 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Areas\Home\Views\Web.config" />
-    <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Home\Views\Shared\Error.cshtml" />
-    <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Home\Views\Home\About.cshtml" />
-    <Content Include="Areas\Home\Views\Home\Contact.cshtml" />
-    <Content Include="Areas\Home\Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\Lib\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Help\Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\Angular\v1.6.4\angular-animate.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Lib\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\Angular\v1.6.4\angular-aria.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-cookies.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-loader.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-message-format.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-messages.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-parse-ext.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-resource.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-route.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-sanitize.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular-touch.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\angular.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\errors.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Angular\v1.6.4\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\css\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Bootstrap\v3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jQuery\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jQuery\jquery-1.11.3.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jQuery\jquery-2.1.4.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Help\Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -417,9 +463,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>42954</DevelopmentServerPort>
+          <DevelopmentServerPort>29258</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:42958/</IISUrl>
+          <IISUrl>http://localhost:29258/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -433,9 +479,9 @@
     <PropertyGroup>
       <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
