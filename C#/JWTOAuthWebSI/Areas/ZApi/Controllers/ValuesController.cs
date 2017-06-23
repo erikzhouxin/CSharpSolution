@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EZOper.TechTester.JWTOAuthWebSI.Areas.ZApi.Controllers
 {
     [Produces("application/json")]
+    [CustomAuthorizeAttribute]
     public class ValuesController : AreaBaseController
     {
         // GET: api/Values
@@ -19,23 +21,23 @@ namespace EZOper.TechTester.JWTOAuthWebSI.Areas.ZApi.Controllers
 
         // GET: api/Values/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public string Get(int id, string name)
         {
             return "value";
         }
-        
+
         // POST: api/Values
         [HttpPost]
         public void Post([FromBody]string value)
         {
         }
-        
+
         // PUT: api/Values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
