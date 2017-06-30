@@ -1,0 +1,701 @@
+@{
+    ViewData["Title"] = "测试Jwt授权方式";
+}
+<style type="text/css">
+    .form-group-lable { text-align: right; float: left; width: 100px; padding: 6px 12px; }
+</style>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading1">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                    1.授权码模式(AuthorizationCode)
+                </a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+            <div class="panel-body">
+                <p>第一步:</p>
+                <form id="AuthCode01" action="/testauthcodeauthorize" method="post" class="form-horizontal col-xs-12">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" readonly value="authorization_code" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="response_type">返回类型:</label>
+                        <input type="text" id="response_type" name="response_type" class="form-control" readonly value="code" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端标识:</label>
+                        <input type="text" id="client_id" name="client_id" class="form-control" value="xishuai" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="redirect_uri">返回URL:</label>
+                        <input type="text" id="redirect_uri" name="redirect_uri" class="form-control" value="/Api/TestOAuth/GetCode" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode01" class="btn btn-primary">GetAuthCode</button>
+                    </div>
+                </form>
+                <p>第二步:</p>
+                <form id="AuthCode02" action="/testauthcodetoken" method="post" class="form-horizontal col-xs-12">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" readonly value="authorization_code" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="authorization_code" title="第一步返回值">返回代码:</label>
+                        <input type="text" id="return_code" name="code" class="form-control" readonly value="" data-toggle="tooltip" data-placement="top" title="第一步返回值" placeholder="第一步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="redirect_uri">返回URL:</label>
+                        <input type="text" id="redirect_uri" name="redirect_uri" class="form-control" value="/Api/TestOAuth/GetCode" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端标识:</label>
+                        <input type="text" id="clientId" class="form-control" value="xishuai" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端密码:</label>
+                        <input type="password" id="clientSecret" class="form-control" value="123" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode02" class="btn btn-primary" disabled>GetToken</button>
+                    </div>
+                </form>
+                <p>第三步:</p>
+                <form id="AuthCode03" action="/Api/TestOAuth/GetValue" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">授权码类型:</label>
+                        <input type="text" id="token_type" name="token_type" class="form-control" value="Bearer" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">访问授权码:</label>
+                        <input type="text" id="access_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第二步返回值" placeholder="第二步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">刷新授权码:</label>
+                        <input type="text" id="refresh_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第二步返回值" placeholder="第二步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" value="refresh_token" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode03" class="btn btn-primary" disabled>GetValue</button>
+                        &nbsp;
+                        <button type="button" id="GetAuthCode04" class="btn btn-primary" data-access-url="/testauthcodetoken" disabled><span class="glyphicon glyphicon-refresh"></span> RefreshToken</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">获取数据:</label>
+                        <input type="text" id="getvalue" class="form-control" value="" readonly />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading2">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                    2.简单模式(Implicit)
+                </a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+            <div class="panel-body">
+                <p>第一步:</p>
+                <form id="AuthCode11" action="/testimplicateauthorize" method="post" class="form-horizontal col-xs-12">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="response_type">返回类型:</label>
+                        <input type="text" id="response_type" name="response_type" class="form-control" readonly value="token" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端标识:</label>
+                        <input type="text" id="client_id" name="client_id" class="form-control" value="xishuai" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="redirect_uri">返回URL:</label>
+                        <input type="text" id="redirect_uri" name="redirect_uri" class="form-control" value="/Api/TestOAuth/GetToken" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode11" class="btn btn-primary">GetToken</button>
+                    </div>
+                </form>
+                <p>第二步:</p>
+                <form id="AuthCode12" action="/Api/TestOAuth/GetValue" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">授权码类型:</label>
+                        <input type="text" id="token_type" name="token_type" class="form-control" value="Bearer" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">访问授权码:</label>
+                        <input type="text" id="access_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第一步返回值" placeholder="第一步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode12" class="btn btn-primary" disabled>GetValue</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">获取数据:</label>
+                        <input type="text" id="getvalue" class="form-control" value="" readonly />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading3">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                    3.密码模式(Password)
+                </a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+            <div class="panel-body">
+                <p>第一步:</p>
+                <form id="AuthCode21" action="/testpasswordtoken" method="post" class="form-horizontal col-xs-12">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" readonly value="password" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="username">用户名:</label>
+                        <input type="text" id="username" name="username" class="form-control" readonly value="xishuai" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="password">用户密码:</label>
+                        <input type="password" id="password" name="password" class="form-control" value="123" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端标识:</label>
+                        <input type="text" id="clientId" class="form-control" value="xishuai" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端密码:</label>
+                        <input type="password" id="clientSecret" class="form-control" value="123" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode21" class="btn btn-primary">GetToken</button>
+                    </div>
+                </form>
+                <p>第二步:</p>
+                <form id="AuthCode22" action="/Api/TestOAuth/GetValue" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">授权码类型:</label>
+                        <input type="text" id="token_type" name="token_type" class="form-control" value="Bearer" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">访问授权码:</label>
+                        <input type="text" id="access_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第一步返回值" placeholder="第一步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">刷新授权码:</label>
+                        <input type="text" id="refresh_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第一步返回值" placeholder="第一步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" value="refresh_token" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode22" class="btn btn-primary" disabled>GetValue</button>
+                        &nbsp;
+                        <button type="button" id="GetAuthCode23" class="btn btn-primary" data-access-url="/testpasswordtoken" disabled><span class="glyphicon glyphicon-refresh"></span> RefreshToken</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">获取数据:</label>
+                        <input type="text" id="getvalue" class="form-control" value="" readonly />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading4">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                    4.客户端模式(ClientCredentials)
+                </a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+            <div class="panel-body">
+                <p>第一步:</p>
+                <form id="AuthCode31" action="/testclienttoken" method="post" class="form-horizontal col-xs-12">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" readonly value="client_credentials" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端标识:</label>
+                        <input type="text" id="clientId" class="form-control" value="xishuai" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="client_id">客户端密码:</label>
+                        <input type="password" id="clientSecret" class="form-control" value="123" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode31" class="btn btn-primary">GetToken</button>
+                    </div>
+                </form>
+                <p>第二步:</p>
+                <form id="AuthCode32" action="/Api/TestOAuth/GetValue" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">授权码类型:</label>
+                        <input type="text" id="token_type" name="token_type" class="form-control" value="Bearer" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">访问授权码:</label>
+                        <input type="text" id="access_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第一步返回值" placeholder="第一步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="">刷新授权码:</label>
+                        <input type="text" id="refresh_token" class="form-control" value="" readonly data-toggle="tooltip" data-placement="top" title="第一步返回值" placeholder="第一步返回值" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="grant_type">授权类型:</label>
+                        <input type="text" id="grant_type" name="grant_type" class="form-control" value="refresh_token" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable"></label>
+                        <button type="button" id="GetAuthCode32" class="btn btn-primary" disabled>GetValue</button>
+                        &nbsp;
+                        <button type="button" id="GetAuthCode33" class="btn btn-primary" data-access-url="/testclienttoken" disabled><span class="glyphicon glyphicon-refresh"></span> RefreshToken</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-lable" for="token_type">获取数据:</label>
+                        <input type="text" id="getvalue" class="form-control" value="" readonly />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScript{
+    <script type="text/javascript">
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+            $('#AuthCode01 #redirect_uri').val('http://' + location.host + $('#AuthCode01 #redirect_uri').val());
+            $('#AuthCode02 #redirect_uri').val('http://' + location.host + $('#AuthCode02 #redirect_uri').val());
+            $('#AuthCode11 #redirect_uri').val('http://' + location.host + $('#AuthCode11 #redirect_uri').val());
+            AuthCode02Timer = window.setTimeout(function () { }, 1000);
+            AuthCode12Timer = window.setTimeout(function () { }, 1000);
+            AuthCode22Timer = window.setTimeout(function () { }, 1000);
+            AuthCode32Timer = window.setTimeout(function () { }, 1000);
+            $('#GetAuthCode01').on('click', function () {
+                var formEle = $('#AuthCode01');
+                var postUrl = formEle.attr('action');
+                var postData = formEle.serialize();
+                $.ajax({
+                    type: "GET",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode02 #return_code').val(data);
+                        $('#GetAuthCode02').removeAttr('disabled');
+                        window.clearTimeout(AuthCode02Timer);
+                        $('#GetAuthCode03').attr('disabled', true);
+                        $('#GetAuthCode04').attr('disabled', true);
+                    },
+                    error: function (data) {
+                        $('#AuthCode02 #return_code').val(data.responseText + '');
+                        $('#GetAuthCode02').attr('disabled', true);
+                        $('#GetAuthCode03').attr('disabled', true);
+                        $('#GetAuthCode04').attr('disabled', true);
+                    },
+                });
+            });
+            $('#GetAuthCode02').on('click', function () {
+                var formEle = $('#AuthCode02');
+                var postUrl = formEle.attr('action');
+                var postData = formEle.serialize();
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode03 #access_token').val(data.access_token);
+                        $('#AuthCode03 #refresh_token').val(data.refresh_token);
+                        window.clearTimeout(AuthCode02Timer);
+                        AuthCode02Timer = window.setTimeout(function () {
+                            $('#GetAuthCode02').attr('disabled', true);
+                            $('#GetAuthCode03').attr('disabled', true);
+                        }, data.expires_in * 1000);
+                        $('#GetAuthCode02').attr('disabled', true);
+                        $('#GetAuthCode03').removeAttr('disabled');
+                        $('#GetAuthCode04').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        $('#AuthCode03 #access_token').val(data.responseText + '');
+                        $('#AuthCode03 #refresh_token').val('{ status: ' + data.status + ', statusText: ' + data.statusText + ' }');
+                        $('#GetAuthCode02').attr('disabled', true);
+                        $('#GetAuthCode03').attr('disabled', true);
+                        $('#GetAuthCode04').attr('disabled', true);
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Basic ' + new Base64().encode($('#AuthCode02 #clientId').val() + ':' + $('#AuthCode02 #clientSecret').val()));
+                    }
+                });
+            });
+            $('#GetAuthCode03').on('click', function () {
+                var formEle = $('#AuthCode03');
+                var postUrl = formEle.attr('action');
+                $.ajax({
+                    type: "GET",
+                    url: postUrl,
+                    success: function (data) {
+                        $('#AuthCode03 #getvalue').val(data);
+                    },
+                    error: function (data) {
+                        $('#AuthCode03 #getvalue').val(data.responseText + '');
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + $('#AuthCode03 #access_token').val());
+                    }
+                });
+            });
+            $('#GetAuthCode04').on('click', function () {
+                var postUrl = $(this).attr('data-access-url');
+                var postData = { grant_type: $('#AuthCode03 #grant_type').val(), refresh_token: $('#AuthCode03 #refresh_token').val() };
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode03 #access_token').val(data.access_token);
+                        $('#AuthCode03 #refresh_token').val(data.refresh_token);
+                        window.clearTimeout(AuthCode02Timer);
+                        AuthCode02Timer = window.setTimeout(function () {
+                            $('#GetAuthCode03').attr('disabled', true);
+                        }, data.expires_in * 1000);
+                        $('#GetAuthCode03').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        $('#AuthCode03 #access_token').val(data.responseText + '');
+                        $('#AuthCode03 #refresh_token').val('{ status: ' + data.status + ', statusText: ' + data.statusText + ' }');
+                        $('#GetAuthCode02').attr('disabled', true);
+                        $('#GetAuthCode03').attr('disabled', true);
+                        $('#GetAuthCode04').attr('disabled', true);
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Basic ' + new Base64().encode($('#AuthCode02 #clientId').val() + ':' + $('#AuthCode02 #clientSecret').val()));
+                    }
+                });
+            });
+            $('#GetAuthCode11').on('click', function () {
+                var formEle = $('#AuthCode11');
+                var postUrl = formEle.attr('action');
+                var postData = formEle.serialize();
+                var accessUrl = postUrl + '?' + postData;
+                //document.getElementById("tokenframe").contentWindow.location.href = accessUrl;//此方法只能下一次才能获取到当前的href
+                var iframe = document.createElement("iframe");
+                iframe.src = accessUrl;
+                iframe.style.display = 'none';
+                if (iframe.attachEvent) {
+                    iframe.attachEvent("onload", function () {
+                        FindKeysInUrl(iframe.contentWindow.location);
+                    });
+                } else {
+                    iframe.onload = function () {
+                        FindKeysInUrl(iframe.contentWindow.location);
+                    };
+                }
+                $('#AuthCode11').append(iframe);
+            });
+            $('#GetAuthCode12').on('click', function () {
+                var formEle = $('#AuthCode12');
+                var postUrl = formEle.attr('action');
+                $.ajax({
+                    type: "GET",
+                    url: postUrl,
+                    success: function (data) {
+                        $('#AuthCode12 #getvalue').val(data);
+                    },
+                    error: function (data) {
+                        $('#AuthCode12 #getvalue').val(data.responseText + '');
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + $('#AuthCode12 #access_token').val());
+                    }
+                });
+            });
+            $('#GetAuthCode21').on('click', function () {
+                var formEle = $('#AuthCode21');
+                var postUrl = formEle.attr('action');
+                var postData = formEle.serialize();
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode22 #access_token').val(data.access_token);
+                        $('#AuthCode22 #refresh_token').val(data.refresh_token);
+                        window.clearTimeout(AuthCode22Timer);
+                        AuthCode22Timer = window.setTimeout(function () {
+                            $('#GetAuthCode22').attr('disabled', true);
+                        }, data.expires_in * 1000);
+                        $('#GetAuthCode22').removeAttr('disabled');
+                        $('#GetAuthCode23').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        $('#AuthCode22 #access_token').val(data.responseText + '');
+                        $('#AuthCode22 #refresh_token').val('{ status: ' + data.status + ', statusText: ' + data.statusText + ' }');
+                        $('#GetAuthCode22').attr('disabled', true);
+                        $('#GetAuthCode23').attr('disabled', true);
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Basic ' + new Base64().encode($('#AuthCode21 #clientId').val() + ':' + $('#AuthCode21 #clientSecret').val()));
+                    }
+                });
+            });
+            $('#GetAuthCode22').on('click', function () {
+                var formEle = $('#AuthCode22');
+                var postUrl = formEle.attr('action');
+                $.ajax({
+                    type: "GET",
+                    url: postUrl,
+                    success: function (data) {
+                        $('#AuthCode22 #getvalue').val(data);
+                    },
+                    error: function (data) {
+                        $('#AuthCode22 #getvalue').val(data.responseText + '');
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + $('#AuthCode22 #access_token').val());
+                    }
+                });
+            });
+            $('#GetAuthCode23').on('click', function () {
+                var postUrl = $(this).attr('data-access-url');
+                var postData = { grant_type: $('#AuthCode22 #grant_type').val(), refresh_token: $('#AuthCode22 #refresh_token').val() };
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode22 #access_token').val(data.access_token);
+                        $('#AuthCode22 #refresh_token').val(data.refresh_token);
+                        window.clearTimeout(AuthCode22Timer);
+                        AuthCode22Timer = window.setTimeout(function () {
+                            $('#GetAuthCode22').attr('disabled', true);
+                        }, data.expires_in * 1000);
+                        $('#GetAuthCode22').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        $('#AuthCode22 #access_token').val(data.responseText + '');
+                        $('#AuthCode22 #refresh_token').val('{ status: ' + data.status + ', statusText: ' + data.statusText + ' }');
+                        $('#GetAuthCode22').attr('disabled', true);
+                        $('#GetAuthCode23').attr('disabled', true);
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Basic ' + new Base64().encode($('#AuthCode21 #clientId').val() + ':' + $('#AuthCode21 #clientSecret').val()));
+                    }
+                });
+            });
+            $('#GetAuthCode31').on('click', function () {
+                var formEle = $('#AuthCode31');
+                var postUrl = formEle.attr('action');
+                var postData = formEle.serialize();
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode32 #access_token').val(data.access_token);
+                        $('#AuthCode32 #refresh_token').val(data.refresh_token);
+                        window.clearTimeout(AuthCode32Timer);
+                        AuthCode32Timer = window.setTimeout(function () {
+                            $('#GetAuthCode32').attr('disabled', true);
+                        }, data.expires_in * 1000);
+                        $('#GetAuthCode32').removeAttr('disabled');
+                        $('#GetAuthCode33').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        $('#AuthCode32 #access_token').val(data.responseText + '');
+                        $('#AuthCode32 #refresh_token').val('{ status: ' + data.status + ', statusText: ' + data.statusText + ' }');
+                        $('#GetAuthCode32').attr('disabled', true);
+                        $('#GetAuthCode33').attr('disabled', true);
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Basic ' + new Base64().encode($('#AuthCode31 #clientId').val() + ':' + $('#AuthCode31 #clientSecret').val()));
+                    }
+                });
+            });
+            $('#GetAuthCode32').on('click', function () {
+                var formEle = $('#AuthCode32');
+                var postUrl = formEle.attr('action');
+                $.ajax({
+                    type: "GET",
+                    url: postUrl,
+                    success: function (data) {
+                        $('#AuthCode32 #getvalue').val(data);
+                    },
+                    error: function (data) {
+                        $('#AuthCode32 #getvalue').val(data.responseText + '');
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + $('#AuthCode32 #access_token').val());
+                    }
+                });
+            });
+            $('#GetAuthCode33').on('click', function () {
+                var postUrl = $(this).attr('data-access-url');
+                var postData = { grant_type: $('#AuthCode32 #grant_type').val(), refresh_token: $('#AuthCode32 #refresh_token').val() };
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: postData,
+                    success: function (data) {
+                        $('#AuthCode32 #access_token').val(data.access_token);
+                        $('#AuthCode32 #refresh_token').val(data.refresh_token);
+                        window.clearTimeout(AuthCode22Timer);
+                        AuthCode32Timer = window.setTimeout(function () {
+                            $('#GetAuthCode32').attr('disabled', true);
+                        }, data.expires_in * 1000);
+                        $('#GetAuthCode32').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        $('#AuthCode32 #access_token').val(data.responseText + '');
+                        $('#AuthCode32 #refresh_token').val('{ status: ' + data.status + ', statusText: ' + data.statusText + ' }');
+                        $('#GetAuthCode32').attr('disabled', true);
+                        $('#GetAuthCode33').attr('disabled', true);
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Basic ' + new Base64().encode($('#AuthCode31 #clientId').val() + ':' + $('#AuthCode31 #clientSecret').val()));
+                    }
+                });
+            });
+        });
+        function FindKeysInUrl(url) {
+            if (url.hash.length > 1) {
+                var keys = url.hash.substring(1).split("&");;
+                for (var i = 0; i < keys.length; i++) {
+                    var item = keys[i];
+                    if (item.indexOf('access_token=') !== -1) {
+                        $('#AuthCode12 #access_token').val(item.replace('access_token=', ''));
+                    }
+                    if (item.indexOf('expires_in=') !== -1) {
+                        var expires_in = item.replace('expires_in=', '');
+                        window.clearTimeout(AuthCode02Timer);
+                        AuthCode02Timer = window.setTimeout(function () {
+                            $('#GetAuthCode12').attr('disabled', true);
+                        }, expires_in * 1000);
+                        $('#GetAuthCode12').removeAttr('disabled');
+                    }
+                }
+            } else {
+                $('#AuthCode12 #access_token').val("获取错误");
+                $('#GetAuthCode12').attr('disabled', true);
+            }
+            $('#AuthCode11 iframe:first').remove();
+        }
+    </script>
+    <script type="text/javascript">
+        function Base64() {
+            // private property
+            _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+            // public method for encoding
+            this.encode = function (input) {
+                var output = "";
+                var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+                var i = 0;
+                input = _utf8_encode(input);
+                while (i < input.length) {
+                    chr1 = input.charCodeAt(i++);
+                    chr2 = input.charCodeAt(i++);
+                    chr3 = input.charCodeAt(i++);
+                    enc1 = chr1 >> 2;
+                    enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                    enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                    enc4 = chr3 & 63;
+                    if (isNaN(chr2)) {
+                        enc3 = enc4 = 64;
+                    } else if (isNaN(chr3)) {
+                        enc4 = 64;
+                    }
+                    output = output +
+                        _keyStr.charAt(enc1) + _keyStr.charAt(enc2) +
+                        _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+                }
+                return output;
+            }
+            // public method for decoding
+            this.decode = function (input) {
+                var output = "";
+                var chr1, chr2, chr3;
+                var enc1, enc2, enc3, enc4;
+                var i = 0;
+                input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+                while (i < input.length) {
+                    enc1 = _keyStr.indexOf(input.charAt(i++));
+                    enc2 = _keyStr.indexOf(input.charAt(i++));
+                    enc3 = _keyStr.indexOf(input.charAt(i++));
+                    enc4 = _keyStr.indexOf(input.charAt(i++));
+                    chr1 = (enc1 << 2) | (enc2 >> 4);
+                    chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                    chr3 = ((enc3 & 3) << 6) | enc4;
+                    output = output + String.fromCharCode(chr1);
+                    if (enc3 != 64) {
+                        output = output + String.fromCharCode(chr2);
+                    }
+                    if (enc4 != 64) {
+                        output = output + String.fromCharCode(chr3);
+                    }
+                }
+                output = _utf8_decode(output);
+                return output;
+            }
+            // private method for UTF-8 encoding
+            _utf8_encode = function (string) {
+                string = string.replace(/\r\n/g, "\n");
+                var utftext = "";
+                for (var n = 0; n < string.length; n++) {
+                    var c = string.charCodeAt(n);
+                    if (c < 128) {
+                        utftext += String.fromCharCode(c);
+                    } else if ((c > 127) && (c < 2048)) {
+                        utftext += String.fromCharCode((c >> 6) | 192);
+                        utftext += String.fromCharCode((c & 63) | 128);
+                    } else {
+                        utftext += String.fromCharCode((c >> 12) | 224);
+                        utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                        utftext += String.fromCharCode((c & 63) | 128);
+                    }
+
+                }
+                return utftext;
+            }
+            // private method for UTF-8 decoding
+            _utf8_decode = function (utftext) {
+                var string = "";
+                var i = 0;
+                var c = c1 = c2 = 0;
+                while (i < utftext.length) {
+                    c = utftext.charCodeAt(i);
+                    if (c < 128) {
+                        string += String.fromCharCode(c);
+                        i++;
+                    } else if ((c > 191) && (c < 224)) {
+                        c2 = utftext.charCodeAt(i + 1);
+                        string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                        i += 2;
+                    } else {
+                        c2 = utftext.charCodeAt(i + 1);
+                        c3 = utftext.charCodeAt(i + 2);
+                        string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                        i += 3;
+                    }
+                }
+                return string;
+            }
+        }
+    </script>
+}

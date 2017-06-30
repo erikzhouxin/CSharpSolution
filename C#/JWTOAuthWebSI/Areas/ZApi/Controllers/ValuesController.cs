@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace EZOper.TechTester.JWTOAuthWebSI.Areas.ZApi.Controllers
 {
     [Produces("application/json")]
-    [CustomAuthorizeAttribute]
+    [CustomAuthorize]
     public class ValuesController : AreaBaseController
     {
         // GET: api/Values

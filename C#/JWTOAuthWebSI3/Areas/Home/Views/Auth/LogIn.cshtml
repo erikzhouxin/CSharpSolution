@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "LogIn";
+}
+<form id="postData" action="/Api/Auth/PostToken" method="post">
+    <input name="userName" value="TEST" />
+    <input name="password" value="TEST123" />
+    <button type="submit">提交</button>
+</form>
+<div id="result">
+    <form id="GetValueForm" action="/Api/Values/Get" method="get">
+        <input type="text" id="access_token" value="" disabled />
+        <input type="text" id="TextResult" value="" disabled />
+        <input id="GetValueBtn" type="button" value="GetValue" />
+    </form>
+</div>
+@section CustomScript{
+    <script type="text/javascript">
+        $(function () {
+            $('#postData').on('submit', function () {
+                var postUrl = $(this).attr('action');
+                var postData = $(this).serialize();
+                var postAllUrl = postUrl + '?' + postData;
+                var postJson = { userName: "TEST", password: "TEST123" };
+                var postBodyData = JSON.stringify(postJson);
+                $.ajax({
+                    type: "post",
+                    url: postUrl,
+                    contentType: 'application/json',  
+                    data: postBodyData,
+                    success: function (data, status) {
+                        if (data.statusCode !== '200') {
+                            alert("Bad Request!");
+                            return;
+                        }
+                        $('#access_token').val(data.access_token);
+                        setCookie('access_token', data.access_token, { expires: data.expires_in });
+                        SetGetValueForm();
+                    },
+                    error: function (data) {
+                        alert(data);
+                    }
+                });
+                return false;
+            });
+            $('#GetValueBtn').on('click', SetGetValueForm);
+        });
+        function SetGetValueForm() {
+            var postUrl = $('#GetValueForm').attr('action');
+            $.get(postUrl, function (data) {
+                $('#TextResult').val(data + '');
+            });
+        }
+        //写cookies
+        function setCookie(name, value,data) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() + data.expires * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/";
+        }
+    </script>
+}
