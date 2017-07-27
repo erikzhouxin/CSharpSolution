@@ -80,7 +80,7 @@ namespace EZOper.TechTester.OWINOAuthWebSI
                 RefreshTokenProvider = new TestOpenAuthRefreshTokenProvider() //refresh_token 认证服务
             };
             app.UseOAuthBearerTokens(TestAuthCodeOAuthOptions); //表示 token_type 使用 bearer 方式
-
+            
             // 简单模式
             var TestImplicateOAuthOptions = new OAuthAuthorizationServerOptions
             {

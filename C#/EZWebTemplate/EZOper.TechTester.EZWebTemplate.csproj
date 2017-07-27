@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,26 +48,29 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.3.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.3.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.3.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.3.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    <Reference Include="Microsoft.AI.Web, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.3.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.3.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -101,6 +104,9 @@
     </Reference>
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.2\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -201,28 +207,28 @@
     <Compile Include="Areas\Help\Context\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\Help\Controllers\HomeController.cs" />
     <Compile Include="Areas\Help\Controllers\ZApiController.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\CollectionModelDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ComplexTypeModelDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\DictionaryModelDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\EnumTypeModelDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\EnumValueDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\HelpPageApiModel.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\IModelDocumentationProvider.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\KeyValuePairModelDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ModelDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ModelDescriptionGenerator.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ModelNameAttribute.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ModelNameHelper.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ParameterAnnotation.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\ParameterDescription.cs" />
-    <Compile Include="Areas\Help\ModelDescriptions\SimpleTypeModelDescription.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\HelpPageSampleGenerator.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\HelpPageSampleKey.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\ImageSample.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\InvalidSample.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\ObjectGenerator.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\SampleDirection.cs" />
-    <Compile Include="Areas\Help\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\Help\Models\CollectionModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\EnumValueDescription.cs" />
+    <Compile Include="Areas\Help\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\Help\Models\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\Help\Models\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\ModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\Help\Models\ModelNameAttribute.cs" />
+    <Compile Include="Areas\Help\Models\ModelNameHelper.cs" />
+    <Compile Include="Areas\Help\Models\ParameterAnnotation.cs" />
+    <Compile Include="Areas\Help\Models\ParameterDescription.cs" />
+    <Compile Include="Areas\Help\Models\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\Help\Models\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\Help\Models\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\Help\Models\ImageSample.cs" />
+    <Compile Include="Areas\Help\Models\InvalidSample.cs" />
+    <Compile Include="Areas\Help\Models\ObjectGenerator.cs" />
+    <Compile Include="Areas\Help\Models\SampleDirection.cs" />
+    <Compile Include="Areas\Help\Models\TextSample.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
     <Compile Include="Context\SysContext.cs" />
@@ -234,17 +240,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SQLite\EZWebTemplate.sql" />
-    <Content Include="Content\CSS\bootstrap-theme.css" />
-    <Content Include="Content\CSS\bootstrap-theme.min.css" />
-    <Content Include="Content\CSS\bootstrap.css" />
-    <Content Include="Content\CSS\bootstrap.min.css" />
-    <Content Include="Content\CSS\help.apihelppage.css" />
-    <Content Include="Content\CSS\Site.css" />
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\CSS\bootstrap-theme.css" />
+    <Content Include="Scripts\CSS\bootstrap-theme.min.css" />
+    <Content Include="Scripts\CSS\bootstrap.css" />
+    <Content Include="Scripts\CSS\bootstrap.min.css" />
+    <Content Include="Content\Download\Readme.txt" />
+    <Content Include="Content\Logs\Readme.txt" />
+    <Content Include="Content\News\Readme.txt" />
+    <Content Include="Content\Templates\Readme.txt" />
+    <Content Include="Content\Temp\Readme.txt" />
+    <Content Include="Content\Upload\Readme.txt" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.common.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.simple.min.js" />
+    <Content Include="Scripts\EZX\help.apihelppage.css" />
+    <Content Include="Scripts\EZX\zapi.site.css" />
     <Content Include="Content\Help\Readme.txt" />
     <Content Include="Content\Images\favicon.ico" />
-    <Content Include="Content\Scripts\help.apihelper.js" />
-    <Content Include="Content\Scripts\help.newbase64.js" />
+    <Content Include="Scripts\EZX\help.apihelper.js" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -295,15 +309,27 @@
     <Content Include="Scripts\Bootstrap\v3.3.7\js\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\v3.3.7\js\bootstrap.min.js" />
     <Content Include="Scripts\Bootstrap\v3.3.7\js\npm.js" />
+    <Content Include="Scripts\EZX\EZBase64.js" />
+    <Content Include="Scripts\CSS\bootstrap.min.css.map" />
+    <Content Include="Scripts\CSS\bootstrap.css.map" />
+    <Content Include="Scripts\CSS\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\CSS\bootstrap-theme.css.map" />
+    <None Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\html5shiv\html5shiv-printshiv.js" />
+    <Content Include="Scripts\html5shiv\html5shiv-printshiv.min.js" />
+    <Content Include="Scripts\html5shiv\html5shiv.js" />
+    <Content Include="Scripts\html5shiv\html5shiv.min.js" />
+    <Content Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate.js" />
+    <Content Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate.min.js" />
     <Content Include="Scripts\jQuery\jquery-1.10.2.js" />
     <Content Include="Scripts\jQuery\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jQuery\jquery-1.11.3.js" />
     <Content Include="Scripts\jQuery\jquery-1.11.3.min.js" />
+    <None Include="Scripts\jQuery\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.js" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jQuery\jquery-2.1.4.js" />
     <Content Include="Scripts\jQuery\jquery-2.1.4.min.js" />
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Help\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Help\Views\Home\Index.cshtml" />
     <Content Include="Areas\Help\Views\Shared\_Layout.cshtml" />
@@ -336,25 +362,43 @@
     <Content Include="Areas\Home\Views\Web.config" />
     <Content Include="Areas\ZApi\Views\_ViewStart.cshtml" />
     <Content Include="Areas\ZApi\Views\Web.config" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.min.map" />
     <None Include="Scripts\jQuery\jquery-3.1.1-vsdoc.js" />
     <None Include="Scripts\jQuery\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.js" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.js" />
-    <Content Include="Scripts\Lib\bootstrap.js" />
+    <None Include="Scripts\jQuery\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate.js" />
+    <Content Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate.min.js" />
     <Content Include="Scripts\Lib\bootstrap.min.js" />
-    <None Include="Scripts\Lib\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\Lib\jquery-1.10.2.js" />
-    <Content Include="Scripts\Lib\jquery-1.10.2.min.js" />
+    <None Include="Scripts\Lib\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\Lib\jquery-1.9.1.min.js" />
+    <None Include="Scripts\Lib\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\Lib\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\Lib\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.map" />
     <None Include="Scripts\Lib\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\Lib\jquery.validate.js" />
+    <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\Lib\jquery.validate.min.js" />
-    <Content Include="Scripts\Lib\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\Lib\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Lib\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Lib\respond.js" />
+    <Content Include="Scripts\Lib\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Lib\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\Lib\respond.min.js" />
+    <Content Include="Scripts\Microsoft.jQuery.Unobtrusive.Validation\v3.2.3\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Microsoft.jQuery.Unobtrusive.Validation\v3.2.3\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Modernizr\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Modernizr\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Respond\v1.4.2\respond.js" />
+    <Content Include="Scripts\Respond\v1.4.2\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\Respond\v1.4.2\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\Respond\v1.4.2\respond.min.js" />
+    <Content Include="Scripts\Respond\v1.2.0\respond.js" />
+    <Content Include="Scripts\Respond\v1.2.0\respond.min.js" />
+    <Content Include="Scripts\Selectivizr\selectivizr-min.js" />
+    <Content Include="Scripts\Selectivizr\selectivizr.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -364,7 +408,7 @@
     </Content>
     <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\Lib\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\Lib\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Angular\v1.6.4\angular-animate.min.js.map" />
@@ -444,9 +488,7 @@
   <ItemGroup>
     <Content Include="Scripts\jQuery\jquery-2.1.4.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Help\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -479,9 +521,9 @@
     <PropertyGroup>
       <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.2.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
