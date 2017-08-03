@@ -13,8 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pad", "Pad", "{880EAC8C-634
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gui", "Gui", "{C20522DD-67F6-41E7-B019-2E128AD69465}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{EB94BE69-C807-4645-9DF7-5F77880D7D99}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EB94BE69-C807-4645-9DF7-5F77880D7D99} = {3DB74401-6103-48A6-987E-3AB72C2C66A3}
 	EndGlobalSection
 EndGlobal
