@@ -250,10 +250,16 @@
     <Content Include="Content\Templates\Readme.txt" />
     <Content Include="Content\Temp\Readme.txt" />
     <Content Include="Content\Upload\Readme.txt" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.common.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.common.min.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.simple.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.simple.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\bmap.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\bmap.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\dataTool.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\dataTool.min.js" />
     <Content Include="Scripts\EZX\help.apihelppage.css" />
     <Content Include="Scripts\EZX\zapi.site.css" />
     <Content Include="Content\Help\Readme.txt" />
