@@ -205,7 +205,9 @@
     <Compile Include="Areas\Help\Context\HelpPageConfig.cs" />
     <Compile Include="Areas\Help\Context\HelpPageConfigurationExtensions.cs" />
     <Compile Include="Areas\Help\Context\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\Help\Controllers\EchartsController.cs" />
     <Compile Include="Areas\Help\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Help\Controllers\JTreeController.cs" />
     <Compile Include="Areas\Help\Controllers\ZApiController.cs" />
     <Compile Include="Areas\Help\Models\CollectionModelDescription.cs" />
     <Compile Include="Areas\Help\Models\ComplexTypeModelDescription.cs" />
@@ -250,10 +252,16 @@
     <Content Include="Content\Templates\Readme.txt" />
     <Content Include="Content\Temp\Readme.txt" />
     <Content Include="Content\Upload\Readme.txt" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.common.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.common.min.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\echarts.simple.js" />
     <Content Include="Scripts\Echarts\v3.6.2\echarts.simple.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\bmap.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\bmap.min.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\dataTool.js" />
+    <Content Include="Scripts\Echarts\v3.6.2\extension\dataTool.min.js" />
     <Content Include="Scripts\EZX\help.apihelppage.css" />
     <Content Include="Scripts\EZX\zapi.site.css" />
     <Content Include="Content\Help\Readme.txt" />
@@ -314,6 +322,9 @@
     <Content Include="Scripts\CSS\bootstrap.css.map" />
     <Content Include="Scripts\CSS\bootstrap-theme.min.css.map" />
     <Content Include="Scripts\CSS\bootstrap-theme.css.map" />
+    <Content Include="Areas\Help\Views\Echarts\Index.cshtml" />
+    <Content Include="Areas\Help\Views\JTree\Index.cshtml" />
+    <Content Include="Areas\Help\Views\JTree\Bootstrap.cshtml" />
     <None Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\html5shiv\html5shiv-printshiv.js" />
     <Content Include="Scripts\html5shiv\html5shiv-printshiv.min.js" />
@@ -507,7 +518,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>29258</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:29262/</IISUrl>
+          <IISUrl>http://localhost:29902/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
