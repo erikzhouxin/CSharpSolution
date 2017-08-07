@@ -1,0 +1,1329 @@
+﻿@{
+    ViewBag.Title = "Tree插件-搜索jTree";
+}
+@section CustomStyle{
+    <link href="~/Scripts/zTree/v3.5.29/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+    <style type="text/css">
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; background: transparent; }
+        body { line-height: 1; font-size: 12px; }
+        ol, ul { list-style: none; }
+        blockquote, q { quotes: none; }
+        blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+        body { overflow: hidden; }
+        :focus { outline: 0; }
+        /* remember to highlight inserts somehow! */
+        ins { text-decoration: none; }
+        del { text-decoration: line-through; }
+        /* tables still need 'cellspacing="0"' in the markup */
+        table { border-collapse: collapse; border-spacing: 0; }
+        /*link style*/
+        a { text-decoration: none; color: #999; cursor: pointer; }
+        /*a:visited {color: #666;}*/
+        a:hover, a:active { color: #CC0000; }
+        /*clear style*/
+        .clear { clear: both; }
+        .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+        .clearfix { display: block; }
+        .icon { /* 通过设置 font-size 来改变图标大小 */ width: 1em; height: 1em; /* 图标和文字相邻时，垂直对齐 */ vertical-align: -0.15em; /* 通过设置 color 来改变 SVG 的颜色/fill */ fill: currentColor; /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+                     normalize.css 中也包含这行 */ overflow: hidden; font-size: 20px; }
+        a { text-decoration: none; color: #999; cursor: pointer; }
+        .hide { display: none; }
+        #layout { text-align: left; display: block; height: 100%; position: relative; }
+        #layout #header { display: none; overflow: hidden; height: 50px; z-index: 30; background-color: #102c4a; background-repeat: repeat-x; background-image: url("../../images/background/header_bg.png"); }
+        #layout #header .headerNav { height: 50px; background-repeat: repeat-x; background-position: 0 0; background-image: url("../../images/background/header_bg.png"); }
+        #layout #header .headerNav .logo { background-image: url(sprite.png); background-position: -30px 0px; width: 325px; height: 41px; float: left; width: 325px; height: 41px; text-indent: -1000px; margin-top: 5px; }
+        #layout #header .headerNav .themeList { position: absolute; top: 30px; right: 10px; }
+        #layout #header .headerNav .themeList li { float: left; padding: 0 3px; }
+        #layout #header .headerNav .themeList li div { display: block; overflow: hidden; width: 13px; height: 11px; text-indent: -100px; cursor: pointer; }
+        #layout #header .headerNav .themeList li.default div { background-image: url(sprite.png); background-position: -144px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.default .selected { background-image: url(sprite.png); background-position: -330px -186px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.green div { background-image: url(sprite.png); background-position: -126px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.green .selected { background-image: url(sprite.png); background-position: -216px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.purple div { background-image: url(sprite.png); background-position: -162px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.purple .selected { background-image: url(sprite.png); background-position: -180px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.silver div { background-image: url(sprite.png); background-position: -198px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.silver .selected { background-image: url(sprite.png); background-position: -312px -186px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.azure div { background-image: url(sprite.png); background-position: -90px -209px; width: 13px; height: 11px; }
+        #layout #header .headerNav .themeList li.azure .selected { background-image: url(sprite.png); background-position: -108px -209px; width: 13px; height: 11px; }
+        #layout #headerToolBar { z-index: 10; position: absolute; top: 0; right: 20px; width: 230px; height: 31px; display: block; }
+        #layout #headerToolBar .toolBarLeft { background-image: url(sprite.png); background-position: -30px -46px; width: 101px; height: 106px; width: 29px; height: 30px; float: left; display: block; }
+        #layout #headerToolBar .toolBarRight { background-image: url(sprite.png); background-position: -321px -46px; width: 27px; height: 30px; width: 29px; height: 30px; float: right; display: block; }
+        #layout #headerToolBar .toolBarCenter { background-image: url(../../images/background/header_tool_bar_c.png); background-repeat: repeat-x; margin: 0 29px; height: 30px; position: relative; z-index: 2; }
+        #layout #headerToolBar .toolBarCenter a { float: left; height: 22px; margin-top: 4px; margin-right: 6px; }
+        #layout #headerToolBar .toolBarCenter a i { color: #1296db; font-size: 20px; }
+        #layout #headerToolBar .toolBarCenter .fullscreen { margin-left: -8px; }
+        #layout #headerToolBar .toolBarCenter #toolbarUser { border: 1px solid #ccc; border-radius: 4px; padding: 0 3px; margin-top: 1px; }
+        #layout #headerToolBar .toolBarCenter #helpCenter { cursor: help; }
+        #layout #headerToolBar .hBar { background-repeat: no-repeat; }
+        #layout #headerToolBar .toolbarUserInfo { background-image: url(sprite.png); background-position: -136px -46px; width: 95px; height: 100px; background-position: left bottom; display: none; position: absolute; top: 24px; right: 60px; height: 50px; width: 96px; z-index: 2; background-repeat: no-repeat; }
+        #layout #headerToolBar .toolbarUserInfo a { font-size: 12px; width: 86px; height: 20px; margin: 0 1px; padding-left: 6px; color: #505050; overflow: hidden; display: block; line-height: 20px; float: left; }
+        #layout #headerToolBar .toolbarUserInfo a:hover { background-color: #3690c8; color: #fff; }
+        #layout #mymenuBar { background-image: url("../../images/background/headmenuBg.png"); height: 25px; position: relative; background-position: 0 -75px; padding: 5px; font-size: 12px; }
+        #layout #mymenuBar #nav li { float: left; height: 22px; line-height: 22px; padding: 0 15px 0 0; z-index: 1; vertical-align: bottom; }
+        #layout #mymenuBar #nav li a { display: block; color: #000; }
+        #layout #mymenuBar #nav li a span { line-height: 20px; }
+        #layout #mymenuBar #nav li a .main_caret { background-image: url(sprite.png); background-position: -348px -81px; width: 7px; height: 4px; width: 7px; height: 4px; display: inline-block; background-repeat: no-repeat; }
+        #root-menu-div ul { padding: 12px 1px 10px 1px; width: 180px; height: auto; z-index: 300; border-radius: 4px 4px 4px 4px; box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15); background: none repeat scroll 0 0 white; border: 1px solid #A8C9E5; }
+        #root-menu-div ul li { white-space: nowrap; height: 23px; line-height: 23px; text-align: left; }
+        .menu-ul div.menu-item a { height: 23px; width: auto; line-height: 23px; display: block; overflow: hidden; padding: 0 0 0 5px; font-size: 12px; color: black; }
+        .menu-ul div.menu-item a .external_small { background-image: url(sprite.png); background-position: -270px -186px; width: 16px; height: 16px; display: inline-block; margin-right: 2px; margin-top: 3px; }
+        .menu-ul div.menu-item a .font_pos { display: inline-block; height: 23px; vertical-align: middle; }
+        .menu-ul div.menu-item img.menu-item-arrow { position: absolute; right: 14px; top: 8px; opacity: 0.2; filter: Alpha(Opacity=20); }
+        .menu-ul li.active { background-color: #FEDDA8; color: #3d6190; }
+        .menu-ul li.active img.menu-item-arrow { opacity: 0.8; filter: Alpha(Opacity=80); }
+        #container { position: absolute; top: 32px; }
+        #container .tabsPage .tabsPageHeader { display: block; height: 27px; border-style: solid; border-width: 0px 1px 0 1px; background-position: 0 -450px; background-repeat: repeat-x; position: relative; background-image: url(../../images/background/tabspage.png); }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent { display: block; overflow: hidden; height: 27px; margin-right: 19px; position: relative; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul { display: block; width: 10000px; height: 26px; z-index: 1; position: absolute; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li { float: left; display: block; height: 26px; margin-left: 2px; background-image: url(../../background/images/tabspage.png); background-position: 0 -100px; background-repeat: repeat-x; position: relative; cursor: pointer; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li a { float: left; display: block; overflow: hidden; height: 26px; padding-left: 5px; line-height: 25px; color: #183152; background-position: 0 0; background-repeat: no-repeat; background-image: url(../../images/background/tabspage.png); }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li a span { font-size: 12px; float: left; display: block; overflow: hidden; width: 92px; height: 24px; padding: 2px 10px 0 3px; line-height: 22px; background-position: 100% -50px; cursor: pointer; background-image: url(../../images/background/tabspage.png); background-repeat: no-repeat; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li a span .home_icon { padding: 0 0 0 18px; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li a.close { background-image: url(sprite.png); background-position: -308px -131px; width: 12px; height: 12px; float: left; display: block; overflow: hidden; width: 12px; height: 12px; padding: 0; text-indent: -1000px; position: absolute; top: 3px; right: -2px; opacity: 0.3; filter: alpha(opacity=30); }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li a.close:hover { background-image: url(sprite.png); background-position: -325px -131px; width: 12px; height: 12px; opacity: 0.8; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li i.tabnumber { z-index: 1; position: absolute; right: 5px; font-family: arial; font-size: 9px; bottom: 2px; color: #3f4e60; opacity: 0.5; filter: alpha(opacity=50); }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li.selected { background-position: 0 -400px; }
+        #container .tabsPage .tabsPageHeader .tabsPageHeaderContent ul li.selected span { font-weight: bold; }
+        #container .tabsPage .tabsMoreList { display: none; overflow: hidden; width: 170px; padding: 2px; border-style: solid; border-width: 1px; position: absolute; top: 24px; right: 0; z-index: 3; border-color: #b8d0d6; background: #FFF; }
+        #container .tabsPage .tabsMoreList li { display: block; overflow: hidden; height: 23px; line-height: 21px; }
+        #container .tabsPage .tabsMoreList li a { font-size: 12px; display: block; width: 148px; height: 21px; padding: 0 10px; border: solid 1px #FFF; white-space: nowrap; line-height: 21px; }
+        #container .tabsPage .tabsMoreList li.selected a { font-weight: bold; border-color: #dfe5ed; background: #e8edf3; }
+        .tabsPage .tabsMore { top: 4px; right: 0; cursor: pointer; display: block; overflow: hidden; width: 17px; height: 23px; position: absolute; z-index: 2; }
+        .icon-zhuye { font-weight: normal !important; }
+        .tabsPage .tabsPageContent { display: block; overflow: hidden; border-style: solid; border-width: 0 1px 1px 1px; position: relative; }
+        .tabsPage .tabsPageContent #sidebar { width: 230px; position: absolute; top: 0; left: 0; z-index: 20; overflow: hidden; background: #5290cb; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse { display: block; overflow: hidden; height: 26px; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar { margin: 3px 4px; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenu { margin-right: 5px; float: left; display: inline-block; position: relative; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenu input.span2 { height: 14px; width: 135px; float: left; padding: 2px 18px 2px 4px; border-radius: 0; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenu a.treeclosebtn { width: 16px; height: 16px; margin: 1px; border: 1px solid #3786d0; left: 120px; position: absolute; background: url(../../images/background/button-bg.png) center center repeat-x; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenu a.treeclosebtn .myicons { color: #1296db; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenu a.treesearchbtn { width: 16px; height: 16px; margin: 1px; border: 1px solid #3786d0; position: absolute; background: url(../../images/background/button-bg.png) center center repeat-x; left: 139px; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenu a.treesearchbtn .myicons { color: #1296db; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenuBar { float: left; display: inline-block; position: relative; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenuBar a.treebar { width: 18px; height: 18px; display: block; padding: 2px 0 0 2px; float: left; margin-right: 2px; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenuBar a.treebar .collapse-all { color: #fff; font-weight: bold; }
+        .tabsPage .tabsPageContent #sidebar .toggleCollapse .navigationbar #searchMenuBar a.treebar .expand-all { color: #fff; font-weight: bold; }
+        .tabsPage .tabsPageContent { display: block; overflow: hidden; border-style: solid; border-width: 0 1px 1px 1px; position: relative; }
+        .tabsPage .tabsPageContent #sidebar { width: 230px; position: absolute; top: 0; left: 0; z-index: 20; overflow: hidden; background: #5290cb; }
+        .accordion { display: block; border-style: solid; border-width: 1px 1px 0 1px; border-color: #5290CB; background: url(../../images/background/009.png) repeat; }
+        .accordion .accordionContent { display: block; overflow: auto; border-style: solid; border-width: 0 0 1px 0; border-color: #5290CB; }
+        .accordion .accordionContent .tree div { display: block; overflow: hidden; height: 22px; line-height: 22px; white-space: nowrap; }
+        .accordion .accordionContent .tree li { clear: both; display: block; line-height: 22px; cursor: pointer; }
+        .accordion .accordionContent .tree div div { float: left; display: block; overflow: hidden; width: 22px; height: 22px; border: none; white-space: nowrap; }
+        .accordion .accordionContent .tree .end_expandable { background-image: url(sprite.png); background-position: -303px -157px; width: 22px; height: 21px; }
+        .accordion .accordionContent .tree .expandable { background-image: url(sprite.png); background-position: -141px -157px; width: 22px; height: 22px; }
+        .accordion .accordionContent .tree .end_collapsable { background-image: url(sprite.png); background-position: -168px -157px; width: 22px; height: 22px; }
+        .accordion .accordionContent .tree .collapsable { background-image: url(sprite.png); background-position: -195px -157px; width: 22px; height: 22px; }
+        .accordion .accordionContent .tree .folder_expandable { background-image: url(smiley_evil.png); width: 16px; height: 16px; margin-top: 3px; margin-right: 3px; }
+        .accordion .accordionContent .tree .folder_collapsable { background-image: url(smiley_sleep.png); width: 16px; height: 16px; margin-top: 3px; margin-right: 3px; }
+        .accordion .accordionContent .tree .node { background-image: url(sprite.png); background-position: -321px -81px; width: 22px; height: 22px; }
+        .accordion .accordionContent .tree .last .node { background-image: url(sprite.png); background-position: -330px -157px; width: 22px; height: 20px; }
+        .accordion .accordionContent .tree .file { background-image: url(sprite.png); background-position: -168px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .appSubLoad .file { background-image: url(sprite.png); background-position: -222px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .layouthelp .file { background-image: url(sprite.png); background-position: -87px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .windowmode .file { background-image: url(sprite.png); background-position: -141px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .dateinput .file { background-image: url(sprite.png); background-position: -321px -108px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .uicombox .file { background-image: url(sprite.png); background-position: -195px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .formValid .file { background-image: url(sprite.png); background-position: -60px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .form_valid .file { background-image: url(sprite.png); background-position: -87px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .treehelp .file { background-image: url(sprite.png); background-position: -114px -186px; width: 22px; height: 18px; }
+        .accordion .accordionContent .tree .line { background-image: url(sprite.png); background-position: -222px -157px; width: 22px; height: 22px; }
+        .accordion .accordionContent .tree .last_expandable { background-image: url(sprite.png); background-position: -276px -157px; width: 22px; height: 22px; }
+        .accordion .accordionContent .tree .last_collapsable { background-image: url(sprite.png); background-position: -249px -157px; width: 22px; height: 22px; }
+        .btn { display: inline-block; padding: 3px 10px; margin-bottom: 0; font-size: 13px; line-height: 16px; color: #333333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; cursor: pointer; background-color: #f5f5f5; background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; border: 1px solid #cccccc; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border-color: #e6e6e6 #e6e6e6 #bfbfbf; border-bottom-color: #b3b3b3; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0); filter: progid:dximagetransform.microsoft.gradient(enabled=false); -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
+        .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active { z-index: 2; }
+        .btn-warning:hover, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled] { background-color: #f89406; *background-color: #df8505; }
+        .btn-primary { background-color: #0074cc; background-image: -ms-linear-gradient(top, #0088cc, #0055cc); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc)); background-image: -webkit-linear-gradient(top, #0088cc, #0055cc); background-image: -o-linear-gradient(top, #0088cc, #0055cc); background-image: -moz-linear-gradient(top, #0088cc, #0055cc); background-image: linear-gradient(top, #0088cc, #0055cc); background-repeat: repeat-x; border-color: #0055cc #0055cc #003580; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0); filter: progid:dximagetransform.microsoft.gradient(enabled=false); }
+        #rightContainer { position: relative; z-index: 2; float: left; margin-left: 230px; width: 100%; height: 100%; background: url(../../images/background/pagecontentBg.png) repeat-y scroll left top; }
+        #rightContainer .winStyle { position: absolute; top: 5px; right: 5px; opacity: 0.2; filter: alpha(opacity=20); z-index: 10; }
+        #rightContainer .winStyle .btn-toolbar .btn-group { display: inline-block; position: relative; display: inline-block; font-size: 0; white-space: nowrap; vertical-align: middle; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn { position: relative; float: left; margin-left: -1px; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn i { display: inline-block; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn .icon-th { background-image: url(sprite.png); background-position: -108px -240px; width: 11px; height: 12px; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn .icon-th.icon-white { background-image: url(sprite.png); background-position: -76px -240px; width: 11px; height: 12px; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn .icon-th-list { background-image: url(sprite.png); background-position: -291px -131px; width: 12px; height: 12px; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn .icon-th-list.icon-white { background-image: url(sprite.png); background-position: -342px -131px; width: 12px; height: 12px; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn .icon-th-large { background-image: url(sprite.png); background-position: -60px -240px; width: 11px; height: 12px; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn .icon-th-large.icon-white { background-image: url(sprite.png); background-position: -92px -240px; width: 11px; height: 12px; }
+        #rightContainer .winStyle .btn-toolbar .btn-group .btn:first-child { margin-left: 0; margin-right: 0; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -moz-border-radius-topleft: 4px; }
+        #rightContainer .winStyle2layout { padding: 5px 0 0 5px; position: absolute; width: 300px; height: 200px; top: 40px; right: 40px; background: #fff; border: 1px solid #cadeee; display: none; z-index: 10; }
+        .thewins .winContent { padding: 0 3px 0 5px; }
+        .thewins .winContent ul.winAppArea { position: absolute; margin: 20px; }
+        .thewins .winContent ul.winAppArea li.appButton { width: 70px; cursor: pointer; height: 80px; position: absolute; z-index: 101; list-style: none; text-align: center; }
+        .thewins .winContent ul.winAppArea li.appButton a.winicons { z-index: 2; width: 70px; height: 36px; display: block; text-decoration: none; color: #999; cursor: pointer; }
+        .thewins .winContent ul.winAppArea li.appButton span.title { background-image: url(sprite.png); background-position: -60px -157px; width: 76px; height: 24px; z-index: 2; max-height: 36px; min-height: 22px; overflow: hidden; display: block; font-size: 12px; margin-top: 1px; color: #000; line-height: 20px; text-align: center; }
+        .thewins .winContent ul.winAppArea li.appButton .winBg { background-image: url(sprite.png); background-position: -236px -46px; width: 80px; height: 80px; display: none; width: 80px; height: 80px; position: absolute; top: -10px; z-index: -1; left: -4px; }
+        .html5_video { width: 100%; position: relative; z-index: 0; }
+        .html5_video video { position: absolute; top: 0; left: 0; min-width: 100%; min-height: 100%; }
+        ul.tmpTargetzTree { background-color: #FFE6B0; opacity: 0.8; filter: alpha(opacity=80); }
+        span.tmpzTreeMove_arrow { width: 16px; height: 16px; display: inline-block; padding: 0; margin: 2px 0 0 1px; border: 0 none; position: absolute; background-color: transparent; background-repeat: no-repeat; background-attachment: scroll; background-position: -110px -80px; background-image: url("./img/zTreeStandard.png"); *background-image: url("./img/zTreeStandard.gif"); }
+        ul.ztree.zTreeDragUL { margin: 0; padding: 0; position: absolute; width: auto; height: auto; overflow: hidden; background-color: #cfcfcf; border: 1px #00B83F dotted; opacity: 0.8; filter: alpha(opacity=80); }
+        .zTreeMask { z-index: 10000; background-color: #cfcfcf; opacity: 0.0; filter: alpha(opacity=0); position: absolute; }
+        .color-white { color: #fff; }
+        .color-red { color: #f00; text-shadow: none; }
+        .color-red1 { color: #ff5050; }
+        .color-blue { color: #004eff; text-shadow: none; }
+        .color-blue1 { color: #022e57; }
+        .color-gray { color: #999; }
+        .color-black { color: #000; }
+        .tree li a, .tree li span { color: #183152; text-decoration: none; font-size: 12px; }
+        .tree div, .tree a, .tree span { display: inherit; white-space: nowrap; }
+    </style>
+}
+<div class="navTab-panel tabsPageContent layoutBox" style="padding-top:20px;padding-left: 20px">
+    <div class="page unitBox">
+        <div class="pageFormContent">
+            <div id="leftside">
+                <!-- jtree模板 -->
+                <div id="sidebar">
+                    <div class="toggleCollapse">
+                        <div class="navigationbar">
+                            <div id="searchMenu">
+                                <input id="searchTree" type="text" class="span2" data-autofocus="autofocus" x-webkit-speech="" lang="zh-CN" x-webkit-grammar="builtin:translate" onwebkitspeechchange="$('#searchTreeBtn').trigger('click')">
+                                <a id="searchTreeClose" title="清除条件" class="treeclosebtn hide"><i class="myicons iconfont icon-close tree-close"></i></a> <a id="searchTreeBtn" title="搜索菜单" class="treesearchbtn"><i class="myicons iconfont icon-search tree-search"></i>搜索</a>
+                            </div>
+                            <div id="searchMenuBar" style="line-height: 30px">
+                                <a title="折叠全部" onClick="$('ul.tree').colExpAll({clickType:'expAll'})" id="expandBtn" class="treebar">折叠<i class="myicons iconfont icon-zhedie collapse-all"></i></a>
+                                <a title="展开全部" onClick="$('ul.tree').colExpAll({clickType:'colAll'})" id="collapseBtn" class="treebar">展开<i class="myicons iconfont icon-1 expand-all"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" fillSpace="sidebar">
+                        <div class="accordionContent">
+                            <ul id="a" class="tree treeFolder collapse in">
+                                <li>
+                                    <a autobypy="bz" dataType="topmenu" childMneu="bzmenus" keyboard="A">帮助</a>
+                                    <ul id="bzmenus" class="bzmenus_sub">
+                                        <li>
+                                            <a autobypy="tyhs"><span class="font_pos"><i class="external_small"></i></span>通用函数common.js</a>
+                                            <ul>
+                                                <li><a autobypy="cjbg" href="#"><span class="font_pos"><i class="external_small"></i></span>创建表格[creatGrid]</a></li>
+                                                <li><a autobypy="ybtj" href="#"><span class="font_pos"><i class="external_small"></i></span>异步提交[ajaxTodo]</a></li>
+                                                <li><a autobypy="ybtj" href="#"><span class="font_pos"><i class="external_small"></i></span>异步提交[submitForm]</a></li>
+                                                <li><a autobypy="ybtj" href="#"><span class="font_pos"><i class="external_small"></i></span>异步提交[ajaxToSeaver]</a></li>
+                                                <li><a autobypy="dkck" href="#"><span class="font_pos"><i class="external_small"></i></span>打开窗口[openMDialog]</a></li>
+                                                <li><a autobypy="dkbq" href="#"><span class="font_pos"><i class="external_small"></i></span>打开标签[openMTabs]</a></li>
+                                                <li><a autobypy="bgcx" href="#"><span class="font_pos"><i class="external_small"></i></span>表格查询[mysearch]</a></li>
+                                                <li><a autobypy="gshbd" href="#"><span class="font_pos"><i class="external_small"></i></span>格式化表单[clearForm]</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="bg"><span class="font_pos"><i class="external_small"></i></span>表格</a>
+                                            <ul>
+                                                <li><a autobypy="jbbg" href="#"><span class="font_pos"><i class="external_small"></i></span>基本表格</a></li>
+                                                <li><a autobypy="jbbg" href="#"><span class="font_pos"><i class="external_small"></i></span>可编辑表格</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="ck|dhk"><span class="font_pos"><i class="external_small"></i></span>窗口|对话框</a>
+                                            <ul>
+                                                <li class="windowmode"><a autobypy="ck|dhk" href="#"><span class="font_pos"><i class="external_small"></i></span>窗口|对话框</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="bd" href=""><span class="font_pos"><i class="external_small"></i></span>表单</a>
+                                            <ul>
+                                                <li class="dateinput"><a autobypy="sjsrk" href="#"><span class="font_pos"><i class="external_small"></i></span>时间输入框</a></li>
+                                                <li class="uicombox"><a autobypy="combox" href="#"><span class="font_pos"><i class="external_small"></i></span>combox</a></li>
+                                                <li class="autocombox"><a autobypy="zdwc" href="#"><span class="font_pos"><i class="external_small"></i></span>自动完成</a></li>
+                                                <li class="jlcombox"><a autobypy="jl" href="#"><span class="font_pos"><i class="external_small"></i></span>级联</a></li>
+                                                <li class="formValid"><a autobypy="khdyz" href="#"><span class="font_pos"><i class="external_small"></i></span>客户端验证</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="s"><span class="font_pos"><i class="external_small"></i></span>树</a>
+                                            <ul>
+                                                <li class="treehelp"><a autobypy="jbs" href="#"><span class="font_pos"><i class="external_small"></i></span>基本树</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="layouthelp"><a autobypy="bj" href="#"><span class="font_pos"><i class="external_small"></i></span>布局</a></li>
+                                        <li><a autobypy="dh" href="#"><span class="font_pos"><i class="external_small"></i></span>导航栏|工具栏</a></li>
+                                        <li><a autobypy="yjcd" href="#"><span class="font_pos"><i class="external_small"></i></span>右键菜单</a></li>
+                                        <li><a autobypy="djdhbq" href="#"><span class="font_pos"><i class="external_small"></i></span>顶级导航标签</a></li>
+                                        <li><a autobypy="nbdbq|tab" href="#"><span class="font_pos"><i class="external_small"></i></span>内部多标签|tab</a></li>
+                                        <li><a autobypy="dialog" href="#"><span class="font_pos"><i class="external_small"></i></span>站长素材</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul id="b" class="tree treeFolder collapse">
+                                <li>
+                                    <a autobypy="sl" dataType="topmenu" childMneu="slmenus" keyboard="A"><span class="font_pos"><i class="external_small"></i></span>示例</a>
+                                    <ul id="slmenus" class="slmenus_sub">
+                                        <li>
+                                            <a autobypy="zh"><span class="font_pos"><i class="external_small"></i></span>综合</a>
+                                            <ul>
+                                                <li><a autobypy="zh1" href="#"><span class="font_pos"><i class="external_small"></i></span>综合1</a></li>
+                                                <li><a autobypy="xwlb" href="#"><span class="font_pos"><i class="external_small"></i></span>新闻列表</a></li>
+                                                <li><a autobypy="xwck" href="#"><span class="font_pos"><i class="external_small"></i></span>新闻查看</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="bd"><span class="font_pos"><i class="external_small"></i></span>表单</a>
+                                            <ul>
+                                                <li><a autobypy="xtjhsz" href="#"><span class="font_pos"><i class="external_small"></i></span>表单设计</a></li>
+                                                <li><a autobypy="xtjhsz2" href="#"><span class="font_pos"><i class="external_small"></i></span>表单设计2</a></li>
+                                                <li><a autobypy="tck" href="#"><span class="font_pos"><i class="external_small"></i></span>弹出框</a></li>
+                                                <li><a autobypy="sqb" href="#"><span class="font_pos"><i class="external_small"></i></span>申请表</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="bg"><span class="external_small"></span>表格</a>
+                                            <ul>
+                                                <li><a autobypy="kbjbg" href="#"><span class="font_pos"><i class="external_small"></i></span>可编辑表格</a></li>
+                                                <li><a autobypy="kbjbg(bzb)" href="#"><span class="font_pos"><i class="external_small"></i></span>可编辑表格(表中表)</a></li>
+                                                <li><a autobypy="yxbg" href="#"><span class="font_pos"><i class="external_small"></i></span>有序表格</a></li>
+                                                <li><a autobypy="bghz" href="#"><span class="font_pos"><i class="external_small"></i></span>表格汇总</a></li>
+                                                <li>
+                                                    <a autobypy="bgfz"><span class="font_pos"><i class="external_small"></i></span>表格分组</a>
+                                                    <ul>
+                                                        <li><a autobypy="mr" href="#"><span class="font_pos"><i class="external_small"></i></span>默认</a></li>
+                                                        <li><a autobypy="zdygs" href="#"><span class="font_pos"><i class="external_small"></i></span>自定义格式</a></li>
+                                                        <li><a autobypy="dfx" href="#"><span class="font_pos"><i class="external_small"></i></span>带复选</a></li>
+                                                        <li><a autobypy="mx" href="#"><span class="font_pos"><i class="external_small"></i></span>明细</a></li>
+                                                        <li><a autobypy="hz" href="#"><span class="font_pos"><i class="external_small"></i></span>汇总</a></li>
+                                                        <li><a autobypy="hb" href="#"><span class="font_pos"><i class="external_small"></i></span>合并</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a autobypy="s"><span class="font_pos"><i class="external_small"></i></span>树</a>
+                                            <ul>
+                                                <li class="treehelp"><a autobypy="jbs" href="#"><span class="font_pos"><i class="external_small"></i></span>基本树</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a autobypy="rcgl" href="#"><span class="font_pos"><i class="external_small"></i></span>日程管理</a></li>
+                                        <li><a autobypy="tpsc" href="#"><span class="font_pos"><i class="external_small"></i></span>上传</a></li>
+                                        <li><a autobypy="jyrlsj" href="#"><span class="font_pos"><i class="external_small"></i></span>交易日历设计</a></li>
+                                        <li><a autobypy="kjpzsj" href="#"><span class="font_pos"><i class="external_small"></i></span>会计凭证设计</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScript{
+    <!-- jtree -->
+    <script type="text/javascript">
+        // 依赖jquery,uitool里面的扩展工具
+        (function ($) {
+            $.extend($.fn, {
+                jTree: function (options) {
+                    var op = $.extend({ checkFn: null, selected: "selected", exp: "expandable", coll: "collapsable", firstExp: "first_expandable", firstColl: "first_collapsable", lastExp: "last_expandable", lastColl: "last_collapsable", folderExp: "folder_expandable", folderColl: "folder_collapsable", endExp: "end_expandable", endColl: "end_collapsable", file: "file", ck: "checked", unck: "unchecked" }, options);
+                    return this.each(function () {
+                        var $this = $(this);
+                        var $thisclone = $this.clone();
+                        $thisclone.attr("id", $this.attr("id") + "_clone").removeClass().hide().insertAfter($this);
+                        var cnum = $this.children().length;
+                        $(">li", $this).each(function () {
+                            var $li = $(this);
+                            var first = $li.prev()[0] ? false : true;
+                            var last = $li.next()[0] ? false : true;
+                            $li.genTree({
+                                icon: $this.hasClass("treeFolder"),
+                                ckbox: $this.hasClass("treeCheck"),
+                                options: op,
+                                level: 0,
+                                exp: (cnum > 1 ? (first ? op.firstExp : (last ? op.lastExp : op.exp)) : op.endExp),
+                                coll: (cnum > 1 ? (first ? op.firstColl : (last ? op.lastColl : op.coll)) : op.endColl),
+                                showSub: (!$this.hasClass("collapse") && ($this.hasClass("expand") || (cnum > 1 ? (first ? true : false) : true))),
+                                isLast: (cnum > 1 ? (last ? true : false) : true)
+                            });
+                        });
+                        clearTimeout(temptree);
+                        var temptree = setTimeout(function () {
+                            if ($this.hasClass("treeCheck")) {
+                                var checkFn = eval($this.attr("oncheck"));
+                                if (checkFn && $.isFunction(checkFn)) {
+                                    $("div.ckbox", $this).each(function () {
+                                        var ckbox = $(this);
+                                        ckbox.click(function () {
+                                            var checked = $(ckbox).hasClass("checked");
+                                            var items = [];
+                                            if (checked) {
+                                                var tnode = $(ckbox).parent().parent();
+                                                var boxes = $("input", tnode);
+                                                if (boxes.size() > 1) {
+                                                    $(boxes).each(function () {
+                                                        items[items.length] = { name: $(this).attr("name"), value: $(this).val(), text: $(this).attr("text") };
+                                                    });
+                                                } else {
+                                                    items = { name: boxes.attr("name"), value: boxes.val(), text: boxes.attr("text") };
+                                                }
+                                            }
+                                            checkFn({ checked: checked, items: items });
+                                        });
+                                    });
+                                }
+                            }
+                            $("a", $this).click(function (event) {
+                                $("div." + op.selected).removeClass(op.selected);
+                                var parent = $(this).parent().addClass(op.selected);
+                                $(".ckbox", parent).trigger("click");
+                                event.stopPropagation();
+                                $(document).trigger("click");
+                                if (!$(this).attr("target")) return false;
+                            });
+                        }, 1);
+                    });
+                },
+                subTree: function (op, level) {
+                    return this.each(function () {
+                        $(">li", this).each(function () {
+                            var $this = $(this);
+                            var isLast = ($this.next()[0] ? false : true);
+                            $this.genTree({
+                                icon: op.icon,
+                                ckbox: op.ckbox,
+                                exp: isLast ? op.options.lastExp : op.options.exp,
+                                coll: isLast ? op.options.lastColl : op.options.coll,
+                                options: op.options,
+                                level: level,
+                                space: isLast ? null : op.space,
+                                showSub: op.showSub,
+                                isLast: isLast
+                            });
+
+                        });
+                    });
+                },
+                colExpAll: function (options) {
+                    var op = $.extend({ Highlight: true, clickType: 'colExp', colBtn: "collapseBtn", expBtn: "expandBtn", input: "searchTree", searchBtn: "searchTreeBtn", closeBtn: "searchTreeClose", checkFn: null, selected: "selected", exp: "expandable", coll: "collapsable", firstExp: "first_expandable", firstColl: "first_collapsable", lastExp: "last_expandable", lastColl: "last_collapsable", folderExp: "folder_expandable", folderColl: "folder_collapsable", endExp: "end_expandable", endColl: "end_collapsable", file: "file", ck: "checked", unck: "unchecked" }, options);
+                    return this.each(function () {
+                        var $this = $(this);
+                        var filterVal = $("#" + op.input).val();
+                        var filterArea = $("#" + $this.attr("id") + "_clone"),
+                            filterAreaHtml = filterArea.html();
+                        var filterHtml = null;
+                        /*查找树上是否有包含输入框的值，过滤不不含的选项[规则，移除当前a的父LI，如果a的同级后节点是UL则不移除]*/
+                        var tempArea = filterArea.clone();
+                        addFilterHtml(tempArea);
+                        filterHtml = tempArea.html();
+                        switch (op.clickType) {
+                            case "search":
+                                op.colExp = true;
+                                break;
+                            case "colAll":
+                                op.colExp = true;
+                                break;
+
+                            case "close":
+                                op.colExp = true;
+                                filterHtml = filterAreaHtml;
+                                break;
+                            case "expAll":
+
+                                op.colExp = false;
+                                break;
+                            default:
+                                break;
+                        }
+
+
+                        function addFilterHtml(ul) {
+                            var $li = ul.children("li");
+                            $li.each(function () {
+                                var $tli = $(this);
+                                if ($tli.children("a").text().indexOf(filterVal) == -1 && $tli.children("a").attr("autobypy").indexOf(filterVal) == -1) {
+                                    if ($tli.children("ul").length > 0) {
+                                        var tul = $tli.children("ul");
+                                        addFilterHtml(tul);
+                                    }
+                                    else { $tli.remove(); }
+                                } else {
+                                    if (op.Highlight) {
+                                        if ($tli.children("a").text().indexOf(filterVal) != -1) {
+                                            $tli.children("a").html($tli.children("a").text().replace(filterVal, "<b class='color-red'>" + filterVal + "</b>"));
+                                        } else {
+                                            var temptext = $tli.children("a").text().slice($tli.children("a").attr("autobypy").indexOf(filterVal), $tli.children("a").attr("autobypy").indexOf(filterVal) + filterVal.length);
+                                            $tli.children("a").html($tli.children("a").text().replace(temptext, "<b class='color-red'>" + temptext + "</b>"))
+                                        }
+                                    }
+                                }
+                            });
+                            if (ul.children("li").length == 0) {
+                                ul.parent("li").remove();
+                            };
+                        };
+
+                        $this.empty().html(filterHtml);
+                        var cnum = $this.children().length;
+                        $(">li", $this).each(function () {
+                            var $li = $(this);
+                            var first = $li.prev()[0] ? false : true;
+                            var last = $li.next()[0] ? false : true;
+                            $li.genTree({
+                                icon: $this.hasClass("treeFolder"),
+                                ckbox: $this.hasClass("treeCheck"),
+                                options: op,
+                                level: 0,
+                                exp: (cnum > 1 ? (first ? op.firstExp : (last ? op.lastExp : op.exp)) : op.endExp),
+                                coll: (cnum > 1 ? (first ? op.firstColl : (last ? op.lastColl : op.coll)) : op.endColl),
+                                showSub: op.colExp,
+                                isLast: (cnum > 1 ? (last ? true : false) : true)
+                            });
+                            $("a[target=navTab]", $li).each(function () {
+                                var thisGroupA = $(this);
+                                thisGroupA.click(function (event) {
+                                    var $thisa = $(this);
+                                    var title = $thisa.attr("title") || $thisa.text();
+                                    var tabid = $thisa.attr("rel") || "_blank";
+                                    var fresh = eval($thisa.attr("fresh") || "false");
+                                    var external = eval($thisa.attr("external") || "false");
+                                    var url = unescape($thisa.attr("href")).replaceTmById($(event.target).parents(".unitBox:first"));
+                                    navTab.openTab(tabid, url, { title: title, fresh: fresh, external: external });
+                                    stopDefault(event);
+                                });
+                            });
+
+                        });
+                        delete tempArea;
+
+                    });
+                },
+                genTree: function (options) {
+                    var op = $.extend({ icon: options.icon, ckbox: options.ckbox, exp: "", coll: "", showSub: false, level: 0, options: null, isLast: false }, options);
+                    return this.each(function () {
+                        var node = $(this);
+                        var tree = $(">ul", node);
+                        var parent = node.parent().prev();
+                        var checked = 'unchecked';
+                        if (op.ckbox) {
+                            if ($(">.checked", parent).size() > 0) checked = 'checked';
+                        }
+                        if (tree.size() > 0) {
+                            node.children(":first").wrap("<div></div>");
+                            $(">li:last", tree).addClass("last" + op.level);
+                            $(">div", node).prepend("<div class='" + (op.showSub ? op.coll : op.exp) + "'></div>" + (op.ckbox ? "<div class='ckbox " + checked + "'></div>" : "") + (op.icon ? "<div class='" + (op.showSub ? op.options.folderColl : op.options.folderExp) + "'></div>" : ""));
+                            op.showSub ? tree.show() : tree.hide();
+                            $(">div>div,>div>a", node).click(function () {//$(">div>div:first
+                                var $fnode = $(">li:first", tree);
+                                if ($fnode.children(":first").isTag('a')) tree.subTree(op, op.level + 1);
+                                var $this = $(this);
+                                var isA = $this.isTag('a') || $this.isTag('div');
+                                var $this = isA ? $(">div>div", node).eq(op.level) : $this;
+                                if (tree.is(":hidden")) {
+                                    $this.removeClass(op.exp).addClass(op.coll);
+                                    if (op.icon) {
+                                        $(">div>div:last", node).removeClass(op.options.folderExp).addClass(op.options.folderColl);
+                                    }
+                                } else {
+                                    $this.removeClass(op.coll).addClass(op.exp);
+                                    if (op.icon) {
+                                        $(">div>div:last", node).removeClass(op.options.folderColl).addClass(op.options.folderExp);
+                                    }
+                                }
+                                //(tree.is(":hidden"))?tree.slideDown("fast"):tree.slideUp("fast");//(tree.is(":hidden"))?tree.slideDown("fast"):(isA?"":tree.slideUp("fast"));
+                                (tree.is(":hidden")) ? tree.show() : tree.hide();
+                                return false;
+                            });
+                            addSpace(op.level, node);
+                            if (op.showSub) tree.subTree(op, op.level + 1);
+                        } else {
+                            node.children().wrap("<div></div>");
+                            $(">div", node).prepend("<div class='node'></div>" + (op.ckbox ? "<div class='ckbox " + checked + "'></div>" : "") + (op.icon ? "<div class='file'></div>" : ""));
+                            addSpace(op.level, node);
+                            if (op.isLast) $(node).addClass("last");
+                        }
+                        if (op.ckbox) node._check(op);
+                        $(">div", node).mouseover(function () {
+                            $(this).addClass("hover");
+                        }).mouseout(function () {
+                            $(this).removeClass("hover");
+                        });
+                        if ($.browser.msie)
+                            $(">div", node).click(function () {
+                                $("a", this).trigger("click");
+                                return false;
+                            });
+                    });
+                    function addSpace(level, node) {
+                        if (level > 0) {
+                            var parent = node.parent().parent();
+                            var space = !parent.next()[0] ? "indent" : "line";
+                            var plist = "<div class='" + space + "'></div>";
+                            if (level > 1) {
+                                var next = $(">div>div", parent).filter(":first");
+                                var prev = "";
+                                while (level > 1) {
+                                    prev = prev + "<div class='" + next.attr("class") + "'></div>";
+                                    next = next.next();
+                                    level--;
+                                }
+                                plist = prev + plist;
+                            }
+                            $(">div", node).prepend(plist);
+                        }
+                    }
+                },
+                _check: function (op) {
+                    var node = $(this);
+                    var ckbox = $(">div>.ckbox", node);
+                    var $input = node.find("a");
+                    var tname = $input.attr("tname"), tvalue = $input.attr("tvalue");
+                    var attrs = "text='" + $input.text() + "' ";
+                    if (tname) attrs += "name='" + tname + "' ";
+                    if (tvalue) attrs += "value='" + tvalue + "' ";
+
+                    ckbox.append("<input type='checkbox' style='display:none;' " + attrs + "/>").click(function () {
+                        var cked = ckbox.hasClass("checked");
+                        var aClass = cked ? "unchecked" : "checked";
+                        var rClass = cked ? "checked" : "unchecked";
+                        ckbox.removeClass(rClass).removeClass(!cked ? "indeterminate" : "").addClass(aClass);
+                        $("input", ckbox).attr("checked", !cked);
+                        $(">ul", node).find("li").each(function () {
+                            var box = $("div.ckbox", this);
+                            box.removeClass(rClass).removeClass(!cked ? "indeterminate" : "").addClass(aClass)
+                                .find("input").attr("checked", !cked);
+                        });
+                        $(node)._checkParent();
+                        return false;
+                    });
+                    var cAttr = $input.attr("checked") || false;
+                    if (cAttr) {
+                        ckbox.find("input").attr("checked", true);
+                        ckbox.removeClass("unchecked").addClass("checked");
+                        $(node)._checkParent();
+                    }
+                },
+                _checkParent: function () {
+                    if ($(this).parent().hasClass("tree")) return;
+                    var parent = $(this).parent().parent();
+                    var stree = $(">ul", parent);
+                    var ckbox = stree.find(">li>a").size() + stree.find("div.ckbox").size();
+                    var ckboxed = stree.find("div.checked").size();
+                    var aClass = (ckboxed == ckbox ? "checked" : (ckboxed != 0 ? "indeterminate" : "unchecked"));
+                    var rClass = (ckboxed == ckbox ? "indeterminate" : (ckboxed != 0 ? "checked" : "indeterminate"));
+                    $(">div>.ckbox", parent).removeClass("unchecked").removeClass("checked").removeClass(rClass).addClass(aClass);
+                    parent._checkParent();
+                }
+            });
+        })(jQuery);
+    </script>
+    <!-- uitool -->
+    <script type="text/javascript">
+        //工具类插件
+        var MC = {
+            MCkeyCode: {
+                ALT: 18,
+                CAPS_LOCK: 20,
+                COMMA: 188, COMMAND: 91, COMMAND_LEFT: 91, COMMAND_RIGHT: 93, CONTROL: 17,
+                MENU: 93, NUMPAD_ADD: 107, NUMPAD_DECIMAL: 110, NUMPAD_DIVIDE: 111, NUMPAD_ENTER: 108, NUMPAD_MULTIPLY: 106, NUMPAD_SUBTRACT: 109,
+                ESCAPE: 27, PERIOD: 190, WINDOWS: 91,
+                HOME: 36, INSERT: 45,
+                ENTER: 13, ESC: 27, END: 35, HOME: 36, NUMPAD_ENTER: 108,
+                SHIFT: 16, TAB: 9,
+                LEFT: 37, RIGHT: 39, UP: 38, DOWN: 40, PAGE_DOWN: 34, PAGE_UP: 33,
+                SPACE: 32, F2: 113,
+                DELETE: 46, BACKSPACE: 8
+            },
+            message: {
+                selectAuto: "--%E8%AF%B7%E9%80%89%E6%8B%A9--"//--请选择--
+            },
+            statusCode: { ok: 200, error: 300, timeout: 301 },
+            ui: { sbar: true },
+            frag: {}, //page fragment
+            _msg: {}, //alert message
+            _set: {
+                loginUrl: "/login.html", //session timeout
+                loginTitle: "", //if loginTitle open a login dialog
+                debug: false
+            },
+            _template: {
+                /*loginForm:'<form method="post" class="form-horizontal" id="loginForm"><fieldset class="form-label"><div class="control-group"><label class="control-label">用户名</label><div class="controls"><input type="text" name="username" class="{required:true}" id="j_username" tabindex="1" /></div></div><div class="control-group"><label class="control-label">密码</label><div class="controls"><input type="password"  name="password" class="{required:true}"  id="j_password" tabindex="2" /></div></div><div class="control-group"><label class="control-label">验证码</label><div class="controls"><input style="vertical-align:middle;" id="auth_code" name="auth_code" type="text" size="10" tabindex="3" class="{required:true} span1"/><img id="auth_code" alt="验证码" src="/authcodeimg.html" align="absmiddle"/></div></div></fieldset></form>'*/
+            },
+            msg: function (key, args) {
+                var _format = function (str, args) {
+                    args = args || [];
+                    var result = str;
+                    for (var i = 0; i < args.length; i++) {
+                        result = result.replace(new RegExp("\\{" + i + "\\}", "g"), args[i]);
+                    }
+                    return result;
+                }
+                return _format(this._msg[key], args);
+            },
+            loadLogin: function () {
+                if ($.MD && MC._set.loginTitle) {
+                    $.MD.open(MC._set.loginUrl, "login", MC._set.loginTitle, { mask: true, width: 520, height: 260 });
+                } else {
+                    window.location = MC._set.loginUrl;
+                }
+            },
+            jsonEval: function (data) {
+                try {
+                    if (typeof (data) == 'string') {
+                        return window.eval('(' + data + ')');//return eval('(' + data + ')');
+                    }
+                    else { return data; }
+                } catch (e) {
+                    return {};
+                }
+            },
+            ajaxError: function (xhr, ajaxOptions, thrownError) {
+                if (xhr.status == "999") {
+                    top.location = MC._set.loginUrl;
+                }
+            },
+            ajaxDone: function (json) {
+                if (json.statusCode === undefined && json.message === undefined) { // for iframeCallback
+                    if (alertMsg) return alertMsg.error(json);
+                    else return alert(json);
+                }
+                if (json.statusCode == MC.statusCode.error) {
+                    if (json.message && alertMsg) alertMsg.error(json.message);
+                } else if (json.statusCode == MC.statusCode.timeout) {
+                    if (alertMsg) alertMsg.error(json.message || MC.msg("sessionTimout"), { okCall: MC.loadLogin });
+                    else MC.loadLogin();
+                } else {
+                    if (json.message && alertMsg) alertMsg.correct(json.message);
+                };
+            },
+            isTrueFalse: function (val) {
+                if (typeof (val) == "string") {
+                    if (val == "true") return true;
+                    else return false;
+                }
+                if (typeof (val) == "boolean") { return val; }
+            },
+            // 清除文本选择
+            _clsSelect: function () {
+                if ('getSelection' in window) {
+                    window.getSelection().removeAllRanges();
+                } else {
+                    try {
+                        document.selection.empty();
+                    } catch (e) { };
+                };
+                /*if (browser.ie)
+                           doc.selection.clear();
+                       else
+                           window.getSelection().removeAllRanges();*/
+            },
+            disassembleUrl: function (url) {
+                var result = {}, parm = {};
+                var urlParm = "";
+                if (url) {
+                    var url = url.split("?");
+                    result.locationUrl = url[0]
+                    urlParm = url[1];
+                }
+                urlParm = urlParm || location.search.substring(1);
+                var re = /([^&=]+)=([^&]*)/g, m;
+                while (m = re.exec(urlParm)) {
+                    parm[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+                }
+                result.parm = parm;
+                return result;
+            },
+            stopD: function (e) {
+                // Prevent the default browser action (W3C)
+                if (e && e.preventDefault)
+                { e.preventDefault(); e.stopPropagation(); }
+                else
+                // A shortcut for stoping the browser action in IE
+                { window.event.returnValue = false; }
+                return false;
+            }
+
+
+        };
+        (function ($) {
+            $.setRegional = function (key, value) {
+                if (!$.regional) $.regional = {};
+                $.regional[key] = value;
+            };
+            var escapeable = /["\\\x00-\x1f\x7f-\x9f]/g,
+                meta = {
+                    '\b': '\\b',
+                    '\t': '\\t',
+                    '\n': '\\n',
+                    '\f': '\\f',
+                    '\r': '\\r',
+                    '"': '\\"',
+                    '\\': '\\\\'
+                };
+            $.quoteString = function (string) {
+                if (string.match(escapeable)) {
+                    return '"' + string.replace(escapeable, function (a) {
+                        var c = meta[a];
+                        if (typeof c === 'string') {
+                            return c;
+                        }
+                        c = a.charCodeAt();
+                        return '\\u00' + Math.floor(c / 16).toString(16) + (c % 16).toString(16);
+                    }) + '"';
+                }
+                return '"' + string + '"';
+            };
+            $.checkArray = function (key, data, array) {
+                if (array.length == 0) return -1;
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i][key] == data[key]) return i;
+                }
+                return -1;
+            };
+            $.isEmptyObj = function (obj) { for (var name in obj) { return false; } return true; };
+            var browser = $.browser = function () {
+                var agent = navigator.userAgent.toLowerCase(),
+                    opera = window.opera,
+                    browser = {
+                        /**
+                         * 检测浏览器是否为IE
+                         * @@name ie
+                         * @@grammar $.browser.msie  => true|false
+                         */
+                        msie: !!window.ActiveXObject,
+
+                        /**
+                         * 检测浏览器是否为Opera
+                         * @@name opera
+                         * @@grammar $.browser.opera  => true|false
+                         */
+                        opera: (!!opera && opera.version),
+
+                        /**
+                         * 检测浏览器是否为webkit内核
+                         * @@name webkit
+                         * @@grammar $.browser.webkit  => true|false
+                         */
+                        webkit: (agent.indexOf(' applewebkit/') > -1),
+
+                        mozilla: /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase()),
+                        /**
+                         * 检测浏览器是否为mac系统下的浏览器
+                         * @@name mac
+                         * @@grammar $.browser.mac  => true|false
+                         */
+                        mac: (agent.indexOf('macintosh') > -1),
+
+                        /**
+                         * 检测浏览器是否处于怪异模式
+                         * @@name quirks
+                         * @@grammar $.browser.quirks  => true|false
+                         */
+                        quirks: (document.compatMode == 'BackCompat')
+                    };
+                /**
+                 * 检测浏览器是否处为gecko内核
+                 * @@name gecko
+                 * @@grammar $.browser.gecko  => true|false
+                 */
+                browser.gecko = (navigator.product == 'Gecko' && !browser.webkit && !browser.opera);
+
+                var version = 0;
+
+                // Internet Explorer 6.0+
+                if (browser.msie) {
+                    version = parseFloat(agent.match(/msie (\d+)/)[1]);
+                    /**
+                     * 检测浏览器是否为 IE9 模式
+                     * @@name ie9Compat
+                     * @@grammar $.browser.ie9Compat  => true|false
+                     */
+                    browser.msiepat = document.documentMode == 9;
+                    /**
+                     * 检测浏览器是否为 IE8 浏览器
+                     * @@name ie8
+                     * @@grammar     $.browser.ie8  => true|false
+                     */
+                    browser.ie8 = !!document.documentMode;
+
+                    /**
+                     * 检测浏览器是否为 IE8 模式
+                     * @@name ie8Compat
+                     * @@grammar     $.browser.ie8Compat  => true|false
+                     */
+                    browser.ie8Compat = document.documentMode == 8;
+
+                    /**
+                     * 检测浏览器是否运行在 兼容IE7模式
+                     * @@name ie7Compat
+                     * @@grammar     $.browser.ie7Compat  => true|false
+                     */
+                    browser.ie7Compat = ((version == 7 && !document.documentMode) || document.documentMode == 7);
+
+                    /**
+                     * 检测浏览器是否IE6模式或怪异模式
+                     * @@name ie6Compat
+                     * @@grammar     $.browser.ie6Compat  => true|false
+                     */
+                    browser.ie6Compat = (version < 7 || browser.quirks);
+
+                }
+
+                // Gecko.
+                if (browser.gecko) {
+                    var geckoRelease = agent.match(/rv:([\d\.]+)/);
+                    if (geckoRelease) {
+                        geckoRelease = geckoRelease[1].split('.');
+                        version = geckoRelease[0] * 10000 + (geckoRelease[1] || 0) * 100 + (geckoRelease[2] || 0) * 1;
+                    }
+                }
+                /**
+                 * 检测浏览器是否为chrome
+                 * @@name chrome
+                 * @@grammar     $.browser.chrome  => true|false
+                 */
+                if (/chrome\/(\d+\.\d)/i.test(agent)) {
+                    browser.chrome = + RegExp['\x241'];
+                }
+                /**
+                 * 检测浏览器是否为safari
+                 * @@name safari
+                 * @@grammar     $.browser.safari  => true|false
+                 */
+                if (/(\d+\.\d)?(?:\.\d)?\s+safari\/?(\d+\.\d+)?/i.test(agent) && !/chrome/i.test(agent)) {
+                    browser.safari = + (RegExp['\x241'] || RegExp['\x242']);
+                }
+
+
+                // Opera 9.50+
+                if (browser.opera) {
+                    version = parseFloat(opera.version());
+                }
+
+                // WebKit 522+ (Safari 3+)
+                if (browser.webkit) {
+                    version = parseFloat(agent.match(/ applewebkit\/(\d+)/)[1]);
+                }
+
+                /**
+                 * 浏览器版本判断
+                 * IE系列返回值为5,6,7,8,9,10等
+                 * gecko系列会返回10900，158900等.
+                 * webkit系列会返回其build号 (如 522等).
+                 * @@name version
+                 * @@grammar     $.browser.version  => number
+                 * @@example
+                 * if ( $.browser.msie && $.browser.version == 6 ){
+                 *     alert( "Ouch!居然是万恶的IE6!" );
+                 * }
+                 */
+                browser.version = version;
+
+                /**
+                 * 是否是兼容模式的浏览器
+                 * @@name isCompatible
+                 * @@grammar  $.browser.isCompatible  => true|false
+                 * @@example
+                 * if ( $.browser.isCompatible ){
+                 *     alert( "你的浏览器相当不错哦！" );
+                 * }
+                 */
+                browser.isCompatible =
+                    !browser.mobile && (
+                        (browser.msie && version >= 6) ||
+                        (browser.gecko && version >= 10801) ||
+                        (browser.opera && version >= 9.5) ||
+                        (browser.air && version >= 1) ||
+                        (browser.webkit && version >= 522) ||
+                        false);
+                return browser;
+            }();
+            $.formateDate = function (date, format, options) {
+                return $.formatDates(date, null, format, options);
+            }
+            $.formatDates = function (date1, date2, format, options) {
+                options = options || {
+                    monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                    monthNamesShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    dayNames: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+                    dayNamesShort: ['日', '一', '二', '三', '四', '五', '六']
+                }
+                function zeroPad(n) {
+                    return (n < 10 ? '0' : '') + n;
+                }
+                var dateFormatters = {
+                    s: function (d) { return d.getSeconds() },
+                    ss: function (d) { return zeroPad(d.getSeconds()) },
+                    m: function (d) { return d.getMinutes() },
+                    mm: function (d) { return zeroPad(d.getMinutes()) },
+                    h: function (d) { return d.getHours() % 12 || 12 },
+                    hh: function (d) { return zeroPad(d.getHours() % 12 || 12) },
+                    H: function (d) { return d.getHours() },
+                    HH: function (d) { return zeroPad(d.getHours()) },
+                    d: function (d) { return d.getDate() },
+                    dd: function (d) { return zeroPad(d.getDate()) },
+                    ddd: function (d, o) { return o.dayNamesShort[d.getDay()] },
+                    dddd: function (d, o) { return o.dayNames[d.getDay()] },
+                    M: function (d) { return d.getMonth() + 1 },
+                    MM: function (d) { return zeroPad(d.getMonth() + 1) },
+                    MMM: function (d, o) { return o.monthNamesShort[d.getMonth()] },
+                    MMMM: function (d, o) { return o.monthNames[d.getMonth()] },
+                    yy: function (d) { return (d.getFullYear() + '').substring(2) },
+                    yyyy: function (d) { return d.getFullYear() },
+                    t: function (d) { return d.getHours() < 12 ? 'a' : 'p' },
+                    tt: function (d) { return d.getHours() < 12 ? 'am' : 'pm' },
+                    T: function (d) { return d.getHours() < 12 ? 'A' : 'P' },
+                    TT: function (d) { return d.getHours() < 12 ? 'AM' : 'PM' },
+                    u: function (d) { return formatDate(d, "yyyy-MM-dd'T'HH:mm:ss'Z'") },
+                    S: function (d) {
+                        var date = d.getDate();
+                        if (date > 10 && date < 20) {
+                            return 'th';
+                        }
+                        return ['st', 'nd', 'rd'][date % 10 - 1] || 'th';
+                    },
+                    w: function (d, o) { // local
+                        return o.weekNumberCalculation(d);
+                    },
+                    W: function (d) { // ISO
+                        return iso8601Week(d);
+                    }
+                };
+                function iso8601Week(date) {
+                    var time;
+                    var checkDate = new Date(date.getTime());
+
+                    // Find Thursday of this week starting on Monday
+                    checkDate.setDate(checkDate.getDate() + 4 - (checkDate.getDay() || 7));
+
+                    time = checkDate.getTime();
+                    checkDate.setMonth(0); // Compare with Jan 1
+                    checkDate.setDate(1);
+                    return Math.floor(Math.round((time - checkDate) / 86400000) / 7) + 1;
+                }
+
+                var date = date1,
+                    otherDate = date2,
+                    i, len = format.length, c,
+                    i2, formatter,
+                    res = '';
+                for (i = 0; i < len; i++) {
+                    c = format.charAt(i);
+                    if (c == "'") {
+                        for (i2 = i + 1; i2 < len; i2++) {
+                            if (format.charAt(i2) == "'") {
+                                if (date) {
+                                    if (i2 == i + 1) {
+                                        res += "'";
+                                    } else {
+                                        res += format.substring(i + 1, i2);
+                                    }
+                                    i = i2;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    else if (c == '(') {
+                        for (i2 = i + 1; i2 < len; i2++) {
+                            if (format.charAt(i2) == ')') {
+                                var subres = $.formatDate(date, format.substring(i + 1, i2), options);
+                                if (parseInt(subres.replace(/\D/, ''), 10)) {
+                                    res += subres;
+                                }
+                                i = i2;
+                                break;
+                            }
+                        }
+                    }
+                    else if (c == '[') {
+                        for (i2 = i + 1; i2 < len; i2++) {
+                            if (format.charAt(i2) == ']') {
+                                var subformat = format.substring(i + 1, i2);
+                                var subres = $.formatDate(date, subformat, options);
+                                if (subres != $.formatDate(otherDate, subformat, options)) {
+                                    res += subres;
+                                }
+                                i = i2;
+                                break;
+                            }
+                        }
+                    }
+                    else if (c == '{') {
+                        date = date2;
+                        otherDate = date1;
+                    }
+                    else if (c == '}') {
+                        date = date1;
+                        otherDate = date2;
+                    }
+                    else {
+                        for (i2 = len; i2 > i; i2--) {
+                            if (formatter = dateFormatters[format.substring(i, i2)]) {
+                                if (date) {
+                                    res += formatter(date, options);
+                                }
+                                i = i2 - 1;
+                                break;
+                            }
+                        }
+                        if (i2 == i) {
+                            if (date) {
+                                res += c;
+                            }
+                        }
+                    }
+                }
+                return res;
+            }
+            $.parseDate = function (s, ignoreTimezone) {
+                function fixDate(d, check) { // force d to be on check's YMD, for daylight savings purposes
+                    if (+d) { // prevent infinite looping on invalid dates
+                        while (d.getDate() != check.getDate()) {
+                            d.setTime(+d + (d < check ? 1 : -1) * HOUR_MS);
+                        }
+                    }
+                }
+                function parseISO8601(s, ignoreTimezone) { // ignoreTimezone defaults to false
+                    // derived from http://delete.me.uk/2005/03/iso8601.html
+                    // TODO: for a know glitch/feature, read tests/issue_206_parseDate_dst.html
+                    var m = s.match(/^([0-9]{4})(-([0-9]{2})(-([0-9]{2})([T ]([0-9]{2}):([0-9]{2})(:([0-9]{2})(\.([0-9]+))?)?(Z|(([-+])([0-9]{2})(:?([0-9]{2}))?))?)?)?)?$/);
+                    if (!m) {
+                        return null;
+                    }
+                    var date = new Date(m[1], 0, 1);
+                    if (ignoreTimezone || !m[13]) {
+                        var check = new Date(m[1], 0, 1, 9, 0);
+                        if (m[3]) {
+                            date.setMonth(m[3] - 1);
+                            check.setMonth(m[3] - 1);
+                        }
+                        if (m[5]) {
+                            date.setDate(m[5]);
+                            check.setDate(m[5]);
+                        }
+                        fixDate(date, check);
+                        if (m[7]) {
+                            date.setHours(m[7]);
+                        }
+                        if (m[8]) {
+                            date.setMinutes(m[8]);
+                        }
+                        if (m[10]) {
+                            date.setSeconds(m[10]);
+                        }
+                        if (m[12]) {
+                            date.setMilliseconds(Number("0." + m[12]) * 1000);
+                        }
+                        fixDate(date, check);
+                    } else {
+                        date.setUTCFullYear(
+                            m[1],
+                            m[3] ? m[3] - 1 : 0,
+                            m[5] || 1
+                        );
+                        date.setUTCHours(
+                            m[7] || 0,
+                            m[8] || 0,
+                            m[10] || 0,
+                            m[12] ? Number("0." + m[12]) * 1000 : 0
+                        );
+                        if (m[14]) {
+                            var offset = Number(m[16]) * 60 + (m[18] ? Number(m[18]) : 0);
+                            offset *= m[15] == '-' ? 1 : -1;
+                            date = new Date(+date + (offset * 60 * 1000));
+                        }
+                    }
+                    return date;
+                }
+                if (typeof s == 'object') { // already a Date object
+                    return s;
+                }
+                if (typeof s == 'number') { // a UNIX timestamp
+                    return new Date(s * 1000);
+                }
+                if (typeof s == 'string') {
+                    if (s.match(/^\d+(\.\d+)?$/)) { // a UNIX timestamp
+                        return new Date(parseFloat(s) * 1000);
+                    }
+                    if (ignoreTimezone === undefined) {
+                        ignoreTimezone = true;
+                    }
+                    return parseISO8601(s, ignoreTimezone) || (s ? new Date(s) : null);
+                }
+                // TODO: never return invalid dates (like from new Date(<string>)), return null instead
+                return null;
+            }
+            $.fn.extend({
+                /**
+                 * @@param {Object} op: {type:GET/POST, url:ajax请求地址, data:ajax请求参数列表, callback:回调函数 }
+                 */
+                ajaxUrl: function (op) {
+                    var $this = $(this);
+                    var tempComboxObj = $this.find("[comboxType]");
+                    clearTimeout("clearCombTimer");
+                    $.ajax({
+                        type: op.type || 'GET',
+                        url: op.url,
+                        data: op.data,
+                        cache: false,
+                        success: function (response, textStatus, jqXHR) {//data, textStatus, jqXHR
+                            try {
+                                $this.empty().html(response).initUI();
+                                if ($.isFunction(op.callback)) op.callback(response);
+                            } catch (e) { throw e; }
+
+                            var clearCombTimer = setTimeout(function () {
+                                if (tempComboxObj.length != 0) {
+                                    for (var i = tempComboxObj.length - 1; i >= 0; i--) {
+                                        if ($(tempComboxObj[i]).attr("ligeruiid")) {
+                                            var tempCombox = $.ligerui.get($(tempComboxObj[i]).attr("ligeruiid"));
+                                            if (tempCombox) {
+                                                tempCombox.destroy();
+                                            }
+                                        }
+                                    }
+                                }
+                            }, 280);
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            if (op.error) { op.error(xhr, ajaxOptions, thrownError) }
+                            MC.ajaxError(xhr, ajaxOptions, thrownError)
+                        }
+                    });
+
+                },
+                loadUrl: function (url, data, callback) {
+                    $(this).ajaxUrl({ url: url, data: data, callback: callback });
+                },
+                initUI: function () {
+                    return this.each(function () {
+                        if ($.isFunction(initUI)) { initUI(this); };
+                    });
+                },
+                /**
+                 * adjust component inner reference box height
+                 * @@param {Object} refBox: reference box jQuery Obj
+                 */
+                layoutH: function ($refBox) {
+                    return this.each(function () {
+                        var $this = $(this);
+                        if (!$refBox) {
+                            if ($this.parents("div.l-dialog-content:first").length > 0) {
+                                $refBox = $this.parents("div.l-dialog-content:first");
+                            }
+                            else { $refBox = $this.parents("div.layoutBox:first"); }
+                        }
+                        var iRefH = $refBox.height();
+                        var iLayoutH = parseInt($this.attr("layoutH")); var isScroll = $this.attr("isScroll");
+                        var iH = iRefH - iLayoutH > 50 ? iRefH - iLayoutH : 50;
+                        (isScroll == "false" || !isScroll) ? $this.height(iH).css("overflow", "auto") : $this.height(iH).css("overflow", "scroll");
+                    });
+                },
+                hoverClass: function (className) {
+                    var _className = className || "hover";
+                    return this.each(function () {
+                        $(this).hover(function () {
+                            $(this).addClass(_className);
+                        }, function () {
+                            $(this).removeClass(_className);
+                        });
+                    });
+                },
+                focusClass: function (className) {
+                    var _className = className || "textInputFocus";
+                    return this.each(function () {
+                        $(this).focus(function () {
+                            $(this).addClass(_className);
+                        }).blur(function () {
+                            $(this).removeClass(_className);
+                        });
+                    });
+                },
+                inputAlert: function () {
+                    return this.each(function () {
+
+                        var $this = $(this);
+
+                        function getAltBox() {
+                            return $this.parent().find("label.alt");
+                        }
+                        function altBoxCss(opacity) {
+                            var position = $this.position();
+                            return {
+                                width: $this.width(),
+                                top: position.top + 'px',
+                                left: position.left + 'px',
+                                opacity: opacity || 1
+                            }
+                        }
+                        if (getAltBox().size() < 1) {
+                            if (!$this.attr("id")) $this.attr("id", $this.attr("name") + "_" + Math.round(Math.random() * 10000));
+                            var $label = $('<label class="alt" for="' + $this.attr("id") + '">' + $this.attr("alt") + '</label>').appendTo($this.parent());
+
+                            $label.css(altBoxCss(1));
+                            if ($this.val()) $label.hide();
+                        }
+                        $this.focus(function () {
+                            getAltBox().css(altBoxCss(0.3));
+                        }).blur(function () {
+                            if (!$(this).val()) getAltBox().show().css("opacity", 1);
+                        }).keydown(function () {
+                            getAltBox().hide();
+                        });
+                    });
+                },
+                isTag: function (tn) {
+                    if (!tn) return false;
+                    return $(this)[0].tagName.toLowerCase() == tn ? true : false;
+                },
+                /**
+                 * 判断当前元素是否已经绑定某个事件
+                 * @@param {Object} type
+                 */
+                isBind: function (type) {
+                    var _events = $(this).data("events");
+                    return _events && type && _events[type];
+                },
+                readonlySelect: function (readonlySelect) {
+                    return this.each(function (index) {
+                        var selectinput = $('<input type="text" class="disabled" disabled="true" />');
+                        var $this = $(this); $this.hide();
+                        selectinput.attr("id", $this.attr("id") + "_zhows")
+                        selectinput.val($this.val());
+                        selectinput.addClass($this.attr("class"));
+                        if ($("#" + $this.attr("id") + "_zhows").length > 0) return;
+                        selectinput.insertAfter($this);
+                    })
+                },
+                //jquery1.8以上版本没有size()方法
+                size: function () {
+                    return this.length;
+                }
+            });
+        })(jQuery);
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化左边页面,现在需要在页面中调用jtree_init
+            //initleftside();
+
+            //调用jtree
+            jtree_init();
+            //
+            $("#searchTreeBtn").bind("click", function () {
+                if ($("#searchTree").val() != "") { $("#searchTreeClose").show(); }
+                $('ul.tree').colExpAll({ clickType: 'search' });
+            });
+            $("#searchTree").bind("keydown", function (e) {
+                if (e.keyCode == 13) {
+                    if ($("#searchTree").val() != "") { $("#searchTreeClose").show(); } else { $("#searchTreeClose").hide(); };
+                    $('ul.tree').colExpAll({ clickType: 'search' })
+                }
+            });
+            $("#searchTreeClose").bind("click", function () {
+                $("#searchTreeClose").hide();
+                $("#searchTree").val("");
+                $('ul.tree').colExpAll({ clickType: 'close' });
+            });
+        })
+
+        function jtree_init() {
+            var $p = $(document);
+            $("ul.tree", $p).jTree();
+        }
+        $.fn.extend({
+            size: function () {
+                return this.length;
+            }
+        });
+    </script>
+}

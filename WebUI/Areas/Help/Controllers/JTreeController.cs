@@ -22,5 +22,15 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Help.Controllers
         {
             return View();
         }
+
+        public ActionResult zTree()
+        {
+            return View();
+        }
+
+        public ActionResult jTree()
+        {
+            return View();
+        }
     }
 }
