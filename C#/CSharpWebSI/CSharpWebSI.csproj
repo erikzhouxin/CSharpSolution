@@ -158,6 +158,92 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2DModels\Definition\DataDefinition.cs" />
+    <Compile Include="2DModels\Entities\AlertMessage.cs" />
+    <Compile Include="2DModels\Entities\AlertMsg.cs" />
+    <Compile Include="2DModels\Entities\AuthCode.cs" />
+    <Compile Include="2DModels\Entities\UserAccount.cs" />
+    <Compile Include="2DModels\Entities\UserPassword.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\AppSystemEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\CodeFirstModel.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\EquipmentSharedEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\EquipmentTypeEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\ExperimentTypeEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\InfoUsageEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\NewsInfoTypeEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\NumberTypeEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\RegionCombinationEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\RegionLevelEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\RequiredOptionEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\SchoolGradeEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\SchoolType.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Base\SemesterTypeEnum.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EducationBaseInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EducationFileInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EducationRenewalInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EducationYearFileInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EducationYearInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentCatalog.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentCatalogAllocation.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentCatalogDimension.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentDimension.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentItem.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentRequirement.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentUnitPrice.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentUnitPriceProject.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityEquipmentVersionPriceProject.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityExperimentItem.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityExperimentTextbook.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityOWSNews.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityRegistrantOrganization.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityRegistrantOrgUsers.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntitySchoolRegistry.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityStandardEquipment.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityStandardExperiment.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityStandardVersion.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\EntityTextbookEdition.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolBaseInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolFileInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolRenewalInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolUserSimpleInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolYearFileInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolYearFileSimpleInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\SchoolYearInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\BookEditions.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\CatalogDimensionRelation.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\CommandInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\DatabaseDistribution.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EducationBureauFilesControl.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EducationBureauRegistry.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EducationBureauUsers.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EducationBureau_ExperimentSettings.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EducationLockUnlockOperLog.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EducationUsersSchoolRange.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EquipmentCatalogs.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EquipmentItems.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EquipmentReferenceUnitPrice.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EquipmentStandardDimensions.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\EquipmentStandardRequirements.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\ExperimentItems.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\GroupingExperimentEquipment.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\OperationLog.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\ReferenceUnitPriceProject.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolCatalogInit.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolNotices.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolOrderInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolRegistry.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolRenewFee.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolUserOperInfo.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolUsers.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SchoolYearFilesRegistry.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\StandardSchoolClassifications.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\StandardVersions.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\SysSettingUser.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\VW_BookEdition.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\VW_Category.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\VW_Experiment.cs" />
+    <Compile Include="2DModels\Entities\WorksBigsail\Honor3\Supervise\VW_ExperimentCategory.cs" />
+    <Compile Include="2DModels\ViewModels\LogOnViewModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -207,6 +293,20 @@
     <Compile Include="Areas\ZApi\SampleGeneration\ObjectGenerator.cs" />
     <Compile Include="Areas\ZApi\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\ZApi\SampleGeneration\TextSample.cs" />
+    <Compile Include="3DataAccess\EZFirebird\FirebirdHelper.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\DatabaseInitializer.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3School\Configuration.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3School\Honor3SchoolContext.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\AddInitDatabase.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\AddInitDatabase.Designer.cs">
+      <DependentUpon>AddInitDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\Configuration.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\Honor3SuperviseContext.cs" />
+    <Compile Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\Honor3SuperviseEntities.cs" />
+    <Compile Include="3DataAccess\EZRedis\RedisConnectionHelp.cs" />
+    <Compile Include="3DataAccess\EZRedis\RedisHelper.cs" />
+    <Compile Include="3DataAccess\EZSQLite\SQLiteHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,6 +322,9 @@
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Site.css" />
+    <Content Include="3DataAccess\EZMssql\Works.Bigsail\Honor3School\Readme.txt" />
+    <Content Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\Honor3Supervise.Trunk.sql" />
+    <Content Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\Readme.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\CSS\Site.css" />
     <Content Include="ApplicationInsights.config">
@@ -322,6 +425,11 @@
     <Content Include="Areas\Home\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="2BServices\" />
+    <Folder Include="2CUtilities\" />
+    <Folder Include="3DACache\" />
+    <Folder Include="3DataAccess\AFactory\" />
+    <Folder Include="3DataAccess\AInterfaces\" />
     <Folder Include="Scripts\AngularJS\" />
   </ItemGroup>
   <ItemGroup>
@@ -334,18 +442,9 @@
     <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BServices\BServices.csproj">
-      <Project>{8e7fd444-2fd2-4230-89b8-4d76ad44236f}</Project>
-      <Name>BServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CUtilities\CUtilities.csproj">
-      <Project>{e1cae6ef-b37f-4dfe-957e-059d2ea16e72}</Project>
-      <Name>CUtilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DModels\DModels.csproj">
-      <Project>{5c97e2f8-1559-4084-8c92-a7dc07141e9c}</Project>
-      <Name>DModels</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="3DataAccess\EZMssql\Works.Bigsail\Honor3Supervise\AddInitDatabase.resx">
+      <DependentUpon>AddInitDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
