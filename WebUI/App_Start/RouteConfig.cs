@@ -12,6 +12,7 @@ namespace EZOper.CSharpSolution.WebUI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("Content/Json/{*relpath}");
 
             AreaRegistrationContext areaRegistrationContext;
             #region // 帮助域

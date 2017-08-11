@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gui", "Gui", "{C20522DD-67F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{EB94BE69-C807-4645-9DF7-5F77880D7D99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EZOper.TechTester.EZWebTemplate", "EZWebTemplate\EZOper.TechTester.EZWebTemplate.csproj", "{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EZOper.TechTester.EZWebCoreTemplate", "EZWebCoreTemplate\EZOper.TechTester.EZWebCoreTemplate.csproj", "{5AC543CF-17D8-40D3-8D1F-36FB8BFDCCA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +29,21 @@ Global
 		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB94BE69-C807-4645-9DF7-5F77880D7D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC543CF-17D8-40D3-8D1F-36FB8BFDCCA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC543CF-17D8-40D3-8D1F-36FB8BFDCCA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC543CF-17D8-40D3-8D1F-36FB8BFDCCA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC543CF-17D8-40D3-8D1F-36FB8BFDCCA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EB94BE69-C807-4645-9DF7-5F77880D7D99} = {3DB74401-6103-48A6-987E-3AB72C2C66A3}
+		{62D11A0E-76A0-4C5F-8268-B0F32CA81B6B} = {80758445-121E-4A74-988F-A2244BEA7F4E}
+		{5AC543CF-17D8-40D3-8D1F-36FB8BFDCCA6} = {80758445-121E-4A74-988F-A2244BEA7F4E}
 	EndGlobalSection
 EndGlobal

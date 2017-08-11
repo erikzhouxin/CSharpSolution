@@ -1,7 +1,168 @@
-﻿
-@{
-    ViewBag.Title = "View";
+﻿@{
+    ViewBag.Title = "图表控件-Echarts";
 }
-
-<h2>View</h2>
-
+@section CustomStyle{
+}
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="heading02">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse02" aria-expanded="true" aria-controls="collapse02">
+                    2.多组数据加载
+                </a>(<a href="http://echarts.baidu.com/demo.html#line-log">官网地址</a>)+(<a href="https://www.highcharts.com/demo/line-ajax">Highcharts</a>)
+            </h4>
+        </div>
+        <div id="collapse02" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading02">
+            <div class="panel-body">
+                <div id="splineirregulartimedemo" style="width:100%;height:500px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="heading01">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse01" aria-expanded="true" aria-controls="collapse01">
+                    1.大量数据滚轴查看
+                </a>(<a href="http://echarts.baidu.com/demo.html#line-aqi">官网地址</a>)
+            </h4>
+        </div>
+        <div id="collapse01" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading01">
+            <div class="panel-body">
+                <div id="aqibeijingdemo" style="width:100%;height:400px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScript{
+    <script src="~/Scripts/Echarts/v3.6.2/echarts.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var splineirregulartimedemoChart = echarts.init(document.getElementById('splineirregulartimedemo'));
+            $.get('/Content/Json/help.highcharts.splineirregulartimedemo.json', function (data) {
+                option = {
+                    title: {
+                        text: '某地降雨量',
+                        left: 'right'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: '{a} <br/>{b} : {c}'
+                    },
+                    legend: {
+                        left: 'left',
+                        data: data.map(function (item) { return item.name; })
+                    },
+                    xAxis: {
+                        name: '日期',
+                        splitLine: { show: false },
+                        type: 'time',
+                        min: new Date("1970-09-01"),
+                        max: new Date("1971/06/01")
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    yAxis: {
+                        name: '降雨量',
+                        type: 'value',
+                    },
+                    series: data.map(function (item) {
+                        return {
+                            name: item.name,
+                            type: 'line',
+                            data: item.data
+                        };
+                    })
+                };
+                window.onresize = splineirregulartimedemoChart.resize;
+                splineirregulartimedemoChart.setOption(option);
+            });
+            var aqibeijingdemoChart = echarts.init(document.getElementById('aqibeijingdemo'));
+            $.get('/Content/Json/help.echarts.aqibeijingdemo.json', function (data) {
+                var option = {
+                    title: { text: '北京空气污染指数' },
+                    tooltip: { trigger: 'axis' },
+                    xAxis: {
+                        data: data.map(function (item) {
+                            return item[0];
+                        })
+                    },
+                    yAxis: {
+                        splitLine: { show: false }
+                    },
+                    toolbox: {
+                        left: 'center',
+                        feature: {
+                            dataZoom: { yAxisIndex: 'none' },
+                            restore: {},
+                            saveAsImage: {}
+                        }
+                    },
+                    dataZoom: [{
+                        startValue: '2014-06-01'
+                    }, {
+                        type: 'inside'
+                    }],
+                    visualMap: {
+                        top: 10,
+                        right: 10,
+                        pieces: [{
+                            gt: 0,
+                            lte: 50,
+                            color: '#096'
+                        }, {
+                            gt: 50,
+                            lte: 100,
+                            color: '#ffde33'
+                        }, {
+                            gt: 100,
+                            lte: 150,
+                            color: '#ff9933'
+                        }, {
+                            gt: 150,
+                            lte: 200,
+                            color: '#cc0033'
+                        }, {
+                            gt: 200,
+                            lte: 300,
+                            color: '#660099'
+                        }, {
+                            gt: 300,
+                            color: '#7e0023'
+                        }],
+                        outOfRange: {
+                            color: '#999'
+                        }
+                    },
+                    series: {
+                        name: 'AQI',
+                        type: 'line',
+                        data: data.map(function (item) {
+                            return item[1];
+                        }),
+                        markLine: {
+                            silent: true,
+                            data: [{
+                                yAxis: 50,
+                                xAxis: '2014-7-1'
+                            }, {
+                                yAxis: 100
+                            }, {
+                                yAxis: 150
+                            }, {
+                                yAxis: 200
+                            }, {
+                                yAxis: 300
+                            }]
+                        }
+                    }
+                };
+                window.onresize = aqibeijingdemoChart.resize;
+                aqibeijingdemoChart.setOption(option);
+            });
+        });
+    </script>
+}

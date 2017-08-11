@@ -4,6 +4,12 @@
 @section CustomStyle{
     <link href="~/Scripts/zTree/v3.5.29/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
 }
+<div class="bs-callout bs-callout-info">
+    <p>Bootstrap自带:<a href="@Url.Action("Bootstrap")" class="btn-link">Bootstrap Tree</a></p>
+    <p>带搜索的zTree:<a href="@Url.Action("jTree")" class="btn-link">jTree</a></p>
+    <p>树形控件zTree:<a href="@Url.Action("zTree")" class="btn-link">zTree</a></p>
+    <p>本页为zTree的搜索示例</p>
+</div>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-info">
         <div class="panel-heading" role="tab" id="heading01">
@@ -13,7 +19,7 @@
                 </a>
             </h4>
         </div>
-        <div id="collapse01" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading01">
+        <div id="collapse01" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading01">
             <div class="panel-body">
                 <input type="text" id="searchTreeTxt" class="form-control" />
                 <div class="col-md-4 col-sm-5">

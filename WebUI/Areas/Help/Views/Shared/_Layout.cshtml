@@ -31,11 +31,21 @@
             <nav id="nav" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">接口域 <b class="caret"></b></a>
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">接口|API <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="@Url.Action("TestApi", "ZApi")">接口列表</a></li>
                             <li class="divider"></li>
                             <li><a href="@Url.Action("Index", "ZApi")" target="_blank">接口帮助</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">示例|Demo <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Echarts")">Echarts</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index", "Highcharts")">Highcharts</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index", "JTree")">jTree + zTree + BootsTree</a></li>
                         </ul>
                     </li>
                 </ul>

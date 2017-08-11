@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "图表控件-Highcharts";
+}
+@section CustomStyle{
+    <link href="~/Scripts/Highcharts/v5.0.14/code/css/highcharts.css" rel="stylesheet" />
+}
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="heading01">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse01" aria-expanded="true" aria-controls="collapse01">
+                    通过 Ajax 加载数据
+                </a>(<a href="https://www.highcharts.com/demo/spline-irregular-time">官网地址</a>)
+            </h4>
+        </div>
+        <div id="collapse01" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading01">
+            <div class="panel-body">
+                <div id="splineirregulartimedemo"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScript{
+    <script src="~/Scripts/Highcharts/v5.0.14/code/highcharts.js"></script>
+    <script src="~/Scripts/Highcharts/v5.0.14/code/modules/exporting.js"></script>
+    <script type="text/javascript">
+        // Get the CSV and create the chart
+        $(function () {
+            $.getJSON('/Content/Json/help.highcharts.splineirregulartimedemo.json', function (data) {
+                Highcharts.chart('splineirregulartimedemo', {
+                    chart: { type: 'spline' },
+                    title: { text: '某地积雪深度' },
+                    subtitle: { text: '不规则时间数据' },
+                    xAxis: {
+                        type: 'datetime',
+                        dateTimeLabelFormats: { month: '%m' },
+                        title: { text: '日期' }
+                    },
+                    yAxis: {
+                        title: { text: '深度 (m)' },
+                        min: 0
+                    },
+                    tooltip: {
+                        headerFormat: '<b>{series.name}</b><br>',
+                        pointFormat: '{point.x:%m月%e日}: {point.y:.2f} m'
+                    },
+                    plotOptions: {
+                        spline: { marker: { enabled: true } }
+                    },
+                    series: data,
+                    credits: {
+                        text: 'erikzhouxin.com',
+                        href: 'http://www.erikzhouxin.com',
+                        target: '_blank'
+                    }
+                });
+            });
+        });
+    </script>
+}
