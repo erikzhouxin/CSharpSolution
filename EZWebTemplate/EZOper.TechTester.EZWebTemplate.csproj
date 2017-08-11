@@ -873,11 +873,8 @@
     <Content Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate.js" />
     <Content Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate.min.js" />
     <Content Include="Scripts\Lib\bootstrap.min.js" />
-    <None Include="Scripts\Lib\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\Lib\jquery-1.9.1.min.js" />
     <None Include="Scripts\Lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\Lib\jquery-1.9.1.min.map" />
     <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.map" />
     <None Include="Scripts\Lib\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.js" />

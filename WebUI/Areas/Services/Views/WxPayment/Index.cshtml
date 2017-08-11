@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "微信支付样例首页";
+}
+@section CustomStyle{
+    <style type="text/css">
+        #FuncListDiv ul { margin-left: 10px; margin-right: 10px; margin-top: 10px; padding: 0; }
+        #FuncListDiv ul li { width: 32%; float: left; margin: 0px; margin-left: 1%; padding: 0px; height: 100px; display: inline; line-height: 100px; color: #fff; font-size: x-large; word-break: break-all; word-wrap: break-word; margin-bottom: 5px; background-color: #00CD00; }
+        #FuncListDiv ul li a, #FuncListDiv ul li a:link, #FuncListDiv ul li a:visited, #FuncListDiv ul li a:hover, #FuncListDiv ul li a:active { -webkit-tap-highlight-color: rgba(0,0,0,0); text-decoration: none; color: #fff; }
+    </style>
+}
+<div id="FuncListDiv" class="col-xs-12 text-center">
+    <ul>
+        <li><a href="@Url.Action("Product")" target="_blank">JSAPI支付</a></li>
+        <li><a href="@Url.Action("MicroPay")" target="_blank">刷卡支付</a></li>
+        <li><a href="@Url.Action("NativePay")" target="_blank">扫码支付</a></li>
+        <li><a href="@Url.Action("OrderQuery")" target="_blank">订单查询</a></li>
+        <li><a href="@Url.Action("Refund")" target="_blank">订单退款</a></li>
+        <li><a href="@Url.Action("RefundQuery")" target="_blank">退款查询</a></li>
+        <li><a href="@Url.Action("DownloadBill")" target="_blank">下载账单</a></li>
+    </ul>
+</div>

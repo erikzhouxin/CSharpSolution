@@ -48,6 +48,9 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LitJson.0.9.0\lib\LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
@@ -233,12 +236,39 @@
     <Compile Include="Areas\Help\Models\SampleDirection.cs" />
     <Compile Include="Areas\Help\Models\TextSample.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Prototypes\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Services\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Services\Controllers\WxPaymentController.cs" />
     <Compile Include="Areas\ZApi\Controllers\DemoController.cs" />
     <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
     <Compile Include="Context\SysContext.cs" />
+    <Compile Include="EntitiesModels\AlertMessage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Payment\AlipayCode\AlipayConfig.cs" />
+    <Compile Include="Payment\AlipayCode\AlipayCore.cs" />
+    <Compile Include="Payment\AlipayCode\AlipayHelper.cs" />
+    <Compile Include="Payment\AlipayCode\AlipayMD5.cs" />
+    <Compile Include="Payment\AlipayCode\AlipayNotify.cs" />
+    <Compile Include="Payment\AlipayCode\AlipayReturnViewModel.cs" />
+    <Compile Include="Payment\AlipayCode\AlipaySubmit.cs" />
+    <Compile Include="Payment\AlipayCode\NotifyViewModel.cs" />
+    <Compile Include="Payment\AlipayCode\SumitViewModel.cs" />
+    <Compile Include="Payment\Alipayment\Config.cs" />
+    <Compile Include="Payment\PaymentConfig.cs" />
+    <Compile Include="Payment\WeChatPayment\Config.cs" />
+    <Compile Include="Payment\WxPayment\WxPayApi.cs" />
+    <Compile Include="Payment\WxPayment\WxPayConfig.cs" />
+    <Compile Include="Payment\WxPayment\WxPayData.cs" />
+    <Compile Include="Payment\WxPayment\WxPayException.cs" />
+    <Compile Include="Payment\WxPayment\WxPayHelper.cs" />
+    <Compile Include="Payment\WxPayment\WxPayHttpService.cs" />
+    <Compile Include="Payment\WxPayment\WxPayJsApi.cs" />
+    <Compile Include="Payment\WxPayment\WxPayLog.cs" />
+    <Compile Include="Payment\WxPayment\WxPayNativeNotify.cs" />
+    <Compile Include="Payment\WxPayment\WxPayNotify.cs" />
+    <Compile Include="Payment\WxPayment\WxPayResultNotify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
   </ItemGroup>
@@ -652,6 +682,19 @@
     <Content Include="Scripts\Highcharts\v5.0.14\code\themes\sunset.js.map" />
     <Content Include="Content\Json\help.echarts.aqibeijingdemo.json" />
     <Content Include="Content\Json\help.highcharts.splineirregulartimedemo.json" />
+    <Content Include="Areas\Services\Views\Web.config" />
+    <Content Include="Areas\Prototypes\Views\Web.config" />
+    <Content Include="Areas\Services\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Services\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Services\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Prototypes\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Prototypes\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Services\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Prototypes\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Prototypes\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\Index.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\DownloadBill.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\JsApiPay.cshtml" />
     <None Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Highstock\v5.0.14\code\css\highcharts.css" />
     <Content Include="Scripts\Highstock\v5.0.14\code\highcharts-3d.js" />
@@ -865,11 +908,8 @@
     <Content Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate.js" />
     <Content Include="Scripts\jQuery.Validate\v1.11.1\jquery.validate.min.js" />
     <Content Include="Scripts\Lib\bootstrap.min.js" />
-    <None Include="Scripts\Lib\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\Lib\jquery-1.9.1.min.js" />
     <None Include="Scripts\Lib\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Lib\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\Lib\jquery-1.9.1.min.map" />
     <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.map" />
     <None Include="Scripts\Lib\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Lib\jquery-3.1.1.slim.min.js" />
@@ -1082,9 +1122,7 @@
   <ItemGroup>
     <Content Include="Scripts\jQuery\jquery-2.1.4.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Payment\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

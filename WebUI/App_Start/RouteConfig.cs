@@ -15,6 +15,15 @@ namespace EZOper.CSharpSolution.WebUI
             routes.IgnoreRoute("Content/Json/{*relpath}");
 
             AreaRegistrationContext areaRegistrationContext;
+            #region // 服务域
+            areaRegistrationContext = new AreaRegistrationContext("Services", routes);
+            areaRegistrationContext.MapRoute(
+                 name: "Services",
+                 url: "Services/{controller}/{action}/{id}",
+                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                 namespaces: new[] { "EZOper.CSharpSolution.WebUI.Areas.Services.Controllers" }
+             );
+            #endregion
             #region // 帮助域
             areaRegistrationContext = new AreaRegistrationContext("Help", routes);
             areaRegistrationContext.MapRoute(
@@ -22,6 +31,15 @@ namespace EZOper.CSharpSolution.WebUI
                  url: "Help/{controller}/{action}/{id}",
                  defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                  namespaces: new[] { "EZOper.CSharpSolution.WebUI.Areas.Help.Controllers" }
+             );
+            #endregion
+            #region // 原型域
+            areaRegistrationContext = new AreaRegistrationContext("Prototypes", routes);
+            areaRegistrationContext.MapRoute(
+                 name: "Prototypes",
+                 url: "Prototypes/{controller}/{action}/{id}",
+                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                 namespaces: new[] { "EZOper.CSharpSolution.WebUI.Areas.Prototypes.Controllers" }
              );
             #endregion
             #region // 基础域-Home

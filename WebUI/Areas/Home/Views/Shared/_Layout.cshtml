@@ -10,7 +10,7 @@
     @RenderSection("CustomStyle", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,14 +31,12 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
     </div>
-    @Scripts.Render("~/bundles/jquery.js")
-    @Scripts.Render("~/bundles/bootstrap.js")
-    @Scripts.Render("~/bundles/modernizr.js")
+    <footer class="container text-center">
+        <hr />
+        <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+    </footer>
+    @Scripts.Render("~/bundles/jqbspack.js")
     @RenderSection("CustomScript", required: false)
 </body>
 </html>
