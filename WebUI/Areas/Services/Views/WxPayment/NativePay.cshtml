@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "微信支付样例-扫码支付";
+}
+<div style="margin-left: 10px;color:#00CD00;font-size:30px;font-weight: bolder;">扫码支付模式一</div><br />
+<img id="Image1" src="/Services/QrCode/GetPng?data=@Url.Encode(ViewBag.QRCode1)" style="width:200px;height:200px;" />
+<br /><br /><br />
+<div style="margin-left: 10px;color:#00CD00;font-size:30px;font-weight: bolder;">扫码支付模式二</div><br />
+<img id="Image2" src="/Services/QrCode/GetPng?data=@Url.Encode(ViewBag.QRCode2)" style="width:200px;height:200px;" />

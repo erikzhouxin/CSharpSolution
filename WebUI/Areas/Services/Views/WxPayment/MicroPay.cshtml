@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "微信支付样例-刷卡支付";
+}
+<form id="queryForm" class="form-horizontal" action="@Url.Action("MicroPayPage")">
+    <div class="form-group">
+        <label for="total_fee" class="control-label col-sm-5 col-md-3">商品描述：</label>
+        <div class="col-sm-5">
+            <input type="text" id="body" name="body" class="form-control" value="test" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="total_fee" class="control-label col-sm-5 col-md-3">支付金额(分)：</label>
+        <div class="col-sm-5">
+            <input type="number" id="fee" name="fee" class="form-control" value="1" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="total_fee" class="control-label col-sm-5 col-md-3">授权码：</label>
+        <div class="col-sm-5">
+            <input type="text" id="auth_code" name="auth_code" class="form-control" value="test" />
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button id="queryBtn" style="width:210px; height:50px; border-radius: 15px;background-color:#00CD00; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;">提交刷卡</button>
+    </div>
+</form>
+<hr />
+<div id="queryResult">
+</div>
+@section CustomScript{
+    <script type="text/javascript">
+        $(function () {
+            $('#queryBtn').on("click", function () {
+                var thisEle = $(this).attr('disabled', true);
+                var formEle = $('#queryForm');
+                var postUrl = formEle.attr('action');
+                var resultEle = $('#queryResult');
+                resultEle.html('');
+                $.post(postUrl, formEle.serialize(), function (data) {
+                    thisEle.removeAttr('disabled');
+                    if (data.IsSuccess) {
+                        resultEle.removeClass('text-danger').addClass('text-success').html(data.Message);
+                    } else {
+                        resultEle.addClass('text-danger').removeClass('text-success').html(data.Message);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+}

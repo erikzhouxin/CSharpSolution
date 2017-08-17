@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "微信支付样例-订单查询";
+}
+<form id="queryForm" class="form-inline" action="@Url.Action("OrderQueryPage")">
+    <p>微信订单号和商户订单号选少填一个，微信订单号优先：</p>
+    <div class="form-group">
+        <label for="transaction_id">微信订单号：</label>
+        <input type="text" id="transaction_id" name="transaction_id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="out_trade_no">商户订单号：</label>
+        <input type="text" id="out_trade_no" name="out_trade_no" class="form-control" />
+    </div>
+    <div class="form-group">
+        <button type="submit" id="queryBtn" class="btn btn-sm btn-info">
+            <span class="fa fa-search"></span>
+            查询
+        </button>
+    </div>
+</form>
+<div id="queryResult"></div>
+@section CustomScript{
+    <script type="text/javascript">
+        $(function () {
+            $('#queryBtn').on('click', function () {
+                var thisEle = $(this).attr('disabled', true);
+                var resultEle = $('#queryResult').html('');
+                var formEle = $('#queryForm');
+                var postUrl = formEle.attr('action');
+                $.post(postUrl, formEle.serialize(), function (data) {
+                    thisEle.removeAttr('disabled');
+                    if (data.IsSuccess) {
+                        resultEle.html(data.Message);
+                    } else {
+                        alert(data.Message);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+}

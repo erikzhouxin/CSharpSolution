@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EZOper.CSharpSolution.WebUI.Payment.WeChatPayment
+namespace EZOper.CSharpSolution.WebUI.Payment.Wepayment
 {
     /// <summary>
     /// 新版微信支付配置

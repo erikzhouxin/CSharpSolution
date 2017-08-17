@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using System.IO;
 
 namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
 {
@@ -21,12 +22,33 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
         public WxPayNotify(Page page)
         {
             this.page = page;
+            IsWebForm = true;
         }
+
+        /// <summary>
+        /// MVC的构造函数
+        /// </summary>
+        /// <param name="context"></param>
+        public WxPayNotify(HttpContextBase context)
+        {
+            this.context = context;
+            IsWebForm = false;
+        }
+
+        /// <summary>
+        /// 是否WebForm
+        /// </summary>
+        public bool IsWebForm { get; private set; }
 
         /// <summary>
         /// 页面
         /// </summary>
-        public Page page { get; set; }
+        public Page page { get; private set; }
+
+        /// <summary>
+        /// 环境信息
+        /// </summary>
+        public HttpContextBase context { get; private set; }
 
         /// <summary>
         /// 接收从微信支付后台发送过来的数据并验证签名
@@ -35,7 +57,7 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
         public WxPayData GetNotifyData()
         {
             //接收从微信后台POST过来的数据
-            System.IO.Stream s = page.Request.InputStream;
+            Stream s = GetInputStream();
             int count = 0;
             byte[] buffer = new byte[1024];
             StringBuilder builder = new StringBuilder();
@@ -61,9 +83,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "FAIL");
                 res.SetValue("return_msg", ex.Message);
-                WxPayLog.Error(this.GetType().ToString(), "Sign check error : " + res.ToXml());
-                page.Response.Write(res.ToXml());
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Error(this.GetType().ToString(), "Sign check error : " + resXml);
+                ResponseWriteEnd(resXml);
             }
 
             WxPayLog.Info(this.GetType().ToString(), "Check sign success");
@@ -75,7 +97,37 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
         /// </summary>
         public virtual void ProcessNotify()
         {
+        }
 
+        /// <summary>
+        /// 返回页面数据
+        /// </summary>
+        /// <param name="resXml"></param>
+        protected void ResponseWriteEnd(string resXml)
+        {
+            if (IsWebForm)
+            {
+                page.Response.Write(resXml);
+                page.Response.End();
+            }
+            else
+            {
+                context.Response.Write(resXml);
+                context.Response.End();
+            }
+        }
+
+        /// <summary>
+        /// 获取请求数据
+        /// </summary>
+        /// <returns></returns>
+        protected Stream GetInputStream()
+        {
+            if (IsWebForm)
+            {
+                return page.Request.InputStream;
+            }
+            return context.Request.InputStream;
         }
     }
 }

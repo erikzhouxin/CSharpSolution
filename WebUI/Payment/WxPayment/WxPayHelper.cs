@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ThoughtWorks.QRCode.Codec;
 
 namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
 {
@@ -259,7 +263,8 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
             data.SetValue("product_id", productId);//商品ID
 
             WxPayData result = WxPayApi.UnifiedOrder(data);//调用统一下单接口
-            string url = result.GetValue("code_url").ToString();//获得统一下单接口返回的二维码链接
+            var getValue = result.GetValue("code_url");
+            string url = getValue != null ? getValue.ToString() : string.Empty;//获得统一下单接口返回的二维码链接
 
             WxPayLog.Info("NativePay.GetPayUrl", "Get native pay mode 2 url : " + url);
             return url;

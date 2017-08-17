@@ -19,7 +19,14 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
         /// <param name="page"></param>
         public WxPayNativeNotify(Page page) : base(page)
         {
+        }
 
+        /// <summary>
+        /// MVC构造函数
+        /// </summary>
+        /// <param name="context"></param>
+        public WxPayNativeNotify(HttpContextBase context) : base(context)
+        {
         }
 
         /// <summary>
@@ -35,9 +42,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "FAIL");
                 res.SetValue("return_msg", "回调数据异常");
-                WxPayLog.Info(this.GetType().ToString(), "The data WeChat post is error : " + res.ToXml());
-                page.Response.Write(res.ToXml());
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Info(this.GetType().ToString(), "The data WeChat post is error : " + resXml);
+                ResponseWriteEnd(resXml);
             }
 
             //调统一下单接口，获得下单结果
@@ -53,10 +60,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "FAIL");
                 res.SetValue("return_msg", "统一下单失败");
-                var toXml = res.ToXml();
-                WxPayLog.Error(this.GetType().ToString(), "UnifiedOrder failure : " + toXml + "\n===========>" + ex.Message);
-                page.Response.Write(toXml);
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Error(this.GetType().ToString(), "UnifiedOrder failure : " + resXml + "\n===========>" + ex.Message);
+                ResponseWriteEnd(resXml);
             }
 
             //若下单失败，则立即返回结果给微信支付后台
@@ -65,9 +71,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "FAIL");
                 res.SetValue("return_msg", "统一下单失败");
-                WxPayLog.Error(this.GetType().ToString(), "UnifiedOrder failure : " + res.ToXml());
-                page.Response.Write(res.ToXml());
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Error(this.GetType().ToString(), "UnifiedOrder failure : " + resXml);
+                ResponseWriteEnd(resXml);
             }
 
             //统一下单成功,则返回成功结果给微信支付后台
@@ -82,9 +88,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
             data.SetValue("err_code_des", "OK");
             data.SetValue("sign", data.MakeSign());
 
-            WxPayLog.Info(this.GetType().ToString(), "UnifiedOrder success , send data to WeChat : " + data.ToXml());
-            page.Response.Write(data.ToXml());
-            page.Response.End();
+            var dataXml = data.ToXml();
+            WxPayLog.Info(this.GetType().ToString(), "UnifiedOrder success , send data to WeChat : " + dataXml);
+            ResponseWriteEnd(dataXml);
         }
 
         private WxPayData UnifiedOrder(string openId, string productId)

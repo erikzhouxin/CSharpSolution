@@ -1,0 +1,58 @@
+﻿@model AlertMsg
+@{
+    ViewBag.Title = "微信支付样例-JSAPI支付";
+    var wxEditAddrParam = ViewBag.WxEditAddrParam;
+}
+<form id="queryForm" class="form-horizontal" action="@Url.Action("JsApiPay")">
+    <input type="hidden" id="openid" name="openid" value="@TempData["openid"]" />
+    <div class="text-center">
+        <p>@Model.Message</p>
+    </div>
+    <hr />
+    @if (Model.IsSuccess)
+    {
+        <div class="form-group">
+            <label for="total_fee" class="control-label col-sm-5 col-md-3">商品总价(分)：</label>
+            <div class="col-sm-5">
+                <input type="number" id="total_fee" name="total_fee" class="form-control" value="1" />
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" style="width:210px; height:50px; border-radius: 15px;background-color:#00CD00; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;">立即购买</button>
+        </div>
+    }
+</form>
+@section CustomScript{
+    <script type="text/javascript">
+    //获取共享地址
+    function editAddress() {
+        WeixinJSBridge.invoke(
+            'editAddress',
+                 @wxEditAddrParam,//josn串
+            function (res) {
+                var addr1 = res.proviceFirstStageName;
+                var addr2 = res.addressCitySecondStageName;
+                var addr3 = res.addressCountiesThirdStageName;
+                var addr4 = res.addressDetailInfo;
+                var tel = res.telNumber;
+                var addr = addr1 + addr2 + addr3 + addr4;
+                alert(addr + ":" + tel);
+            }
+        );
+    }
+    window.onload = function () {
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', editAddress, false);
+            }
+            else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', editAddress);
+                document.attachEvent('onWeixinJSBridgeReady', editAddress);
+            }
+        }
+        else {
+            editAddress();
+        }
+    };
+    </script>
+}

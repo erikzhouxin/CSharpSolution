@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "微信支付样例-订单退款";
+}
+<form id="queryForm" class="form-horizontal" action="@Url.Action("RefundPage")">
+    <div class="form-group">
+        <p>微信订单号和商户订单号至少填一个，微信订单号优先：</p>
+    </div>
+    <div class="form-group">
+        <label for="transaction_id" class="control-label col-sm-5 col-md-3">微信订单号：</label>
+        <div class="col-sm-5">
+            <input type="text" id="transaction_id" name="transaction_id" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="out_trade_no" class="control-label col-sm-5 col-md-3">商户订单号：</label>
+        <div class="col-sm-5">
+            <input type="text" id="out_trade_no" name="out_trade_no" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="total_fee" class="control-label col-sm-5 col-md-3">订单总金额(分)：</label>
+        <div class="col-sm-5">
+            <input type="number" id="total_fee" name="total_fee" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="refund_fee" class="control-label col-sm-5 col-md-3">退款金额(分)：</label>
+        <div class="col-sm-5">
+            <input type="number" id="refund_fee" name="refund_fee" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" id="queryBtn" style="width:210px; height:50px; border-radius: 15px;background-color:#00CD00; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;">提交退款</button>
+    </div>
+</form>
+<div id="queryResult"></div>
+@section CustomScript{
+    <script type="text/javascript">
+        $(function () {
+            $('#queryBtn').on('click', function () {
+                var thisEle = $(this).attr('disabled', true);
+                var resultEle = $('#queryResult').html('');
+                var formEle = $('#queryForm');
+                var postUrl = formEle.attr('action');
+                $.post(postUrl, formEle.serialize(), function (data) {
+                    thisEle.removeAttr('disabled');
+                    if (data.IsSuccess) {
+                        resultEle.removeClass('text-danger').addClass('text-success').html(data.Message);
+                    } else {
+                        resultEle.addClass('text-danger').removeClass('text-success').html(data.Message);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+}

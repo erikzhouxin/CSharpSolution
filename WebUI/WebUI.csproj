@@ -166,6 +166,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4778.30637, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
@@ -238,6 +241,7 @@
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Prototypes\Controllers\HomeController.cs" />
     <Compile Include="Areas\Services\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Services\Controllers\QrCodeController.cs" />
     <Compile Include="Areas\Services\Controllers\WxPaymentController.cs" />
     <Compile Include="Areas\ZApi\Controllers\DemoController.cs" />
     <Compile Include="Areas\ZApi\Controllers\ValuesController.cs" />
@@ -257,7 +261,8 @@
     <Compile Include="Payment\AlipayCode\SumitViewModel.cs" />
     <Compile Include="Payment\Alipayment\Config.cs" />
     <Compile Include="Payment\PaymentConfig.cs" />
-    <Compile Include="Payment\WeChatPayment\Config.cs" />
+    <Compile Include="Payment\PaymentHelper.cs" />
+    <Compile Include="Payment\Wepayment\Config.cs" />
     <Compile Include="Payment\WxPayment\WxPayApi.cs" />
     <Compile Include="Payment\WxPayment\WxPayConfig.cs" />
     <Compile Include="Payment\WxPayment\WxPayData.cs" />
@@ -271,9 +276,130 @@
     <Compile Include="Payment\WxPayment\WxPayResultNotify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Utilities\QrCodeHelper.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\DownloadBill.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\JsApiPay.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\MicroPay.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\NativeNotify.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\NativePay.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\OrderQuery.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\Refund.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\RefundQuery.cs" />
+    <Compile Include="WebForm\Payment\Wepay\business\ResultNotify.cs" />
+    <Compile Include="WebForm\Payment\Wepay\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\DownloadBillPage.aspx.cs">
+      <DependentUpon>DownloadBillpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\DownloadBillPage.aspx.designer.cs">
+      <DependentUpon>DownloadBillpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\JsApiPayPage.aspx.cs">
+      <DependentUpon>JsApiPayPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\JsApiPayPage.aspx.designer.cs">
+      <DependentUpon>JsApiPayPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\MakeQRCode.aspx.cs">
+      <DependentUpon>MakeQRCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\MakeQRCode.aspx.designer.cs">
+      <DependentUpon>MakeQRCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\MicroPayPage.aspx.cs">
+      <DependentUpon>MicroPayPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\MicroPayPage.aspx.designer.cs">
+      <DependentUpon>MicroPayPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\NativeNotifyPage.aspx.cs">
+      <DependentUpon>NativeNotifyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\NativeNotifyPage.aspx.designer.cs">
+      <DependentUpon>NativeNotifyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\NativePayPage.aspx.cs">
+      <DependentUpon>NativePayPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\NativePayPage.aspx.designer.cs">
+      <DependentUpon>NativePayPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\OrderQueryPage.aspx.cs">
+      <DependentUpon>OrderQueryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\OrderQueryPage.aspx.designer.cs">
+      <DependentUpon>OrderQueryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\ProductPage.aspx.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\ProductPage.aspx.designer.cs">
+      <DependentUpon>ProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\RefundPage.aspx.cs">
+      <DependentUpon>RefundPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\RefundPage.aspx.designer.cs">
+      <DependentUpon>RefundPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\RefundQueryPage.aspx.cs">
+      <DependentUpon>RefundQueryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\RefundQueryPage.aspx.designer.cs">
+      <DependentUpon>RefundQueryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\ResultNotifyPage.aspx.cs">
+      <DependentUpon>ResultNotifyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\example\ResultNotifyPage.aspx.designer.cs">
+      <DependentUpon>ResultNotifyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Payment\Wepay\lib\Config.cs" />
+    <Compile Include="WebForm\Payment\Wepay\lib\Data.cs" />
+    <Compile Include="WebForm\Payment\Wepay\lib\Exception.cs" />
+    <Compile Include="WebForm\Payment\Wepay\lib\HttpService.cs" />
+    <Compile Include="WebForm\Payment\Wepay\lib\Log.cs" />
+    <Compile Include="WebForm\Payment\Wepay\lib\Notify.cs" />
+    <Compile Include="WebForm\Payment\Wepay\lib\WxPayApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SQLite\EZWebTemplate.sql" />
+    <Content Include="Content\Images\Payment\AlipayLogo.100x100.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.120x120.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.165x58.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.182x64.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.228x80.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.273x96.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.342x120.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.36x36.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.48x48.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.56x56.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.60x60.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.64x64.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.75x75.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.80x80.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.855x300.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.88x88.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.96x96.png" />
+    <Content Include="Content\Images\Payment\AlipayLogo.biao.png" />
+    <Content Include="Content\Images\Payment\AlipayPanel.png" />
+    <Content Include="Content\Images\Payment\WepayPanel.png" />
     <Content Include="Scripts\CSS\bootstrap-theme.css" />
     <Content Include="Scripts\CSS\bootstrap-theme.min.css" />
     <Content Include="Scripts\CSS\bootstrap.css" />
@@ -695,6 +821,25 @@
     <Content Include="Areas\Services\Views\WxPayment\Index.cshtml" />
     <Content Include="Areas\Services\Views\WxPayment\DownloadBill.cshtml" />
     <Content Include="Areas\Services\Views\WxPayment\JsApiPay.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\Product.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\MicroPay.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\NativePay.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\NativeNotify.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\OrderQuery.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\Refund.cshtml" />
+    <Content Include="Areas\Services\Views\WxPayment\ResultNotify.cshtml" />
+    <Content Include="WebForm\Payment\Wepay\Default.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\DownloadBillpage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\JsApiPayPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\MakeQRCode.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\MicroPayPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\NativeNotifyPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\NativePayPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\OrderQueryPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\ProductPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\RefundPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\RefundQueryPage.aspx" />
+    <Content Include="WebForm\Payment\Wepay\example\ResultNotifyPage.aspx" />
     <None Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Highstock\v5.0.14\code\css\highcharts.css" />
     <Content Include="Scripts\Highstock\v5.0.14\code\highcharts-3d.js" />
@@ -1043,6 +1188,7 @@
     <Content Include="Scripts\zTree\v3.5.29\css\awesomeStyle\awesome.less" />
     <Content Include="Scripts\zTree\v3.5.29\css\awesomeStyle\fa.less" />
     <Content Include="Scripts\ZRender\v2.1.0\README.md" />
+    <Content Include="WebForm\Payment\Wepay\cert\apiclient_cert.p12" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Angular\v1.6.4\angular-animate.min.js.map" />

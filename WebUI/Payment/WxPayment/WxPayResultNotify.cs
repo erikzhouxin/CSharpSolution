@@ -22,6 +22,14 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
         }
 
         /// <summary>
+        /// MVC构造函数
+        /// </summary>
+        /// <param name="context"></param>
+        public WxPayResultNotify(HttpContextBase context) : base(context)
+        {
+        }
+
+        /// <summary>
         /// 处理通知
         /// </summary>
         public override void ProcessNotify()
@@ -35,9 +43,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "FAIL");
                 res.SetValue("return_msg", "支付结果中微信订单号不存在");
-                WxPayLog.Error(this.GetType().ToString(), "The Pay result is error : " + res.ToXml());
-                page.Response.Write(res.ToXml());
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Error(this.GetType().ToString(), "The Pay result is error : " + resXml);
+                ResponseWriteEnd(resXml);
             }
 
             string transaction_id = notifyData.GetValue("transaction_id").ToString();
@@ -49,9 +57,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "FAIL");
                 res.SetValue("return_msg", "订单查询失败");
-                WxPayLog.Error(this.GetType().ToString(), "Order query failure : " + res.ToXml());
-                page.Response.Write(res.ToXml());
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Error(this.GetType().ToString(), "Order query failure : " + resXml);
+                ResponseWriteEnd(resXml);
             }
             //查询订单成功
             else
@@ -59,9 +67,9 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayData res = new WxPayData();
                 res.SetValue("return_code", "SUCCESS");
                 res.SetValue("return_msg", "OK");
-                WxPayLog.Info(this.GetType().ToString(), "order query success : " + res.ToXml());
-                page.Response.Write(res.ToXml());
-                page.Response.End();
+                var resXml = res.ToXml();
+                WxPayLog.Info(this.GetType().ToString(), "order query success : " + resXml);
+                ResponseWriteEnd(resXml);
             }
         }
 

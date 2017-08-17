@@ -305,7 +305,7 @@ namespace EZOper.CSharpSolution.WebUI.Payment.AlipayCode
         /// 获取支付宝GET|POST过来通知消息，并以“参数名=参数值”的形式组成数组
         /// </summary>
         /// <returns>request回来的信息组成的数组</returns>
-        public static SortedDictionary<string, string> GetRequestGet(NameValueCollection requestQueryString)
+        public static SortedDictionary<string, string> GetRequest(NameValueCollection requestQueryString)
         {
             int i = 0;
             SortedDictionary<string, string> sArray = new SortedDictionary<string, string>();

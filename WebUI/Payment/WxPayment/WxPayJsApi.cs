@@ -19,8 +19,17 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
     /// </summary>
     public class WxPayJsApi
     {
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="page"></param>
         public WxPayJsApi(Page page) : this(page.Request)
         { }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="request"></param>
         public WxPayJsApi(HttpRequest request)
         {
             Code = request.QueryString["code"];
@@ -29,6 +38,10 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
             UrlQuery = request.Url.Query;
         }
 
+        /// <summary>
+        /// MVC构造函数
+        /// </summary>
+        /// <param name="request"></param>
         public WxPayJsApi(HttpRequestBase request)
         {
             Code = request.QueryString["code"];
@@ -120,12 +133,12 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
         /// <summary>
         /// 通过code换取网页授权access_token和openid的返回数据，正确时返回的JSON数据包如下：
         /// {
-        /// "access_token":"ACCESS_TOKEN",
-        /// "expires_in":7200,
-        /// "refresh_token":"REFRESH_TOKEN",
-        /// "openid":"OPENID",
-        /// "scope":"SCOPE",
-        /// "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
+        ///     "access_token":"ACCESS_TOKEN",
+        ///     "expires_in":7200,
+        ///     "refresh_token":"REFRESH_TOKEN",
+        ///     "openid":"OPENID",
+        ///     "scope":"SCOPE",
+        ///     "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
         /// }
         /// 其中access_token可用于获取共享收货地址
         /// openid是微信支付jsapi支付接口统一下单时必须的参数
@@ -229,9 +242,18 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
             WxPayLog.Debug(this.GetType().ToString(), "Get jsApiParam : " + parameters);
             return parameters;
         }
-                
-	    /// <summary>
+
+        /// <summary>
         /// 获取收货地址js函数入口参数,详情请参考收货地址共享接口：http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_9
+        /// 调用js获取收货地址时需要传入的参数
+        /// 格式：json串
+        /// 包含以下字段：
+        ///     appid：公众号id
+        ///     scope: 填写“jsapi_address”，获得编辑地址权限
+        ///     signType:签名方式，目前仅支持SHA1
+        ///     addrSign: 签名，由appid、url、timestamp、noncestr、accesstoken参与签名
+        ///     timeStamp：时间戳
+        ///     nonceStr: 随机字符串
         /// </summary>
         /// <returns>共享收货地址js函数需要的参数，json格式可以直接做参数使用</returns>
         public string GetEditAddressParameters()
@@ -254,6 +276,7 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
                 WxPayLog.Debug(this.GetType().ToString(), "SHA1 encrypt param : " + param);
                 //SHA1加密
                 string addrSign = Sha1Hash(param);
+                
                 WxPayLog.Debug(this.GetType().ToString(), "SHA1 encrypt result : " + addrSign);
 
                 //获取收货地址js函数入口参数
@@ -291,7 +314,7 @@ namespace EZOper.CSharpSolution.WebUI.Payment.WxPayment
             StringBuilder sBuilder = new StringBuilder();
             for (int i = 0; i < data.Length; i++)
             {
-                sBuilder.Append(data[i].ToString("x2"));
+                sBuilder.Append(data[i].ToString("x2").ToUpper());
             }
             return sBuilder.ToString();
         }
