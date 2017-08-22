@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,6 +48,9 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AopSdk">
+      <HintPath>..\OSS\Beans\AopSdk.dll</HintPath>
+    </Reference>
     <Reference Include="LitJson, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LitJson.0.9.0\lib\LitJson.dll</HintPath>
     </Reference>
@@ -75,8 +78,8 @@
     <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -108,8 +111,8 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.2\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -203,6 +206,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayCore.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FMonitorResult.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FPayResult.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FPrepayResult.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FQueryResult.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FRefundResult.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayMonitorImpl.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\Alipaynotify.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\AlipayTradeImpl.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\F2FBiz.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\F2FMonitor.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\F2FResult.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\IAlipayMonitor.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Business\IAlipayTradeService.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayMonitorContentBuilder.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradePayContentBuilder.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradePrecreateContentBuilder.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradeQueryCententBuilder.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradeRefundContentBuilder.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Domain\JsonBuilder.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Model\ExtendParams.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Model\GoodsInfo.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Model\PayResultModel.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Model\ResultEnum.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Model\TradeInfo.cs" />
+    <Compile Include="Alipayment\F2FPayDll\Model\TradeStatusModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -259,10 +288,67 @@
     <Compile Include="Payment\AlipayCode\AlipaySubmit.cs" />
     <Compile Include="Payment\AlipayCode\NotifyViewModel.cs" />
     <Compile Include="Payment\AlipayCode\SumitViewModel.cs" />
-    <Compile Include="Payment\Alipayment\Config.cs" />
     <Compile Include="Payment\PaymentConfig.cs" />
     <Compile Include="Payment\PaymentHelper.cs" />
-    <Compile Include="Payment\Wepayment\Config.cs" />
+    <Compile Include="WebForm\Alipayment\app_code\Config.cs" />
+    <Compile Include="WebForm\Alipayment\app_code\LogHelper.cs" />
+    <Compile Include="WebForm\Alipayment\barcodepay.aspx.cs">
+      <DependentUpon>barcodepay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\barcodepay.aspx.designer.cs">
+      <DependentUpon>barcodepay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\monitor.aspx.cs">
+      <DependentUpon>monitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\monitor.aspx.designer.cs">
+      <DependentUpon>monitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\notify_url.aspx.cs">
+      <DependentUpon>notify_url.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\notify_url.aspx.designer.cs">
+      <DependentUpon>notify_url.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\precreate.aspx.cs">
+      <DependentUpon>precreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\precreate.aspx.designer.cs">
+      <DependentUpon>precreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\query.aspx.cs">
+      <DependentUpon>query.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\query.aspx.designer.cs">
+      <DependentUpon>query.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\refund.aspx.cs">
+      <DependentUpon>refund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\refund.aspx.designer.cs">
+      <DependentUpon>refund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Alipayment\result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wepayment\Config.cs" />
     <Compile Include="Payment\WxPayment\WxPayApi.cs" />
     <Compile Include="Payment\WxPayment\WxPayConfig.cs" />
     <Compile Include="Payment\WxPayment\WxPayData.cs" />
@@ -277,106 +363,106 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Utilities\QrCodeHelper.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\DownloadBill.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\JsApiPay.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\MicroPay.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\NativeNotify.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\NativePay.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\OrderQuery.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\Refund.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\RefundQuery.cs" />
-    <Compile Include="WebForm\Payment\Wepay\business\ResultNotify.cs" />
-    <Compile Include="WebForm\Payment\Wepay\Default.aspx.cs">
+    <Compile Include="WebForm\Wepayment\business\DownloadBill.cs" />
+    <Compile Include="WebForm\Wepayment\business\JsApiPay.cs" />
+    <Compile Include="WebForm\Wepayment\business\MicroPay.cs" />
+    <Compile Include="WebForm\Wepayment\business\NativeNotify.cs" />
+    <Compile Include="WebForm\Wepayment\business\NativePay.cs" />
+    <Compile Include="WebForm\Wepayment\business\OrderQuery.cs" />
+    <Compile Include="WebForm\Wepayment\business\Refund.cs" />
+    <Compile Include="WebForm\Wepayment\business\RefundQuery.cs" />
+    <Compile Include="WebForm\Wepayment\business\ResultNotify.cs" />
+    <Compile Include="WebForm\Wepayment\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\Default.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\DownloadBillPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\DownloadBillPage.aspx.cs">
       <DependentUpon>DownloadBillpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\DownloadBillPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\DownloadBillPage.aspx.designer.cs">
       <DependentUpon>DownloadBillpage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\JsApiPayPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\JsApiPayPage.aspx.cs">
       <DependentUpon>JsApiPayPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\JsApiPayPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\JsApiPayPage.aspx.designer.cs">
       <DependentUpon>JsApiPayPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\MakeQRCode.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\MakeQRCode.aspx.cs">
       <DependentUpon>MakeQRCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\MakeQRCode.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\MakeQRCode.aspx.designer.cs">
       <DependentUpon>MakeQRCode.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\MicroPayPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\MicroPayPage.aspx.cs">
       <DependentUpon>MicroPayPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\MicroPayPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\MicroPayPage.aspx.designer.cs">
       <DependentUpon>MicroPayPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\NativeNotifyPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\NativeNotifyPage.aspx.cs">
       <DependentUpon>NativeNotifyPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\NativeNotifyPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\NativeNotifyPage.aspx.designer.cs">
       <DependentUpon>NativeNotifyPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\NativePayPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\NativePayPage.aspx.cs">
       <DependentUpon>NativePayPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\NativePayPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\NativePayPage.aspx.designer.cs">
       <DependentUpon>NativePayPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\OrderQueryPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\OrderQueryPage.aspx.cs">
       <DependentUpon>OrderQueryPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\OrderQueryPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\OrderQueryPage.aspx.designer.cs">
       <DependentUpon>OrderQueryPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\ProductPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\ProductPage.aspx.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\ProductPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\ProductPage.aspx.designer.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\RefundPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\RefundPage.aspx.cs">
       <DependentUpon>RefundPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\RefundPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\RefundPage.aspx.designer.cs">
       <DependentUpon>RefundPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\RefundQueryPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\RefundQueryPage.aspx.cs">
       <DependentUpon>RefundQueryPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\RefundQueryPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\RefundQueryPage.aspx.designer.cs">
       <DependentUpon>RefundQueryPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\ResultNotifyPage.aspx.cs">
+    <Compile Include="WebForm\Wepayment\example\ResultNotifyPage.aspx.cs">
       <DependentUpon>ResultNotifyPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\example\ResultNotifyPage.aspx.designer.cs">
+    <Compile Include="WebForm\Wepayment\example\ResultNotifyPage.aspx.designer.cs">
       <DependentUpon>ResultNotifyPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Payment\Wepay\lib\Config.cs" />
-    <Compile Include="WebForm\Payment\Wepay\lib\Data.cs" />
-    <Compile Include="WebForm\Payment\Wepay\lib\Exception.cs" />
-    <Compile Include="WebForm\Payment\Wepay\lib\HttpService.cs" />
-    <Compile Include="WebForm\Payment\Wepay\lib\Log.cs" />
-    <Compile Include="WebForm\Payment\Wepay\lib\Notify.cs" />
-    <Compile Include="WebForm\Payment\Wepay\lib\WxPayApi.cs" />
+    <Compile Include="WebForm\Wepayment\lib\Config.cs" />
+    <Compile Include="WebForm\Wepayment\lib\Data.cs" />
+    <Compile Include="WebForm\Wepayment\lib\Exception.cs" />
+    <Compile Include="WebForm\Wepayment\lib\HttpService.cs" />
+    <Compile Include="WebForm\Wepayment\lib\Log.cs" />
+    <Compile Include="WebForm\Wepayment\lib\Notify.cs" />
+    <Compile Include="WebForm\Wepayment\lib\WxPayApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SQLite\EZWebTemplate.sql" />
@@ -400,6 +486,17 @@
     <Content Include="Content\Images\Payment\AlipayLogo.biao.png" />
     <Content Include="Content\Images\Payment\AlipayPanel.png" />
     <Content Include="Content\Images\Payment\WepayPanel.png" />
+    <Content Include="Html\Alipayment\getCities.html" />
+    <Content Include="Html\Alipayment\getLocation.html" />
+    <Content Include="Html\Alipayment\getNetworkType.html" />
+    <Content Include="Html\Alipayment\list.html" />
+    <Content Include="Html\Alipayment\scan.html" />
+    <Content Include="Html\Alipayment\selectAddress.html" />
+    <Content Include="Html\Alipayment\shake.html" />
+    <Content Include="Html\Alipayment\share.html" />
+    <Content Include="Html\Alipayment\speech.html" />
+    <Content Include="Html\Alipayment\takePhoto.html" />
+    <Content Include="Html\Alipayment\vibrate.html" />
     <Content Include="Scripts\CSS\bootstrap-theme.css" />
     <Content Include="Scripts\CSS\bootstrap-theme.min.css" />
     <Content Include="Scripts\CSS\bootstrap.css" />
@@ -828,18 +925,28 @@
     <Content Include="Areas\Services\Views\WxPayment\OrderQuery.cshtml" />
     <Content Include="Areas\Services\Views\WxPayment\Refund.cshtml" />
     <Content Include="Areas\Services\Views\WxPayment\ResultNotify.cshtml" />
-    <Content Include="WebForm\Payment\Wepay\Default.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\DownloadBillpage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\JsApiPayPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\MakeQRCode.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\MicroPayPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\NativeNotifyPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\NativePayPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\OrderQueryPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\ProductPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\RefundPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\RefundQueryPage.aspx" />
-    <Content Include="WebForm\Payment\Wepay\example\ResultNotifyPage.aspx" />
+    <Content Include="WebForm\Alipayment\barcodepay.aspx" />
+    <Content Include="WebForm\Alipayment\images\alipay.gif" />
+    <Content Include="WebForm\Alipayment\images\new-btn-fixed.png" />
+    <Content Include="WebForm\Alipayment\index.aspx" />
+    <Content Include="WebForm\Alipayment\monitor.aspx" />
+    <Content Include="WebForm\Alipayment\notify_url.aspx" />
+    <Content Include="WebForm\Alipayment\precreate.aspx" />
+    <Content Include="WebForm\Alipayment\query.aspx" />
+    <Content Include="WebForm\Alipayment\refund.aspx" />
+    <Content Include="WebForm\Alipayment\result.aspx" />
+    <Content Include="WebForm\Wepayment\Default.aspx" />
+    <Content Include="WebForm\Wepayment\example\DownloadBillpage.aspx" />
+    <Content Include="WebForm\Wepayment\example\JsApiPayPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\MakeQRCode.aspx" />
+    <Content Include="WebForm\Wepayment\example\MicroPayPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\NativeNotifyPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\NativePayPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\OrderQueryPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\ProductPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\RefundPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\RefundQueryPage.aspx" />
+    <Content Include="WebForm\Wepayment\example\ResultNotifyPage.aspx" />
     <None Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Highstock\v5.0.14\code\css\highcharts.css" />
     <Content Include="Scripts\Highstock\v5.0.14\code\highcharts-3d.js" />
@@ -1188,7 +1295,7 @@
     <Content Include="Scripts\zTree\v3.5.29\css\awesomeStyle\awesome.less" />
     <Content Include="Scripts\zTree\v3.5.29\css\awesomeStyle\fa.less" />
     <Content Include="Scripts\ZRender\v2.1.0\README.md" />
-    <Content Include="WebForm\Payment\Wepay\cert\apiclient_cert.p12" />
+    <Content Include="WebForm\Wepayment\cert\apiclient_cert.p12" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Angular\v1.6.4\angular-animate.min.js.map" />
@@ -1301,9 +1408,9 @@
     <PropertyGroup>
       <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
