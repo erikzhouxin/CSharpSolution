@@ -206,32 +206,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayCore.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FMonitorResult.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FPayResult.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FPrepayResult.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FQueryResult.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayF2FRefundResult.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayMonitorImpl.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\Alipaynotify.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\AlipayTradeImpl.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\F2FBiz.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\F2FMonitor.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\F2FResult.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\IAlipayMonitor.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Business\IAlipayTradeService.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayMonitorContentBuilder.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradePayContentBuilder.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradePrecreateContentBuilder.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradeQueryCententBuilder.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Domain\AlipayTradeRefundContentBuilder.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Domain\JsonBuilder.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Model\ExtendParams.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Model\GoodsInfo.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Model\PayResultModel.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Model\ResultEnum.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Model\TradeInfo.cs" />
-    <Compile Include="Alipayment\F2FPayDll\Model\TradeStatusModel.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayCore.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FMonitorResult.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FPayResult.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FPrepayResult.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FQueryResult.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FRefundResult.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayMonitorImpl.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\Alipaynotify.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayTradeImpl.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\F2FBiz.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\F2FMonitor.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\F2FResult.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\IAlipayMonitor.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Business\IAlipayTradeService.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayMonitorContentBuilder.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradePayContentBuilder.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradePrecreateContentBuilder.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradeQueryCententBuilder.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradeRefundContentBuilder.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\JsonBuilder.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Model\ExtendParams.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Model\GoodsInfo.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Model\PayResultModel.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Model\ResultEnum.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Model\TradeInfo.cs" />
+    <Compile Include="Payment\Alipayment\F2FPayDll\Model\TradeStatusModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -348,7 +348,7 @@
     <Compile Include="WebForm\Alipayment\result.aspx.designer.cs">
       <DependentUpon>result.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Wepayment\Config.cs" />
+    <Compile Include="Payment\Wepayment\Config.cs" />
     <Compile Include="Payment\WxPayment\WxPayApi.cs" />
     <Compile Include="Payment\WxPayment\WxPayConfig.cs" />
     <Compile Include="Payment\WxPayment\WxPayData.cs" />
