@@ -60,6 +60,12 @@ namespace Aop.Api.Domain
         public string ItemType { get; set; }
 
         /// <summary>
+        /// 备注
+        /// </summary>
+        [XmlElement("memo")]
+        public string Memo { get; set; }
+
+        /// <summary>
         /// 操作上下文 isv角色操作时必填。其他角色不需填写，不填时以auth_code为准。
         /// </summary>
         [XmlElement("operation_context")]
@@ -102,7 +108,7 @@ namespace Aop.Api.Domain
         public string ShopIds { get; set; }
 
         /// <summary>
-        /// 商品名称，请勿超过20汉字，40个字符
+        /// 商品名称，请勿超过40汉字，80个字符
         /// </summary>
         [XmlElement("subject")]
         public string Subject { get; set; }

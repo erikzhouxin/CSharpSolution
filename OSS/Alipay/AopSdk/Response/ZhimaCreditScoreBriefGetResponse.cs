@@ -15,7 +15,7 @@ namespace Aop.Api.Response
         public string BizNo { get; set; }
 
         /// <summary>
-        /// 准入判断结果  Y=准入,N=不准入,N/A=无法评估该用户的信用
+        /// 准入判断结果  Y(用户的芝麻分大于等于准入分数)，N（用户的芝麻分小于准入分数），N/A（无法评估，例如用户未开通芝麻信用,或芝麻采集的信息不足以评估该用户的信用）
         /// </summary>
         [XmlElement("is_admittance")]
         public string IsAdmittance { get; set; }

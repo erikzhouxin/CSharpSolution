@@ -82,7 +82,7 @@ namespace Aop.Api.Domain
         public string PatientCardNo { get; set; }
 
         /// <summary>
-        /// 患者证件号码
+        /// 患者证件类型
         /// </summary>
         [XmlElement("patient_card_type")]
         public string PatientCardType { get; set; }

@@ -11,7 +11,7 @@ namespace Aop.Api.Domain
     public class AlipayOpenPublicDefaultExtensionCreateModel : AopObject
     {
         /// <summary>
-        /// 默认扩展区列表，最大条数为3，
+        /// 默认扩展区列表，最多包含3个扩展区
         /// </summary>
         [XmlArray("areas")]
         [XmlArrayItem("extension_area")]

@@ -16,6 +16,12 @@ namespace Aop.Api.Domain
         public string Category { get; set; }
 
         /// <summary>
+        /// 采集的数据的版本号。
+        /// </summary>
+        [XmlElement("data_version")]
+        public string DataVersion { get; set; }
+
+        /// <summary>
         /// 实体code
         /// </summary>
         [XmlElement("entity_code")]
@@ -34,7 +40,7 @@ namespace Aop.Api.Domain
         public string EntityType { get; set; }
 
         /// <summary>
-        /// 模型结果,不同数据项,对应的模型结果对象不同,以JSON格式输出
+        /// 征信模型结果,以JSON格式输出，包括征信评分creditScore、不准入原因refuseReasons、模型标识码modelIdCode三个字段
         /// </summary>
         [XmlElement("model_result_object")]
         public string ModelResultObject { get; set; }

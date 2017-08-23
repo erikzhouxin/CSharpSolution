@@ -22,7 +22,7 @@ namespace Aop.Api.Domain
         public long StartTerm { get; set; }
 
         /// <summary>
-        /// 数值
+        /// 分期值（如还款方式、利率等）
         /// </summary>
         [XmlElement("value")]
         public string Value { get; set; }

@@ -29,10 +29,28 @@ namespace Aop.Api.Domain
         public string BuyerLogonId { get; set; }
 
         /// <summary>
+        /// 禁用渠道，用户不可用指定渠道支付  当有多个渠道时用“,”分隔  注，与enable_pay_channels互斥
+        /// </summary>
+        [XmlElement("disable_pay_channels")]
+        public string DisablePayChannels { get; set; }
+
+        /// <summary>
         /// 可打折金额. 参与优惠计算的金额，单位为元，精确到小数点后两位，取值范围[0.01,100000000] 如果该值未传入，但传入了【订单总金额】，【不可打折金额】则该值默认为【订单总金额】-【不可打折金额】
         /// </summary>
         [XmlElement("discountable_amount")]
         public string DiscountableAmount { get; set; }
+
+        /// <summary>
+        /// 可用渠道，用户只能在指定渠道范围内支付  当有多个渠道时用“,”分隔  注，与disable_pay_channels互斥
+        /// </summary>
+        [XmlElement("enable_pay_channels")]
+        public string EnablePayChannels { get; set; }
+
+        /// <summary>
+        /// 外部指定买家
+        /// </summary>
+        [XmlElement("ext_user_info")]
+        public ExtUserInfo ExtUserInfo { get; set; }
 
         /// <summary>
         /// 业务扩展参数

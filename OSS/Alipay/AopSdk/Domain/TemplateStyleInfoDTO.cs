@@ -48,6 +48,18 @@ namespace Aop.Api.Domain
         public List<string> FeatureDescriptions { get; set; }
 
         /// <summary>
+        /// 设置是否在卡面展示（个人头像）图片信息，默认不展示；  当前仅用于身份验证信息类型的个人头像图片；  图片id随创建卡/更新卡时传入；  详见会员卡产品文档。
+        /// </summary>
+        [XmlElement("front_image_enable")]
+        public bool FrontImageEnable { get; set; }
+
+        /// <summary>
+        /// 设置是否在卡面展示文案信息，默认不展示；  文案信息分行展示，最多展示3行文案，每行文案分为label和value两部分；  文案实际内容随创建卡/更新卡时传入；  详见会员卡产品说明文档。
+        /// </summary>
+        [XmlElement("front_text_list_enable")]
+        public bool FrontTextListEnable { get; set; }
+
+        /// <summary>
         /// logo的图片ID，通过接口（alipay.offline.material.image.upload）上传图片    图片说明：1M以内，格式bmp、png、jpeg、jpg、gif；  尺寸不小于500*500px的正方形；  请优先使用商家LOGO；
         /// </summary>
         [XmlElement("logo_id")]

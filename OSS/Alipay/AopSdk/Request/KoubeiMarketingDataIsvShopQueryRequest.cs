@@ -6,17 +6,17 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.security.prod.xwbtest.purchase
+    /// AOP API: koubei.marketing.data.isv.shop.query
     /// </summary>
-    public class AlipaySecurityProdXwbtestPurchaseRequest : IAopRequest<AlipaySecurityProdXwbtestPurchaseResponse>
+    public class KoubeiMarketingDataIsvShopQueryRequest : IAopRequest<KoubeiMarketingDataIsvShopQueryResponse>
     {
         /// <summary>
-        /// xwbtest
+        /// ISV商户门店摘要信息批量查询接口
         /// </summary>
         public string BizContent { get; set; }
 
         #region IAopRequest Members
-		private bool  needEncrypt=true;
+		private bool  needEncrypt=false;
         private string apiVersion = "1.0";
 		private string terminalType;
 		private string terminalInfo;
@@ -76,7 +76,7 @@ namespace Aop.Api.Request
 
         public string GetApiName()
         {
-            return "alipay.security.prod.xwbtest.purchase";
+            return "koubei.marketing.data.isv.shop.query";
         }
 
         public void SetApiVersion(string apiVersion){

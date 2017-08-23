@@ -60,6 +60,12 @@ namespace Aop.Api.Domain
         public string ItemId { get; set; }
 
         /// <summary>
+        /// 备注
+        /// </summary>
+        [XmlElement("memo")]
+        public string Memo { get; set; }
+
+        /// <summary>
         /// 操作上下文。isv角色操作时必填。其他角色不需填写。
         /// </summary>
         [XmlElement("operation_context")]

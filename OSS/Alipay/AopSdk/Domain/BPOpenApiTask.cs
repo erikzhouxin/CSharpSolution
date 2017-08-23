@@ -28,10 +28,28 @@ namespace Aop.Api.Domain
         public string DisplayName { get; set; }
 
         /// <summary>
+        /// 操作时间
+        /// </summary>
+        [XmlElement("gmt_operate")]
+        public string GmtOperate { get; set; }
+
+        /// <summary>
+        /// 处理备注信息
+        /// </summary>
+        [XmlElement("memo")]
+        public string Memo { get; set; }
+
+        /// <summary>
         /// 审批节点code
         /// </summary>
         [XmlElement("name")]
         public string Name { get; set; }
+
+        /// <summary>
+        /// 点击的操作按钮
+        /// </summary>
+        [XmlElement("operate")]
+        public string Operate { get; set; }
 
         /// <summary>
         /// 可点击的操作

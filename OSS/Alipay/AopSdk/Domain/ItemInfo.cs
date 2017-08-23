@@ -59,5 +59,11 @@ namespace Aop.Api.Domain
         /// </summary>
         [XmlElement("original_price")]
         public string OriginalPrice { get; set; }
+
+        /// <summary>
+        /// 单品券中每个单品的最低消费金额
+        /// </summary>
+        [XmlElement("sku_min_consume")]
+        public string SkuMinConsume { get; set; }
     }
 }

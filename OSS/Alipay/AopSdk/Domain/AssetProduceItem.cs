@@ -52,6 +52,12 @@ namespace Aop.Api.Domain
         public string CreateDate { get; set; }
 
         /// <summary>
+        /// 1 - 旧模式, 需要在生产完成后反馈运单号 ; 2 - 新模式, 不需要在生产完成后反馈运单号
+        /// </summary>
+        [XmlElement("data_version")]
+        public string DataVersion { get; set; }
+
+        /// <summary>
         /// 区
         /// </summary>
         [XmlElement("district")]

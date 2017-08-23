@@ -82,6 +82,12 @@ namespace Aop.Api.Domain
         public string CompanySource { get; set; }
 
         /// <summary>
+        /// 备注json 数据
+        /// </summary>
+        [XmlElement("content_var")]
+        public string ContentVar { get; set; }
+
+        /// <summary>
         /// 过期时间(毫秒数)
         /// </summary>
         [XmlElement("gmt_expired")]
@@ -92,6 +98,12 @@ namespace Aop.Api.Domain
         /// </summary>
         [XmlElement("gmt_refresh")]
         public string GmtRefresh { get; set; }
+
+        /// <summary>
+        /// 职位开始时间(毫秒数)
+        /// </summary>
+        [XmlElement("gmt_start")]
+        public string GmtStart { get; set; }
 
         /// <summary>
         /// 职位描述

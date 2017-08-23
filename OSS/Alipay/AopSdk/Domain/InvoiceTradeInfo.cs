@@ -35,6 +35,12 @@ namespace Aop.Api.Domain
         public string GoodsName { get; set; }
 
         /// <summary>
+        /// 发票内容项明细
+        /// </summary>
+        [XmlElement("invoice_content")]
+        public InvoiceItemQueryOpenModel InvoiceContent { get; set; }
+
+        /// <summary>
         /// 品牌全称，由商户在发票管家配置
         /// </summary>
         [XmlElement("m_name")]

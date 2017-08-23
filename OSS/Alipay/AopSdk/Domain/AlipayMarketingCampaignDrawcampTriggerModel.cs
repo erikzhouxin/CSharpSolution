@@ -28,6 +28,24 @@ namespace Aop.Api.Domain
         public long CampSource { get; set; }
 
         /// <summary>
+        /// 渠道来源参数
+        /// </summary>
+        [XmlElement("channel_info")]
+        public string ChannelInfo { get; set; }
+
+        /// <summary>
+        /// 客户端ip
+        /// </summary>
+        [XmlElement("client_ip")]
+        public string ClientIp { get; set; }
+
+        /// <summary>
+        /// rds嵌入页面的js收集的用户行为数据
+        /// </summary>
+        [XmlElement("json_ua")]
+        public string JsonUa { get; set; }
+
+        /// <summary>
         /// 用户登录号/用户uid，非脱敏账号
         /// </summary>
         [XmlElement("user_id")]
