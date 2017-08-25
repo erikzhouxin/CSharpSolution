@@ -1,4 +1,4 @@
-﻿using EZOper.CSharpSolution.WebUI.Alipayment;
+﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

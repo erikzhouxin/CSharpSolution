@@ -48,9 +48,6 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="AopSdk">
-      <HintPath>..\OSS\Beans\AopSdk.dll</HintPath>
-    </Reference>
     <Reference Include="LitJson, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LitJson.0.9.0\lib\LitJson.dll</HintPath>
     </Reference>
@@ -206,32 +203,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayCore.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FMonitorResult.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FPayResult.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FPrepayResult.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FQueryResult.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayF2FRefundResult.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayMonitorImpl.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\Alipaynotify.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\AlipayTradeImpl.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\F2FBiz.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\F2FMonitor.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\F2FResult.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\IAlipayMonitor.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Business\IAlipayTradeService.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayMonitorContentBuilder.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradePayContentBuilder.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradePrecreateContentBuilder.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradeQueryCententBuilder.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\AlipayTradeRefundContentBuilder.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Domain\JsonBuilder.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Model\ExtendParams.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Model\GoodsInfo.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Model\PayResultModel.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Model\ResultEnum.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Model\TradeInfo.cs" />
-    <Compile Include="Payment\Alipayment\F2FPayDll\Model\TradeStatusModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -279,15 +250,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Payment\AlipayCode\AlipayConfig.cs" />
-    <Compile Include="Payment\AlipayCode\AlipayCore.cs" />
-    <Compile Include="Payment\AlipayCode\AlipayHelper.cs" />
-    <Compile Include="Payment\AlipayCode\AlipayMD5.cs" />
-    <Compile Include="Payment\AlipayCode\AlipayNotify.cs" />
-    <Compile Include="Payment\AlipayCode\AlipayReturnViewModel.cs" />
-    <Compile Include="Payment\AlipayCode\AlipaySubmit.cs" />
-    <Compile Include="Payment\AlipayCode\NotifyViewModel.cs" />
-    <Compile Include="Payment\AlipayCode\SumitViewModel.cs" />
     <Compile Include="Payment\PaymentConfig.cs" />
     <Compile Include="Payment\PaymentHelper.cs" />
     <Compile Include="WebForm\Alipayment\app_code\Config.cs" />
@@ -348,7 +310,6 @@
     <Compile Include="WebForm\Alipayment\result.aspx.designer.cs">
       <DependentUpon>result.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Payment\Wepayment\Config.cs" />
     <Compile Include="Payment\WxPayment\WxPayApi.cs" />
     <Compile Include="Payment\WxPayment\WxPayConfig.cs" />
     <Compile Include="Payment\WxPayment\WxPayData.cs" />
@@ -1375,7 +1336,12 @@
   <ItemGroup>
     <Content Include="Scripts\jQuery\jquery-2.1.4.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EZOper.PaymentUtilities\EZOper.PaymentUtilities.csproj">
+      <Project>{f526e02a-948c-4962-a2f9-cf0850c7c51d}</Project>
+      <Name>EZOper.PaymentUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
