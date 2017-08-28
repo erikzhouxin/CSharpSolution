@@ -1,4 +1,4 @@
-﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
+﻿using EZOper.NetSiteUtilities.Alipayment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +22,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
     /// </summary>
     public partial class query : System.Web.UI.Page
     {
-
-        IAlipayTradeService serviceClient = F2FBiz.CreateClientInstance(Config.serverUrl, Config.appId, Config.merchant_private_key, Config.version,
-                             Config.sign_type, Config.alipay_public_key, Config.charset);
-
+        IAlipayTradeService serviceClient = AlipayF2FBiz.GetTradeImpl();
         string result = "";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,13 +43,13 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
             //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
             switch (queryResult.Status)
             {
-                case ResultEnum.SUCCESS:
+                case AlipayResultEnum.SUCCESS:
                     DoSuccessProcess(queryResult);
                     break;
-                case ResultEnum.FAILED:
+                case AlipayResultEnum.FAILED:
                     DoFailedProcess(queryResult);
                     break;
-                case ResultEnum.UNKNOWN:
+                case AlipayResultEnum.UNKNOWN:
                     if (queryResult.response == null)
                     {
                         //result = "网络异常，请检查网络配置";
@@ -71,7 +68,6 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
         private void DoSuccessProcess(AlipayF2FQueryResult queryResult)
         {
-
             //请添加支付成功后的处理
             result = queryResult.response.Body;
         }
@@ -79,7 +75,6 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
         private void DoFailedProcess(AlipayF2FQueryResult queryResult)
         {
-
             //请添加查询支付失败的处理
             result = queryResult.response.Body;
         }

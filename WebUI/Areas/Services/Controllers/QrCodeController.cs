@@ -1,5 +1,4 @@
-﻿using EZOper.CSharpSolution.WebUI.Payment;
-using EZOper.CSharpSolution.WebUI.Utilities;
+﻿using EZOper.CSharpSolution.WebUI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

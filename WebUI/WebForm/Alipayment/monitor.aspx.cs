@@ -1,4 +1,4 @@
-﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
+﻿using EZOper.NetSiteUtilities.Alipayment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,12 +22,8 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
     /// </summary>
     public partial class monitor : System.Web.UI.Page
     {
-
-        private LogHelper log = new LogHelper();
-
         //心跳接口返回没有签名,不需要传递alipay_rsa_public_key,设置为null,接口不会进行验证签名
-        IAlipayMonitor monitorClient = F2FMonitor.CreateClientInstance(Config.monitorUrl, Config.appId, Config.merchant_private_key, Config.version,
-                             Config.sign_type, null, Config.charset);
+        IAlipayMonitor monitorClient = AlipayF2FBiz.GetMonitorImpl();
 
         string result = "";
 
@@ -50,13 +46,13 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
             switch (monitorResult.Status)
             {
-                case ResultEnum.SUCCESS:
+                case AlipayResultEnum.SUCCESS:
                     DoSuccessProcess(monitorResult);
                     break;
-                case ResultEnum.FAILED:
+                case AlipayResultEnum.FAILED:
                     DoFailedProcess(monitorResult);
                     break;
-                case ResultEnum.UNKNOWN:
+                case AlipayResultEnum.UNKNOWN:
                     result = "配置或网络异常，请检查";
                     break;
             }
@@ -84,9 +80,9 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
 
             //传入交易信息详情
-            List<TradeInfo> gList = new List<TradeInfo>();
+            List<AlipayTradeInfo> gList = new List<AlipayTradeInfo>();
 
-            TradeInfo trade = new TradeInfo();
+            AlipayTradeInfo trade = new AlipayTradeInfo();
             //trade.OTN = "201508011234";
             trade.OTN = WIDout_request_no.Text.Trim();
             trade.TC = "0.123";

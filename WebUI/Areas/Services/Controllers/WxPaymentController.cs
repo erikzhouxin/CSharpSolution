@@ -1,6 +1,5 @@
 ﻿using EZOper.CSharpSolution.WebUI.EntitiesModels;
-using EZOper.CSharpSolution.WebUI.Payment;
-using EZOper.CSharpSolution.WebUI.Payment.WxPayment;
+using EZOper.NetSiteUtilities.Wepayment;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,7 +39,7 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
             //调用下载对账单接口,如果内部出现异常则在页面上显示异常原因
             try
             {
-                string result = WxPayHelper.DownloadBill(dateStr, bill_type);
+                string result = WxPayApiBiz.DownloadBill(dateStr, bill_type);
                 alertMsg.IsSuccess = true;
                 alertMsg.Message = result;
             }
@@ -149,7 +148,7 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
             //调用刷卡支付,如果内部出现异常则在页面上显示异常原因
             try
             {
-                alertMsg.Message = WxPayHelper.MicroPay(body, fee, auth_code);
+                alertMsg.Message = WxPayApiBiz.MicroPay(body, fee, auth_code);
             }
             catch (WxPayException ex)
             {
@@ -170,18 +169,17 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
             WxPayLog.Info(this.GetType().ToString(), "page load");
 
             //生成扫码支付模式一url
-            ViewBag.QRCode1 = WxPayHelper.GetPreNativePayUrl("123456789");
+            ViewBag.QRCode1 = WxPayApiBiz.GetNativePrePayUrl("123456789");
 
             //生成扫码支付模式二url
-            ViewBag.QRCode2 = WxPayHelper.GetNativePayUrl("123456789");
+            ViewBag.QRCode2 = WxPayApiBiz.GetNativePayUrl("123456789");
 
             return View();
         }
 
         public ActionResult NativeNotify()
         {
-            var nativeNatify = new WxPayNativeNotify(HttpContext);
-            nativeNatify.ProcessNotify();
+            WxPayApiBiz.ProcessNativeNotify(HttpContext);
             return View();
         }
         #endregion
@@ -203,7 +201,7 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
             //调用订单查询接口,如果内部出现异常则在页面上显示异常原因
             try
             {
-                string result = WxPayHelper.OrderQuery(transaction_id, out_trade_no);//调用订单查询业务逻辑
+                string result = WxPayApiBiz.OrderQuery(transaction_id, out_trade_no);//调用订单查询业务逻辑
                 alertMsg.IsSuccess = true;
                 alertMsg.Message = result;
             }
@@ -251,7 +249,7 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
             //调用订单退款接口,如果内部出现异常则在页面上显示异常原因
             try
             {
-                string result = WxPayHelper.Refund(transaction_id, out_trade_no, total_fee, refund_fee);
+                string result = WxPayApiBiz.Refund(transaction_id, out_trade_no, total_fee, refund_fee);
                 alertMsg.Message = result;
             }
             catch (WxPayException ex)
@@ -269,8 +267,7 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
 
         public ActionResult ResultNotify()
         {
-            var resultNotify = new WxPayResultNotify(HttpContext);
-            resultNotify.ProcessNotify();
+            WxPayApiBiz.ProcessResultNotify(HttpContext);
             return View();
         }
         #endregion
@@ -293,7 +290,7 @@ namespace EZOper.CSharpSolution.WebUI.Areas.Services.Controllers
             //调用退款查询接口,如果内部出现异常则在页面上显示异常原因
             try
             {
-                string result = WxPayHelper.RefundQuery(refund_id, out_refund_no, transaction_id, out_trade_no);
+                string result = WxPayApiBiz.RefundQuery(refund_id, out_refund_no, transaction_id, out_trade_no);
                 alertMsg.IsSuccess = true;
                 alertMsg.Message = result;
             }

@@ -1,4 +1,4 @@
-﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
+﻿using EZOper.NetSiteUtilities.Alipayment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,12 +22,8 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
     /// </summary>
     public partial class refund : System.Web.UI.Page
     {
-
-
         string result = "";
-
-        IAlipayTradeService serviceClient = F2FBiz.CreateClientInstance(Config.serverUrl, Config.appId, Config.merchant_private_key, Config.version,
-                             Config.sign_type, Config.alipay_public_key, Config.charset);
+        IAlipayTradeService serviceClient = AlipayF2FBiz.GetTradeImpl();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,13 +43,13 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
             //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
             switch (refundResult.Status)
             {
-                case ResultEnum.SUCCESS:
+                case AlipayResultEnum.SUCCESS:
                     DoSuccessProcess(refundResult);
                     break;
-                case ResultEnum.FAILED:
+                case AlipayResultEnum.FAILED:
                     DoFailedProcess(refundResult);
                     break;
-                case ResultEnum.UNKNOWN:
+                case AlipayResultEnum.UNKNOWN:
                     if (refundResult.response == null)
                     {
                         result = "配置或网络异常，请检查";
@@ -97,7 +93,6 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
         /// </summary>
         private void DoSuccessProcess(AlipayF2FRefundResult refundResult)
         {
-
             //请添加退款成功后的处理
             result = refundResult.response.Body;
         }
@@ -107,7 +102,6 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
         /// </summary>
         private void DoFailedProcess(AlipayF2FRefundResult refundResult)
         {
-
             //请添加退款失败后的处理
             result = refundResult.response.Body;
         }

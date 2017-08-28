@@ -1,4 +1,4 @@
-﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
+﻿using EZOper.NetSiteUtilities.Alipayment;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -30,7 +30,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
             if (sPara.Count > 0)//判断是否有带返回参数
             {
                 //Notify aliNotify = new Notify();
-                Notify aliNotify = new Notify(Config.charset, Config.sign_type, Config.pid, Config.mapiUrl, Config.alipay_public_key);
+                AlipayNotify aliNotify = new AlipayNotify();
 
                 //对异步通知进行验签
                 bool verifyResult = aliNotify.Verify(sPara, Request.Form["notify_id"], Request.Form["sign"]);

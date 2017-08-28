@@ -1,4 +1,4 @@
-﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
+﻿using EZOper.NetSiteUtilities.Alipayment;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,22 +26,14 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
     /// </summary>
     public partial class precreate : System.Web.UI.Page
     {
-
-        private LogHelper log = new LogHelper();
-
-        IAlipayTradeService serviceClient = F2FBiz.CreateClientInstance(Config.serverUrl, Config.appId, Config.merchant_private_key, Config.version,
-                             Config.sign_type, Config.alipay_public_key, Config.charset);
-
+        IAlipayTradeService serviceClient = AlipayF2FBiz.GetTradeImpl();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
         }
 
         protected void Alipay_RSA_Submit(object sender, EventArgs e)
         {
-
             AlipayTradePrecreateContentBuilder builder = BuildPrecreateContent();
             string out_trade_no = builder.out_trade_no;
 
@@ -58,15 +50,15 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
             switch (precreateResult.Status)
             {
-                case ResultEnum.SUCCESS:
+                case AlipayResultEnum.SUCCESS:
                     DoWaitProcess(precreateResult);
                     break;
-                case ResultEnum.FAILED:
+                case AlipayResultEnum.FAILED:
                     result = precreateResult.response.Body;
                     Response.Redirect("result.aspx?Text=" + result);
                     break;
 
-                case ResultEnum.UNKNOWN:
+                case AlipayResultEnum.UNKNOWN:
                     if (precreateResult.response == null)
                     {
                         result = "配置或网络异常，请检查后重试";
@@ -100,7 +92,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
             AlipayTradePrecreateContentBuilder builder = new AlipayTradePrecreateContentBuilder();
             //收款账号
-            builder.seller_id = Config.pid;
+            builder.seller_id = AlipayConfig.pid;
             //订单编号
             builder.out_trade_no = out_trade_no;
             //订单总金额
@@ -121,8 +113,8 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
             builder.operator_id = "test";
 
             //传入商品信息详情
-            List<GoodsInfo> gList = new List<GoodsInfo>();
-            GoodsInfo goods = new GoodsInfo();
+            List<AlipayGoodsInfo> gList = new List<AlipayGoodsInfo>();
+            AlipayGoodsInfo goods = new AlipayGoodsInfo();
             goods.goods_id = "goods id";
             goods.goods_name = "goods name";
             goods.price = "0.01";
@@ -185,7 +177,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
                 queryResult = serviceClient.tradeQuery(out_trade_no);
                 if (queryResult != null)
                 {
-                    if (queryResult.Status == ResultEnum.SUCCESS)
+                    if (queryResult.Status == AlipayResultEnum.SUCCESS)
                     {
                         DoSuccessProcess(queryResult);
                         return;
@@ -201,7 +193,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
         private void DoSuccessProcess(AlipayF2FQueryResult queryResult)
         {
             //支付成功，请更新相应单据
-            log.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
+            AlipayLog.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
 
         }
 

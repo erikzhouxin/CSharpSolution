@@ -5,7 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.IO;
-//using LitJson;
+using EZOper.NetSiteUtilities.Wepayment;
 
 namespace EZOper.CSharpSolution.WebUI.WebForm.Wepayment
 {
@@ -13,7 +13,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Wepayment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Log.Info(this.GetType().ToString(), "page load");
+            WxPayLog.Info(this.GetType().ToString(), "page load");
         }
     }
 }

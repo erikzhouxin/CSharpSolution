@@ -1,8 +1,8 @@
 ﻿<%@ page language="C#" autoeventwireup="true" codebehind="Default.aspx.cs" inherits="EZOper.CSharpSolution.WebUI.WebForm.Wepayment._Default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,13 +20,13 @@
 <body runat="server">
     <div align="center">
         <ul>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/ProductPage.aspx">JSAPI支付</a></li>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/MicroPayPage.aspx">刷卡支付</a></li>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/NativePayPage.aspx">扫码支付</a></li>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/OrderQueryPage.aspx">订单查询</a></li>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/RefundPage.aspx">订单退款</a></li>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/RefundQueryPage.aspx">退款查询</a></li>
-            <li style="background-color: #00CD00"><a href="http://paysdk.weixin.qq.com/example/DownloadBillPage.aspx">下载账单</a></li>
+            <li style="background-color: #00CD00"><a href="./ProductPage.aspx">JSAPI支付</a></li>
+            <li style="background-color: #00CD00"><a href="./MicroPayPage.aspx">刷卡支付</a></li>
+            <li style="background-color: #00CD00"><a href="./NativePayPage.aspx">扫码支付</a></li>
+            <li style="background-color: #00CD00"><a href="./OrderQueryPage.aspx">订单查询</a></li>
+            <li style="background-color: #00CD00"><a href="./RefundPage.aspx">订单退款</a></li>
+            <li style="background-color: #00CD00"><a href="./RefundQueryPage.aspx">退款查询</a></li>
+            <li style="background-color: #00CD00"><a href="./DownloadBillPage.aspx">下载账单</a></li>
         </ul>
     </div>
 </body>

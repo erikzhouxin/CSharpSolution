@@ -1,4 +1,4 @@
-﻿using EZOper.PaymentUtilities.Alipayment.F2FPayDll;
+﻿using EZOper.NetSiteUtilities.Alipayment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,28 +12,19 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
     /// 功能：统一下单并支付接口接入页
     /// 日期：2016-12-27
     /// 说明：
-    /// 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
-    /// 该代码仅供学习和研究支付宝接口使用，只是提供一个参考。
-    /// 
     /// /////////////////注意///////////////////////////////////////////////////////////////
     /// 如果您在接口集成过程中遇到问题，可以按照下面的途径来解决
     /// 1、支持中心（https://support.open.alipay.com/alipay/support/index.htm），提交申请集成协助，我们会有专业的技术工程师主动联系您协助解决
     /// 2、开发者论坛（https://openclub.alipay.com/）
-    /// 
     /// </summary>
     public partial class barcodepay : System.Web.UI.Page
     {
-
-        private LogHelper log = new LogHelper();
-
-        IAlipayTradeService serviceClient = F2FBiz.CreateClientInstance(Config.serverUrl, Config.appId, Config.merchant_private_key, Config.version,
-                             Config.sign_type, Config.alipay_public_key, Config.charset);
+        IAlipayTradeService serviceClient = AlipayF2FBiz.GetTradeImpl();
 
         string result = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         /// <summary>
@@ -51,13 +42,13 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
             switch (payResult.Status)
             {
-                case ResultEnum.SUCCESS:
+                case AlipayResultEnum.SUCCESS:
                     DoSuccessProcess(payResult);
                     break;
-                case ResultEnum.FAILED:
+                case AlipayResultEnum.FAILED:
                     DoFailedProcess(payResult);
                     break;
-                case ResultEnum.UNKNOWN:
+                case AlipayResultEnum.UNKNOWN:
                     result = "网络异常，请检查网络配置后，更换外部订单号重试";
                     break;
             }
@@ -85,7 +76,7 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
             AlipayTradePayContentBuilder builder = new AlipayTradePayContentBuilder();
 
             //收款账号
-            builder.seller_id = Config.pid;
+            builder.seller_id = AlipayConfig.pid;
             //订单编号
             builder.out_trade_no = out_trade_no;
             //支付场景，无需修改
@@ -111,9 +102,9 @@ namespace EZOper.CSharpSolution.WebUI.WebForm.Alipayment
 
 
             //传入商品信息详情
-            List<GoodsInfo> gList = new List<GoodsInfo>();
+            List<AlipayGoodsInfo> gList = new List<AlipayGoodsInfo>();
 
-            GoodsInfo goods = new GoodsInfo();
+            AlipayGoodsInfo goods = new AlipayGoodsInfo();
             goods.goods_id = "304";
             goods.goods_name = "goods#name";
             goods.price = "0.01";

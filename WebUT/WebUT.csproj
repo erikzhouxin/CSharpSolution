@@ -38,9 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AopSdk">
-      <HintPath>..\OSS\Beans\AopSdk.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.11\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -51,17 +48,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Payment\AopSdk\Test\PublicTest.cs" />
-    <Compile Include="Payment\AopSdk\Test\TestImage.cs" />
+    <Compile Include="Aliyun\Dysmsapi\DysmsapiUT.cs" />
+    <Compile Include="AopApi\PublicTest.cs" />
+    <Compile Include="AopApi\TestImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <Content Include="Payment\AopSdk\Test\aop-sandbox-RSA-private-c#.pem" />
-    <Content Include="Payment\AopSdk\Test\public-key.pem" />
+    <Content Include="AopApi\aop-sandbox-RSA-private-c#.pem" />
+    <Content Include="AopApi\public-key.pem" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetSiteUtilities\NetSiteUtilities.csproj">
+      <Project>{c7a37912-1da2-4b16-8e89-9b8492adb531}</Project>
+      <Name>NetSiteUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebUI\WebUI.csproj">
       <Project>{eb94be69-c807-4645-9df7-5f77880d7d99}</Project>
       <Name>WebUI</Name>
