@@ -42,6 +42,15 @@ namespace EZOper.CSharpSolution.WebUI
                  namespaces: new[] { "EZOper.CSharpSolution.WebUI.Areas.Prototypes.Controllers" }
              );
             #endregion
+            #region // 中心域
+            areaRegistrationContext = new AreaRegistrationContext("Centers", routes);
+            areaRegistrationContext.MapRoute(
+                 name: "Centers",
+                 url: "Centers/{controller}/{action}/{id}",
+                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                 namespaces: new[] { "EZOper.CSharpSolution.WebUI.Areas.Centers.Controllers" }
+             );
+            #endregion
             #region // 基础域-Home
             areaRegistrationContext = new AreaRegistrationContext("Home", routes);
             areaRegistrationContext.MapRoute(
