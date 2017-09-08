@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "bootstrap-datepicker";
+}
+@section CustomStyle{
+    <link href="~/Scripts/Bootstrap.DatePicker/v1.7.1/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+}
+<div class="bs-callout bs-callout-info">
+    <p>项目地址:<a href="https://github.com/uxsolutions/bootstrap-datepicker" target="_blank">Github</a></p>
+    <p>分支项目地址:<a href="@Url.Action("bsdatetimepicker")" target="_blank">Bootstrap.DateTimePicker</a></p>
+    <p>配置生成地址:<a href="https://uxsolutions.github.io/bootstrap-datepicker/" target="_blank">Configuration</a></p>
+</div>
+<input id="datatimepicker" type="text" class="form-control">
+@section CustomScript{
+    <script src="~/Scripts/Bootstrap.DatePicker/v1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/Bootstrap.DatePicker/v1.7.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript">
+        $('#datatimepicker').datepicker({
+            format: "yyyy-mm-dd",
+            todayBtn: true,
+            clearBtn: true,
+            language: "zh-CN",
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>
+}

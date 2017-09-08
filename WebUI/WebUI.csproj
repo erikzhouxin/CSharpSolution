@@ -212,6 +212,7 @@
     <Compile Include="Areas\Help\Context\HelpPageConfig.cs" />
     <Compile Include="Areas\Help\Context\HelpPageConfigurationExtensions.cs" />
     <Compile Include="Areas\Help\Context\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\Help\Controllers\DatePickerController.cs" />
     <Compile Include="Areas\Help\Controllers\EchartsController.cs" />
     <Compile Include="Areas\Help\Controllers\HighchartsController.cs" />
     <Compile Include="Areas\Help\Controllers\HomeController.cs" />
@@ -428,6 +429,25 @@
     <Content Include="Html\Alipayment\speech.html" />
     <Content Include="Html\Alipayment\takePhoto.html" />
     <Content Include="Html\Alipayment\vibrate.html" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker.min.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker3.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\js\bootstrap-datepicker.js" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\js\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\Bootstrap.DatetimePicker\v2.4.4\css\bootstrap-datetimepicker.css" />
+    <Content Include="Scripts\Bootstrap.DatetimePicker\v2.4.4\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Scripts\Bootstrap.DatetimePicker\v2.4.4\js\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Bootstrap.DatetimePicker\v2.4.4\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\Bootstrap.DatetimePicker\v2.4.4\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="Scripts\Bootstrap.DatetimePicker\v2.4.4\js\locales\bootstrap-datetimepicker.zh-TW.js" />
     <Content Include="Scripts\CKEditor\v4.7.2\adapters\jquery.js" />
     <Content Include="Scripts\CKEditor\v4.7.2\build-config.js" />
     <Content Include="Scripts\CKEditor\v4.7.2\ckeditor.js" />
@@ -603,6 +623,7 @@
     <Content Include="Scripts\Echarts\v3.6.2\extension\bmap.min.js" />
     <Content Include="Scripts\Echarts\v3.6.2\extension\dataTool.js" />
     <Content Include="Scripts\Echarts\v3.6.2\extension\dataTool.min.js" />
+    <Content Include="Scripts\EZX\ezoper.datetime.js" />
     <Content Include="Scripts\EZX\help.apihelppage.css" />
     <Content Include="Scripts\EZX\zapi.site.css" />
     <Content Include="Content\Help\Readme.txt" />
@@ -1037,10 +1058,10 @@
     <Content Include="Scripts\jQuery.FancyBox\v1.3.4\fancybox\jquery.fancybox-1.3.4.pack.js" />
     <Content Include="Scripts\jQuery.FancyBox\v1.3.4\fancybox\jquery.mousewheel-3.0.4.pack.js" />
     <Content Include="Scripts\jQuery.FancyBox\v1.3.4\style.css" />
-    <Content Include="Scripts\jQuery.FancyBox\v3.1\dist\jquery.fancybox.css" />
-    <Content Include="Scripts\jQuery.FancyBox\v3.1\dist\jquery.fancybox.js" />
-    <Content Include="Scripts\jQuery.FancyBox\v3.1\dist\jquery.fancybox.min.css" />
-    <Content Include="Scripts\jQuery.FancyBox\v3.1\dist\jquery.fancybox.min.js" />
+    <Content Include="Scripts\jQuery.FancyBox\v3.1\jquery.fancybox.css" />
+    <Content Include="Scripts\jQuery.FancyBox\v3.1\jquery.fancybox.js" />
+    <Content Include="Scripts\jQuery.FancyBox\v3.1\jquery.fancybox.min.css" />
+    <Content Include="Scripts\jQuery.FancyBox\v3.1\jquery.fancybox.min.js" />
     <Content Include="Scripts\KindEditor\v4.1.11\kindeditor-all-min.js" />
     <Content Include="Scripts\KindEditor\v4.1.11\kindeditor-all.js" />
     <Content Include="Scripts\KindEditor\v4.1.11\lang\en.js" />
@@ -1548,6 +1569,14 @@
     <Content Include="Scripts\CKEditor\v4.7.2\plugins\wsc\LICENSE.md" />
     <Content Include="Scripts\CKEditor\v4.7.2\plugins\wsc\README.md" />
     <Content Include="Scripts\CKEditor\v4.7.2\skins\moono-lisa\readme.md" />
+    <Content Include="Areas\Works\Views\Web.config" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker.css.map" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Scripts\Bootstrap.DatePicker\v1.7.1\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Areas\Help\Views\DatePicker\Index.cshtml" />
+    <Content Include="Areas\Help\Views\DatePicker\BsDatePicker.cshtml" />
+    <Content Include="Areas\Help\Views\DatePicker\BsDateTimePicker.cshtml" />
     <None Include="Scripts\jQuery.Validate\v1.16.0\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Highstock\v5.0.14\code\css\highcharts.css" />
     <Content Include="Scripts\Highstock\v5.0.14\code\highcharts-3d.js" />
@@ -1989,7 +2018,11 @@
       <Name>NetSiteUtilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Works\Controllers\" />
+    <Folder Include="Areas\Works\Models\" />
+    <Folder Include="Areas\Works\Views\Shared\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

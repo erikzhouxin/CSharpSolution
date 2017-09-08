@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "bootstrap-datetimepicker";
+}
+@section CustomStyle{
+    <link href="~/Scripts/Bootstrap.DatetimePicker/v2.4.4/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+}
+<div class="bs-callout bs-callout-info">
+    <p>项目地址:<a href="https://github.com/smalot/bootstrap-datetimepicker" target="_blank">Github</a></p>
+    <p><a href="http://www.cnblogs.com/alice626/p/5179609.html" target="_blank">参考教程</a></p>
+</div>
+<div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+    <input class="span2" size="16" type="text" value="12-02-2012">
+    <span class="add-on"><i class="icon-remove"></i></span>
+    <span class="add-on"><i class="icon-th"></i></span>
+</div>   
+@section CustomScript{
+    <script src="~/Scripts/Bootstrap.DatetimePicker/v2.4.4/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/Bootstrap.DatetimePicker/v2.4.4/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript">
+        $("#datetimepicker").datetimepicker();
+    </script>
+}
